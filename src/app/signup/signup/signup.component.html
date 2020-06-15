@@ -1,0 +1,76 @@
+<a [href]="landingPage" type="button" class="btn btn-danger m-4 text-white">	&#5176; Voltar</a>
+
+<div class="container m-4">
+  <h4 class="text-left mb-4 ml-2">Cadastro</h4>
+  <form 
+    [formGroup]="signupForm" 
+    [ngClass]="{'border-danger':signupForm.invalid==true}" 
+    class="border border-success p-4 rounded-top"
+    (submit)="enviar()">
+
+    <div class="form-row">
+
+      <div class="form-group col-md-6">
+        <label for="inputEmail">Email</label>
+        <input formControlName="email" type="email" class="form-control" id="inputEmail" placeholder="Digite seu email">
+        <app-val-message 
+          *ngIf="signupForm.get('email').errors?.required"
+          text="Por favor, digite seu Email.">
+        </app-val-message>
+        <app-val-message
+          *ngIf="signupForm.get('email').errors?.emailPadrao"
+          text="Por favor, digite um Email valido.">
+        </app-val-message>
+        <app-val-message
+        *ngIf="signupForm.get('email').errors?.emailTaken"
+        text="Email já cadastrado.">
+        </app-val-message>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="inputName">Nome</label>
+        <input onkeydown="javascript:void(0)" formControlName="nome" type="text" class="form-control" id="inputName" placeholder="Digite seu nome">
+        <app-val-message 
+          *ngIf="signupForm.get('nome').errors?.required"
+          text="Por favor, digite seu nome.">
+        </app-val-message>
+        <app-val-message 
+          *ngIf="signupForm.get('nome').errors?.maxLength"
+          text="Nome muito extenso.">
+        </app-val-message>
+        <app-val-message 
+          *ngIf="signupForm.get('nome').errors?.minLength"
+          text="Nome muito curto.">
+        </app-val-message>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputPassword">Senha</label>
+      <input formControlName="senha" type="password" class="form-control" id="inputPassword" placeholder="Digite sua Senha">
+      <app-val-message 
+        *ngIf="signupForm.get('senha').errors?.required"
+        text="Por favor, digite uma senha.">
+      </app-val-message>
+    </div>
+
+    <div class="form-group">
+      <label for="inputPasswordConfirm">Confirmar senha</label>
+      <input formControlName="confSenha" type="password" class="form-control" id="inputPasswordConfirm" placeholder="Confirme sua senha">
+      <app-val-message 
+        *ngIf="signupForm.get('confSenha').errors?.required"
+        text="Por favor, confirme sua senha.">
+      </app-val-message>
+      <app-val-message 
+        *ngIf="signupForm.errors?.comparaSenha"
+        text="As senhas não batem!">
+      </app-val-message>
+    </div>
+
+    <small class="d-block">Já possui uma conta? <a [routerLink]="['../Login']" type="button" class="btn btn-primary text-white">Acesse sua conta aqui!</a></small>
+   
+    <button [disabled]="signupForm.invalid || signupForm.pending" type="submit" class="btn btn-success mt-4">Cadastrar</button>
+  </form>
+</div>
+
+

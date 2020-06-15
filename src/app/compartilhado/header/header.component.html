@@ -1,0 +1,16 @@
+<nav class="navbar navbar-light bg-light fixed-top">
+  <span class="navbar-brand mb-0 h1"><p class="h1">DrillDev</p></span>
+
+  <div *ngIf="(user$ | async) as user">
+    <a class=" text-center ml-2">Olá, {{ user.email }}</a>
+  </div>
+
+  <div>
+    <a 
+    (click)="logout()"
+    type="button"  
+    class="text-decoration-none text-white btn btn-danger mr-2">
+      Sair
+    </a>
+  </div>
+</nav>  

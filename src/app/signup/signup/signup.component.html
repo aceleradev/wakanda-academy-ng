@@ -4,7 +4,7 @@
   <h4 class="text-left mb-4 ml-2">Cadastro</h4>
   <form 
     [formGroup]="signupForm" 
-    [ngClass]="{'border-danger':signupForm.invalid==true}" 
+    [ngClass]="{ 'border-danger':signupForm.invalid || exibeSeExisteEmail == true }" 
     class="border border-success p-4 rounded-top"
     (submit)="enviar()">
 
@@ -12,34 +12,34 @@
 
       <div class="form-group col-md-6">
         <label for="inputEmail">Email</label>
-        <input formControlName="email" type="email" class="form-control" id="inputEmail" placeholder="Digite seu email">
-        <app-val-message 
-          *ngIf="signupForm.get('email').errors?.required"
-          text="Por favor, digite seu Email.">
-        </app-val-message>
+        <input formControlName="email" type="email" class="form-control" id="inputEmail" placeholder="Digite seu email" (focus)="removeMensagem()">
         <app-val-message
           *ngIf="signupForm.get('email').errors?.emailPadrao"
           text="Por favor, digite um Email valido.">
         </app-val-message>
         <app-val-message
-        *ngIf="signupForm.get('email').errors?.emailTaken"
-        text="Email já cadastrado.">
+          *ngIf="signupForm.get('email').errors?.required"
+          text="">
+        </app-val-message>
+        <app-val-message
+          *ngIf="exibeSeExisteEmail"
+          text="Email já cadastrado.">
         </app-val-message>
       </div>
 
       <div class="form-group col-md-6">
         <label for="inputName">Nome</label>
-        <input onkeydown="javascript:void(0)" formControlName="nome" type="text" class="form-control" id="inputName" placeholder="Digite seu nome">
+        <input formControlName="nome" type="text" class="form-control" id="inputName" placeholder="Digite seu nome">
         <app-val-message 
           *ngIf="signupForm.get('nome').errors?.required"
           text="Por favor, digite seu nome.">
         </app-val-message>
         <app-val-message 
-          *ngIf="signupForm.get('nome').errors?.maxLength"
+          *ngIf="signupForm.get('nome').errors?.maxlength"
           text="Nome muito extenso.">
         </app-val-message>
         <app-val-message 
-          *ngIf="signupForm.get('nome').errors?.minLength"
+          *ngIf="signupForm.get('nome').errors?.minlength"
           text="Nome muito curto.">
         </app-val-message>
       </div>
@@ -69,7 +69,7 @@
 
     <small class="d-block">Já possui uma conta? <a [routerLink]="['../Login']" type="button" class="btn btn-primary text-white">Acesse sua conta aqui!</a></small>
    
-    <button [disabled]="signupForm.invalid || signupForm.pending" type="submit" class="btn btn-success mt-4">Cadastrar</button>
+    <button [disabled]="signupForm.invalid || signupForm.pending " type="submit" class="btn btn-success mt-4">Cadastrar</button>
   </form>
 </div>
 

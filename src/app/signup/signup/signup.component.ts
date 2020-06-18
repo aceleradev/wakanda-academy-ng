@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { emailPadraoValidator } from 'src/app/compartilhado/validators/email-validator/emailPadrao.validator';
 import { comparaSenha } from '../validator/comparaSenha/comparaSenha.validator';
 import { SignupService } from '../service/signup.service';
 import { NewUser } from '../interface/new-user';
-import { Router } from '@angular/router';
-import { CheckEmailNotTakenValidatorService } from '../validator/checkEmailNotTaken/checkEmailTaken.validator.service';
 
 @Component({
   selector: 'app-signup',
@@ -14,14 +13,14 @@ import { CheckEmailNotTakenValidatorService } from '../validator/checkEmailNotTa
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  landingPage="http://localhost:4200/";
+  landingPage = "http://localhost:4200/";
   signupForm: FormGroup;
+  exibeSeExisteEmail: boolean = false;
 
   constructor(
     private fromBuilder: FormBuilder,
     private signupService: SignupService,
-    private router: Router,
-    private CheckEmailNotTakenValidatorService: CheckEmailNotTakenValidatorService
+    private router: Router
     ) { }
 
   ngOnInit() {
@@ -31,7 +30,6 @@ export class SignupComponent implements OnInit {
         Validators.required,
         emailPadraoValidator
       ],
-      // this.CheckEmailNotTakenValidatorService.checkUserEmailTaken()
     ],
       nome:["",
       [
@@ -60,9 +58,19 @@ export class SignupComponent implements OnInit {
     this.signupService
       .register(newUser)
       .subscribe(
-        ()=>{this.router.navigate(["Login"])},
-        err => console.log(err)
-      )
+        (res)=>{
+          if(res){
+            this.router.navigate(["Login"]);
+            // this.exibeSeExisteEmail = false;
+          }else{
+            this.exibeSeExisteEmail = true;
+            this.signupForm.reset();
+          }
+      })
+  }
+
+  removeMensagem() {
+    this.exibeSeExisteEmail = false;
   }
 
 }

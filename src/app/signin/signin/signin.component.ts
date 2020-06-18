@@ -13,9 +13,10 @@ import { emailPadraoValidator } from 'src/app/compartilhado/validators/email-val
 export class SigninComponent implements OnInit {
   landingPage = "http://localhost:4200";
   loginForm: FormGroup;
+  exibeSeLoginInvalido:boolean = false;
 
-  @ViewChild("InputEmail") inputEmail: ElementRef<HTMLInputElement>
-
+  // @ViewChild("InputEmail") inputEmail: ElementRef<HTMLInputElement>
+  
   constructor(
     private formbuilder:FormBuilder,
     private router:Router,
@@ -26,7 +27,7 @@ export class SigninComponent implements OnInit {
       email: ["", 
         [
           Validators.required,
-          emailPadraoValidator
+          // emailPadraoValidator
         ]
       ],
       senha: ["", 
@@ -41,14 +42,20 @@ export class SigninComponent implements OnInit {
     this.loginService.login(
       this.loginForm.get("email").value, 
       this.loginForm.get("senha").value)
-    .subscribe(() => {
-       this.router.navigateByUrl("");
-    }, err => {
-      console.log(err);
-      this.loginForm.reset();
-      this.inputEmail.nativeElement.focus();
-      alert('algo deu errado, tente novamente');
-    });
+    .subscribe(res => {
+      if(res) {
+        this.router.navigateByUrl("");
+        // this.exibeSeLoginInvalido = false;
+      }else{
+        this.exibeSeLoginInvalido = true;
+        this.loginForm.reset();
+        // this.inputEmail.nativeElement.focus();
+      }
+    })
   }
 
+  removeMensagem() {
+    this.exibeSeLoginInvalido = false;
+  }
+  
 }

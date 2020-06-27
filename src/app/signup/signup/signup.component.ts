@@ -54,6 +54,10 @@ export class SignupComponent implements OnInit {
     },{validator: comparaSenha});
   }
 
+  keyp(){
+    console.log(this.signupForm.get('nome').errors)
+  }
+
   enviar() {
     const newUser = this.signupForm.getRawValue() as NewUser;
     console.log(newUser);

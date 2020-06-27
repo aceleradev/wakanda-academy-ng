@@ -35,11 +35,11 @@
           text="Por favor, digite seu nome.">
         </app-val-message>
         <app-val-message 
-          *ngIf="signupForm.get('nome').errors?.maxLength"
+          *ngIf="signupForm.get('nome').errors?.maxlength"
           text="Nome muito extenso.">
         </app-val-message>
         <app-val-message 
-          *ngIf="signupForm.get('nome').errors?.minLength"
+          *ngIf="signupForm.get('nome').errors?.minlength"
           text="Nome muito curto.">
         </app-val-message>
       </div>

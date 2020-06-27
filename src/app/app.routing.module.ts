@@ -11,31 +11,21 @@ const routes: Routes = [
     {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'Home'
+        redirectTo: 'home'
     },
     {
-        path: 'login',
-        pathMatch: 'full',
-        redirectTo: 'Login'
-    },
-    {
-        path: 'signUp',
-        pathMatch: 'full',
-        redirectTo: 'SignUp'
-    },
-    {
-        path: "Home",
-        component: HomeComponent,
-        canActivate: [AuthGuard]
-    },
-    {
-        path: "Login",
+        path: "login",
         component: SigninComponent,
         canActivate: [LoginGuard]
     },
     {
-        path: "SignUp",
+        path: 'signUp',
         component: SignupComponent
+    },
+    {
+        path: "home",
+        component: HomeComponent,
+        canActivate: [AuthGuard]
     }
 ];
 

@@ -15,7 +15,7 @@ export class SignupService {
   ) { }
 
   register(newUser: NewUser) {
-    return this.http.post(environment.apiUrl, newUser)
+    return this.http.post('/wakanda/app/v1/user', newUser);
   }
 
   verSeJaCadastrado(email: string) {

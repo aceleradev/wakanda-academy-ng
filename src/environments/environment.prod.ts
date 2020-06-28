@@ -1,4 +1,7 @@
+let userHost = 'https://wakanda-user-singup-be.herokuapp.com';
+
 export const environment = {
   production: true,
-  apiUrl: 'https://wakanda-user-singup-be.herokuapp.com/wakanda/app/v1/user'
+  apiUrl: userHost + '/wakanda/app/v1/user',
+  userHost: userHost
 };

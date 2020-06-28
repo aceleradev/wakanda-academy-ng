@@ -9,8 +9,10 @@ app.use(express.static(`${__dirname}/dist/${nomeApp}`));
  
 app.post('/wakanda/app/v1/user', (req, res) => {
     http.request({
+        method: 'post',
         host: environment.userHost,
-        path: "/wakanda/app/v1/user"
+        path: "/wakanda/app/v1/user",
+        data: req.body
     }, (clientRespose) => {
         clientRespose.on('data', (data) => {
             res.send(data);

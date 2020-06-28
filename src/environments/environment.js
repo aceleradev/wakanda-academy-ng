@@ -2,10 +2,13 @@
 // `ng build ---prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 const userHost = 'https://wakanda-user-singup-be.herokuapp.com';
+const landingpageUrl = 'https://wakanda-landginpage-ng.herokuapp.com';
+
 const env = {
   production: false,
   apiUrl: userHost + '/wakanda/app/v1/user/create',
-  userHost: userHost
+  userHost: userHost,
+  landingpageUrl: landingpageUrl
 };
 
 module.exports = env;

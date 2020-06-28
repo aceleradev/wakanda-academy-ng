@@ -10,16 +10,13 @@ app.use(express.json());
 
 app.use(express.static(`${__dirname}/dist/${nomeApp}`));
  
-app.post('/wakanda/app/v1/user', (req, res) => {
-    axios({
-        method: 'post',
-        url: environment.apiUrl,
-        data: req.body
-    }).then((clientRespose) => {
-        res.send(clientRespose.data);
-    }, (error) => {
-        res.status(error.response.status).send(error.response.data);
-    });
+app.post('/wakanda/app/v1/user/create', (req, res) => {
+    axios.post(environment.apiUrl, req.body)
+        .then((clientRespose) => {
+            res.send(clientRespose.data);
+        }, (error) => {
+            res.status(error.response.status).send(error.response.data);
+        });
 });
 
 app.get('/*', (req, res) => {

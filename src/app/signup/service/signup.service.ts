@@ -14,10 +14,10 @@ export class SignupService {
   ) { }
 
   register(newUser: NewUser) {
-    return this.http.post('/wakanda/app/v1/user', newUser);
+    return this.http.post('/wakanda/app/v1/user/create', newUser);
   }
 
   verSeJaCadastrado(email: string) {
-    return this.http.get('/wakanda/app/v1/user');
+    return this.http.get('/wakanda/app/v1/user/create');
   }
 }

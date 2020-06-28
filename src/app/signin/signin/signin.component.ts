@@ -5,13 +5,15 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { LoginService } from '../service/login-service/login-service.service';
 import { emailPadraoValidator } from 'src/app/compartilhado/validators/email-validator/emailPadrao.validator';
 
+import * as environment from '../../../environments/environment.js';
+
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
-  landingPage = "http://localhost:4200";
+  landingPage = environment.landingpageUrl;
   loginForm: FormGroup;
 
   @ViewChild("InputEmail") inputEmail: ElementRef<HTMLInputElement>

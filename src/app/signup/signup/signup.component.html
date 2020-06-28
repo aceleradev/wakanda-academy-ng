@@ -29,17 +29,17 @@
 
       <div class="form-group col-md-6">
         <label for="inputName">Nome</label>
-        <input onkeydown="javascript:void(0)" formControlName="nome" type="text" class="form-control" id="inputName" placeholder="Digite seu nome">
+        <input formControlName="name" type="text" class="form-control" id="inputName" placeholder="Digite seu nome">
         <app-val-message 
-          *ngIf="signupForm.get('nome').errors?.required"
+          *ngIf="signupForm.get('name').errors?.required"
           text="Por favor, digite seu nome.">
         </app-val-message>
         <app-val-message 
-          *ngIf="signupForm.get('nome').errors?.maxlength"
+          *ngIf="signupForm.get('name').errors?.maxlength"
           text="Nome muito extenso.">
         </app-val-message>
         <app-val-message 
-          *ngIf="signupForm.get('nome').errors?.minlength"
+          *ngIf="signupForm.get('name').errors?.minlength"
           text="Nome muito curto.">
         </app-val-message>
       </div>
@@ -47,18 +47,18 @@
 
     <div class="form-group">
       <label for="inputPassword">Senha</label>
-      <input formControlName="senha" type="password" class="form-control" id="inputPassword" placeholder="Digite sua Senha">
+      <input formControlName="password" type="password" class="form-control" id="inputPassword" placeholder="Digite sua Senha">
       <app-val-message 
-        *ngIf="signupForm.get('senha').errors?.required"
+        *ngIf="signupForm.get('password').errors?.required"
         text="Por favor, digite uma senha.">
       </app-val-message>
     </div>
 
     <div class="form-group">
       <label for="inputPasswordConfirm">Confirmar senha</label>
-      <input formControlName="confSenha" type="password" class="form-control" id="inputPasswordConfirm" placeholder="Confirme sua senha">
+      <input formControlName="confPassword" type="password" class="form-control" id="inputPasswordConfirm" placeholder="Confirme sua senha">
       <app-val-message 
-        *ngIf="signupForm.get('confSenha').errors?.required"
+        *ngIf="signupForm.get('confPassword').errors?.required"
         text="Por favor, confirme sua senha.">
       </app-val-message>
       <app-val-message 
@@ -67,7 +67,7 @@
       </app-val-message>
     </div>
 
-    <small class="d-block">Já possui uma conta? <a [routerLink]="['../Login']" type="button" class="btn btn-primary text-white">Acesse sua conta aqui!</a></small>
+    <small class="d-block">Já possui uma conta? <a [routerLink]="['../login']" type="button" class="btn btn-primary text-white">Acesse sua conta aqui!</a></small>
    
     <button [disabled]="signupForm.invalid || signupForm.pending" type="submit" class="btn btn-success mt-4">Cadastrar</button>
   </form>

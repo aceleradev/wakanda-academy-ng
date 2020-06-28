@@ -33,19 +33,19 @@ export class SignupComponent implements OnInit {
       ],
       // this.CheckEmailNotTakenValidatorService.checkUserEmailTaken()
     ],
-      nome:["",
+      name:["",
       [
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(60)
       ]
     ],
-      senha:["",
+      password:["",
       [
         Validators.required
       ]
     ],
-      confSenha:["",
+      confPassword:["",
       [
         Validators.required
       ]
@@ -54,17 +54,13 @@ export class SignupComponent implements OnInit {
     },{validator: comparaSenha});
   }
 
-  keyp(){
-    console.log(this.signupForm.get('nome').errors)
-  }
-
   enviar() {
     const newUser = this.signupForm.getRawValue() as NewUser;
     console.log(newUser);
     this.signupService
       .register(newUser)
       .subscribe(
-        ()=>{this.router.navigate(["Login"])},
+        ()=>{this.router.navigate(["login"])},
         err => console.log(err)
       )
   }

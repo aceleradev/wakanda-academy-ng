@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { NewUser } from '../interface/new-user';
-import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -19,6 +18,6 @@ export class SignupService {
   }
 
   verSeJaCadastrado(email: string) {
-    return this.http.get(environment.apiUrl);
+    return this.http.get('/wakanda/app/v1/user');
   }
 }

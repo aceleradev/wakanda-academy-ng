@@ -1,4 +1,4 @@
- const environment = require("./src/environments/environment").environment;
+ const environment = require("./src/environments/environment");
 
 module.exports = {
     "/wakanda/app/v1/user/*": {

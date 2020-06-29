@@ -7,14 +7,14 @@ import { SignupService } from '../service/signup.service';
 import { NewUser } from '../interface/new-user';
 import { Router } from '@angular/router';
 import { CheckEmailNotTakenValidatorService } from '../validator/checkEmailNotTaken/checkEmailTaken.validator.service';
-
+import * as environment from '../../../environments/environment.js';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  landingPage="http://localhost:4200/";
+  landingPage=environment.landingpageUrl;
   signupForm: FormGroup;
 
   constructor(

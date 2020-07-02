@@ -6,21 +6,22 @@ import { emailPadraoValidator } from 'src/app/compartilhado/validators/email-val
 import { comparaSenha } from '../validator/comparaSenha/comparaSenha.validator';
 import { SignupService } from '../service/signup.service';
 import { NewUser } from '../interface/new-user';
-
+import * as environment from '../../../environments/environment.js';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  landingPage = "http://localhost:4200/";
+  landingPage=environment.environment.landingpageUrl;
   signupForm: FormGroup;
-  exibeSeExisteEmail: boolean = false;
+  protected exibeSeExisteEmail: boolean = false;
 
   constructor(
     private fromBuilder: FormBuilder,
     private signupService: SignupService,
-    private router: Router
+    private router: Router,
+   
     ) { }
 
   ngOnInit() {
@@ -30,20 +31,21 @@ export class SignupComponent implements OnInit {
         Validators.required,
         emailPadraoValidator
       ],
+      
     ],
-      nome:["",
+      name:["",
       [
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(60)
       ]
     ],
-      senha:["",
+      password:["",
       [
         Validators.required
       ]
     ],
-      confSenha:["",
+      confPassword:["",
       [
         Validators.required
       ]
@@ -54,7 +56,7 @@ export class SignupComponent implements OnInit {
 
   enviar() {
     const newUser = this.signupForm.getRawValue() as NewUser;
-    console.log(newUser);
+    //console.log(newUser);
     this.signupService
       .register(newUser)
       .subscribe(
@@ -64,7 +66,7 @@ export class SignupComponent implements OnInit {
             // this.exibeSeExisteEmail = false;
           }else{
             this.exibeSeExisteEmail = true;
-            this.signupForm.reset();
+            this.signupForm.controls["email"].reset("");
           }
       })
   }
@@ -72,5 +74,4 @@ export class SignupComponent implements OnInit {
   removeMensagem() {
     this.exibeSeExisteEmail = false;
   }
-
 }

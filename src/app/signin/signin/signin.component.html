@@ -12,12 +12,16 @@
         type="email" 
         class="form-control" 
         id="InputEmail"
-        placeholder="Digite seu Email"
-        (focus)="removeMensagem()">
+        placeholder="Digite seu Email">
 
           <app-val-message 
             *ngIf="loginForm.get('email').errors?.required"
             text="Por favor, digite seu email.">
+          </app-val-message>
+
+          <app-val-message 
+            *ngIf="loginForm.get('email').errors?.emailPadrao"
+            text="Email invalido.">
           </app-val-message>
     </div>
 
@@ -38,7 +42,7 @@
     <small 
       class="d-block mb-2">Não esta cadastrado? 
       <button 
-        [routerLink]="['../SignUp']"
+        [routerLink]="['../signUp']"
         type="button" 
         class="btn btn-success">
           Cadastre-se aqui!
@@ -51,10 +55,6 @@
       class="btn btn-primary mr-4">
         Entrar
     </button>
-    <app-val-message
-      *ngIf="exibeSeLoginInvalido"
-      text="Email ou senha inválidos.">
-    </app-val-message>
     
   </form>
 </div>

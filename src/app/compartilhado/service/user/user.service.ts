@@ -32,7 +32,7 @@ export class UserService {
 
   logout() {
     this.tokenService.removeToken();
-    this.router.navigateByUrl("Login");
+    this.router.navigateByUrl("login");
   }
 
   isLogged() {

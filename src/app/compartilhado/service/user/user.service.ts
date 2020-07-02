@@ -32,11 +32,7 @@ export class UserService {
 
   logout() {
     this.tokenService.removeToken();
-<<<<<<< HEAD
     this.router.navigateByUrl("login");
-=======
-    this.router.navigateByUrl("Login");
->>>>>>> projeto
   }
 
   isLogged() {

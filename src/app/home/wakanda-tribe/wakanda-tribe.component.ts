@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { WakandaTribe } from '../interfaces/wakanda-tribe';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-wakanda-tribe',
@@ -11,9 +12,13 @@ export class WakandaTribeComponent implements OnInit {
   @Input() id:string
   @Input() nome:string
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  redirect() {
+    this.router.navigate(["/tribe", this.id])
   }
 
 }

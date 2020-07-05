@@ -1,3 +1,5 @@
-<p>
-  wakanda-tribeslist works!
-</p>
+<ul>
+  <li *ngFor="let tribe of tribes" class="p-1">
+    <app-wakanda-tribe [id]="tribe.id" [nome]="tribe.nome"></app-wakanda-tribe>
+  </li>
+</ul>

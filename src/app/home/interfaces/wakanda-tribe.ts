@@ -1,7 +1,9 @@
 export interface WakandaTribe {
-    nome: String,
-    descricao: String,
-    simbolo: ImageData,
-    dataDeInicio: Date,
-    url: String
+    
+    id: string,
+    nome: string,
+    description: string,
+    icon_url: string,
+    difficulty: string,
+    
 }

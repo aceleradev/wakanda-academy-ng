@@ -4,6 +4,8 @@ import { RouterModule } from '@angular/router';
 
 import { ValMessageComponent } from './val-message/val-message.component';
 import { HeaderComponent } from './header/header.component';
+import { LoadingComponent } from './loading/loading/loading.component';
+import { LoadingModule } from './loading/loading.module';
 
 @NgModule({
   imports: [

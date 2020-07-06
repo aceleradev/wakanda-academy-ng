@@ -1,6 +1,6 @@
 export interface WakandaTribe {
     
-    id: string,
+    code: string,
     nome: string,
     description: string,
     icon_url: string,

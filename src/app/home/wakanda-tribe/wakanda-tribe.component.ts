@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class WakandaTribeComponent implements OnInit {
 
-  @Input() id:string
+  @Input() code:string
   @Input() nome:string
 
   constructor(private router: Router) { }
@@ -18,7 +18,7 @@ export class WakandaTribeComponent implements OnInit {
   }
 
   redirect() {
-    this.router.navigate(["/tribe", this.id])
+    this.router.navigate(["/tribe", this.code])
   }
 
 }

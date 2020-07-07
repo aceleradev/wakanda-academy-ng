@@ -4,13 +4,20 @@ import { HomeComponent } from './home/home.component';
 import { CompartilhadoModule } from '../compartilhado/compartilhado.module';
 import { WakandaTribeslistComponent } from './wakanda-tribeslist/wakanda-tribeslist.component';
 import { WakandaTribeComponent } from './wakanda-tribe/wakanda-tribe.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
-    CompartilhadoModule
+    CompartilhadoModule,
+    RouterModule
   ],
-  declarations: [HomeComponent, WakandaTribeslistComponent, WakandaTribeComponent],
+  declarations: 
+  [
+    HomeComponent, 
+    WakandaTribeslistComponent, 
+    WakandaTribeComponent
+  ],
   exports: [HomeComponent]
 })
 export class HomeModule { }

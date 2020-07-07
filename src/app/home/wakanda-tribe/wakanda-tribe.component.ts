@@ -11,6 +11,8 @@ export class WakandaTribeComponent implements OnInit {
 
   @Input() code:string
   @Input() nome:string
+  @Input() descricao:string
+  @Input() icon_url:string
 
   constructor(private router: Router) { }
 

@@ -4,7 +4,7 @@ import { environment } from 'src/environments/environment';
 import { WakandaTribe } from '../interfaces/wakanda-tribe';
 
 //const API_URL = environment.apiUrl
-const API_URL = "https://run.mocky.io/v3/6232452b-0199-45b9-a34c-3ba0566ea65e"
+const API_URL = "https://run.mocky.io/v3/4af0c27a-2547-4574-88f0-ccf8629030ef"
 @Injectable({
   providedIn: 'root'
 })

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { WakandaTribeslistService } from 'src/app/home/services/wakanda-tribeslist.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { WakandaTribe } from 'src/app/home/interfaces/wakanda-tribe';
 
 @Component({
   selector: 'app-wakander-tribe-detail',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WakanderTribeDetailComponent implements OnInit {
 
-  constructor() { }
+  code: string = "";
+  tribo: WakandaTribe;
+
+  constructor(
+    private route: ActivatedRoute,
+    private wakanderTribeService: WakandaTribeslistService) { }
 
   ngOnInit() {
+    this.code = this.route.snapshot.params.code;
+    console.log(this.code);
+    this.wakanderTribeService.getTribo(this.code).subscribe(wakanda => this.tribo = wakanda);
+    console.log(this.tribo);
+    
   }
 
 }

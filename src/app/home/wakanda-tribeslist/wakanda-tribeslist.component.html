@@ -1,5 +1,27 @@
-<ul class="list-group">
-  <a *ngFor="let tribe of tribes" class = "p-1 mr-3">
-    <app-wakanda-tribe [code]="tribe.code" [nome]="tribe.nome"></app-wakanda-tribe>
-  </a>
-</ul>
+<div class="bg-light">
+  <h2 class="text-center mt-4 p-4"><em>Tribos</em></h2>
+</div>
+
+
+<ol class="list-group">
+
+  <li *ngFor="let cols of rows" class="row no-gutters mr-1 ml-1 p-4">
+    
+      <div 
+        *ngFor="let tribe of cols" 
+        class="col-6 m-0 p-4" 
+        style=
+          "
+          text-align: center;
+          "
+        apDarkenOnHover
+      >
+          <app-wakanda-tribe 
+            [code]="tribe.code" 
+            [nome]="tribe.nome" 
+            [descricao]="tribe.description"
+            [icon_url]="tribe.icon_url">
+          </app-wakanda-tribe>             
+      </div>
+  </li>
+</ol>

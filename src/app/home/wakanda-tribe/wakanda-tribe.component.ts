@@ -20,7 +20,9 @@ export class WakandaTribeComponent implements OnInit {
   }
 
   redirect() {
-    this.router.navigate(["/tribe", this.code])
+    this.router.navigate(["/tribe", this.code]);
+    console.log(this.router.navigate(["/tribe", this.code]));
+    
   }
 
 }

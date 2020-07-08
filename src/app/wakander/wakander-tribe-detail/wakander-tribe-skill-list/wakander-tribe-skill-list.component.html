@@ -1,3 +1,6 @@
-<p>
-  wakander-tribe-skill-list works!
-</p>
+<ol class="list-group">
+
+  <li *ngFor="let skill of skills" class="row no-gutters mr-1 ml-1 p-4">
+    {{skill.nome}}
+  </li>
+</ol>

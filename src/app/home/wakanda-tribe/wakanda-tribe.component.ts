@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { WakandaTribe } from '../interfaces/wakanda-tribe';
+import { WakandaTribe } from '../../compartilhado/interface/wakanda-tribe';
 import { Router } from '@angular/router';
 
 @Component({

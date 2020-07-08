@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { WakandaTribeslistService } from '../services/wakanda-tribeslist.service';
-import { WakandaTribe } from '../interfaces/wakanda-tribe';
+import { WakandaTribe } from '../../compartilhado/interface/wakanda-tribe';
 import { UserService } from 'src/app/compartilhado/service/user/user.service';
 import { User } from 'src/app/compartilhado/interface/user';
 

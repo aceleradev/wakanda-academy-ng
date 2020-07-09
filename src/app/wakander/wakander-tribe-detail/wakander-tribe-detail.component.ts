@@ -3,6 +3,7 @@ import { WakandaTribeslistService } from 'src/app/home/services/wakanda-tribesli
 import { Router, ActivatedRoute } from '@angular/router';
 import { WakandaTribe } from 'src/app/compartilhado/interface/wakanda-tribe';
 import { Skill } from 'src/app/compartilhado/interface/skill';
+import { WakanderService } from '../service/wakander.service';
 
 @Component({
   selector: 'app-wakander-tribe-detail',
@@ -16,12 +17,12 @@ export class WakanderTribeDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private wakanderTribeService: WakandaTribeslistService) { }
+    private wakanderService: WakanderService) { }
 
   ngOnInit() {
     this.code = this.route.snapshot.params.code;
     console.log(this.code);
-    this.wakanderTribeService.getTribo(this.code).subscribe(wakanda => {
+    this.wakanderService.getTribo(this.code).subscribe(wakanda => {
       this.tribo = wakanda
       console.log(this.tribo);
     });

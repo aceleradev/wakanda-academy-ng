@@ -1,7 +1,5 @@
-<div class="bg-light">
+<div class="container bg-light">
   <h2 class="text-center mt-4 p-4"><em>Tribos</em></h2>
-</div>
-
 
 <ol class="list-group">
 
@@ -20,8 +18,11 @@
             [code]="tribe.code" 
             [nome]="tribe.nome" 
             [descricao]="tribe.description"
-            [icon_url]="tribe.icon_url">
+            [icon_url]="tribe.icon_url"
+            [status]="tribe.status"
+            >
           </app-wakanda-tribe>             
       </div>
   </li>
 </ol>
+</div>

@@ -1,3 +1,18 @@
-<p>
-  wakander-tribe-skill-detail works!
-</p>
+<div class="accordion" id="accordionExample">
+  <div class="card ">
+    <div [ngClass] = "color()" class="card-header " id="headingOne">
+      <h2 class="mb-0">
+        &#11167;
+        <button   class="btn btn-link text-white" type="button" data-toggle="collapse" [attr.data-target]="'#' + skill.code" aria-expanded="true" aria-controls="collapseOne">
+          {{skill.nome}}
+        </button>
+      </h2>
+    </div>
+
+    <div [attr.id]="skill.code" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card card-body">
+        //TODO: LISTAR AULAS
+      </div>
+    </div>
+  </div>
+</div>

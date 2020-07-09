@@ -6,7 +6,7 @@ import { WakandaTribe } from '../../compartilhado/interface/wakanda-tribe';
 //const API_URL = environment.apiUrl
 const userHost = "https://run.mocky.io"
 //const url_tribos = "/v3/4af0c27a-2547-4574-88f0-ccf8629030ef"
-const url_tribos = "/v3/900ad802-a9a8-451e-a09a-3c22f5cb870c"
+const url_tribos = "/v3/9bae3330-1357-4c5a-a341-7d92b351b71e"
 const url_tribo = "/v3/c8f5bbc4-c310-4b86-badb-54849bf14ecd";
 @Injectable({
   providedIn: 'root'

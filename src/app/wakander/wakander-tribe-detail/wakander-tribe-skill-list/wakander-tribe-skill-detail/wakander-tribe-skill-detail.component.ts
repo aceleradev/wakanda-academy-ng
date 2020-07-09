@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Skill } from 'src/app/compartilhado/interface/skill';
+import { StatusColorService } from 'src/app/compartilhado/service/status-color/status-color.service';
 
 @Component({
   selector: 'app-wakander-tribe-skill-detail',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WakanderTribeSkillDetailComponent implements OnInit {
 
-  constructor() { }
+  @Input() skill: Skill;
+
+  constructor(private status:StatusColorService) { }
 
   ngOnInit() {
+    console.log(this.skill.status);
   }
-
+  
+  color() {
+    return this.status.checkStatus(this.skill.status);
+  }
 }

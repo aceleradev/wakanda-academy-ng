@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { WakandaTribe } from '../../compartilhado/interface/wakanda-tribe';
 import { Router } from '@angular/router';
+import { status } from 'src/app/compartilhado/interface/status.enum';
+import { StatusColorService } from 'src/app/compartilhado/service/status-color/status-color.service';
 
 @Component({
   selector: 'app-wakanda-tribe',
@@ -13,16 +15,26 @@ export class WakandaTribeComponent implements OnInit {
   @Input() nome:string
   @Input() descricao:string
   @Input() icon_url:string
+  @Input() status: status;
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private statusColor: StatusColorService) { }
 
   ngOnInit() {
   }
 
   redirect() {
-    this.router.navigate(["/tribe", this.code]);
-    console.log(this.router.navigate(["/tribe", this.code]));
-    
+    if(this.status.toString()=="CLOSED") {
+      alert("Ops! você ainda não liberou esse curso!")
+    }else {
+      this.router.navigate(["/tribe", this.code]);
+      console.log(this.router.navigate(["/tribe", this.code]));
+    }
+  }
+
+  color() {
+    return this.statusColor.checkStatus(this.status);
   }
 
 }

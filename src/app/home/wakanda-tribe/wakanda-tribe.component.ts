@@ -25,9 +25,7 @@ export class WakandaTribeComponent implements OnInit {
   }
 
   redirect() {
-    if(this.status.toString()=="CLOSED") {
-      alert("Ops! você ainda não liberou esse curso!")
-    }else {
+    if(this.status.toString() != "CLOSED") {
       this.router.navigate(["/tribe", this.code]);
       console.log(this.router.navigate(["/tribe", this.code]));
     }

@@ -35,11 +35,6 @@ export class WakandaTribeslistComponent implements OnInit {
       console.log(this.tribes);
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    if(changes.photos) 
-      this.rows = this.groupColumns(this.tribes);
-  }
-
   groupColumns(tribes: WakandaTribe[]) {
     const newRows = [];
 

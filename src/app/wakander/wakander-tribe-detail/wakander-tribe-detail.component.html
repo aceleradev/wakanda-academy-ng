@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-3">
 
-        <div class="card text-white bg-secondary">
+        <div class="card text-white bg-secondary p-2">
             <div class="row mt-1 ml-1">
                 <img [src]="tribo.icon_url" class="d-block rounded-circle" style="max-height: 100px; max-width: 100px;">
             </div>
@@ -16,12 +16,14 @@
         
         <div class="card bg-light">
             <h5 class="card-header">Habilidades</h5>
+            <div class="container mr-1 p-2">
+                <app-wakander-tribe-skill-list [skills] = "tribo.skills"></app-wakander-tribe-skill-list>
+            </div>
         </div>
-        <app-wakander-tribe-skill-list [skills] = "tribo.skills"></app-wakander-tribe-skill-list>
         
     </div>
 
-    <div class="col-9 ">
+    <div class="col-9">
         //TODO: IMPLEMENTAR LESSONS
     </div>
 </div>

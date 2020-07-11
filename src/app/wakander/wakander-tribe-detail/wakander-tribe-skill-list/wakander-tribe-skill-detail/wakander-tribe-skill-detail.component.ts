@@ -14,7 +14,7 @@ export class WakanderTribeSkillDetailComponent implements OnInit {
   constructor(private status:StatusColorService) { }
 
   ngOnInit() {
-    console.log(this.skill.status);
+    console.log(this.skill.status.toString());
   }
   
   color() {

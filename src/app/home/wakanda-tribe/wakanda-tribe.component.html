@@ -1,31 +1,46 @@
+
 <a 
   (click)="redirect()" 
   class =
-    "
-    list-group-item 
-    list-group-item-action 
-    <!-- list-group-item-secondary -->
-    " 
-    [ngClass] = "color()"
+  "
+  list-group-item 
+  list-group-item-action 
+  <!-- list-group-item-secondary -->
+  " 
+  [ngClass] = "color()"
+  data-toggle="modal" 
+  data-target="#exampleModal"
 >
   <div class="row">
-    <div class="col-sm-6">
-        <div class="row ">
-          <img 
-            class="col-sm-3 rounded-circle" 
-            [src]="icon_url" 
-            alt="logo da tribo"
-            style =
+    <div class="col-6">
+      <div class="row ">
+        <img 
+        class="col-3 rounded-circle" 
+        [src]="icon_url" 
+        alt="logo da tribo"
+        style =
               "
-              max-width: 100px;
-              max-height: 100px;
+                max-width: 100px;
+                max-height: 100px;
               "
-          />
-          <div class="col-sm-6">
+            />
+            <div class="">
               <h3>{{nome}}</h3>
               <p class="card-text">{{descricao}}</p>
+            </div>
           </div>
         </div>
+        <i *ngIf="this.status.toString() =='DONE' " class="fa fa-check fa-4x fa-fw fa-inverse"></i>     
+      </div>
+</a>
+
+<div  class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Ops!</strong> você ainda não tem acesso a esse curso!
+      <button type="button" class="close p-1" data-dismiss="alert" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
   </div>
-</a>
+</div>

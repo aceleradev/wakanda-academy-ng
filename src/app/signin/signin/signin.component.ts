@@ -13,8 +13,9 @@ import * as environment from '../../../environments/environment.js';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
-  landingPage = environment.landingpageUrl;
+  landingPage = environment.environment.landingpageUrl;
   loginForm: FormGroup;
+  fromUrl:string;
 
   @ViewChild("InputEmail") inputEmail: ElementRef<HTMLInputElement>
 
@@ -25,6 +26,11 @@ export class SigninComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit() {
+
+    this.route.queryParams.subscribe(params => {
+      this.fromUrl = params.fromUrl;
+  })
+
     this.loginForm = this.formbuilder.group({
       email: ["", 
         [
@@ -47,7 +53,11 @@ export class SigninComponent implements OnInit {
       this.loginForm.get("senha").value,
       success)
     .subscribe(() => {
-       this.router.navigateByUrl("");
+      if(this.fromUrl){                 
+        this.router.navigateByUrl(this.fromUrl);
+      }else{
+        this.router.navigateByUrl("");
+      }
     }, err => {
       console.log(err);
       this.loginForm.reset();

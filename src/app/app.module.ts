@@ -7,6 +7,8 @@ import { HomeModule } from "./home/home.module";
 import { SigninModule } from './signin/signin.module';
 import { SignupModule } from './signup/signup.module';
 import { HttpClientModule } from '@angular/common/http';
+import { WakanderModule } from './wakander/wakander.module';
+import { LoadingModule } from './compartilhado/loading/loading.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
     HomeModule,
     SigninModule,
     SignupModule,
-    HttpClientModule
+    HttpClientModule,
+    WakanderModule,
+    LoadingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

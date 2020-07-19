@@ -3,16 +3,23 @@
 <div class="container m-4">
   <h4 class="text-left mb-4 ml-2">Cadastro</h4>
   <form 
-    [formGroup]="signupForm" 
-    [ngClass]="{'border-danger':signupForm.invalid==true}" 
-    class="border border-success p-4 rounded-top"
-    (submit)="enviar()">
+  [formGroup]="signupForm" 
+  [ngClass]="{ 'border-danger':signupForm.invalid || exibeSeExisteEmail == true }" 
+  class="border border-success p-4 rounded-top bg-light"
+  (submit)="enviar()">
 
     <div class="form-row">
 
       <div class="form-group col-md-6">
         <label for="inputEmail">Email</label>
-        <input formControlName="email" type="email" class="form-control" id="inputEmail" placeholder="Digite seu email">
+        <input 
+          formControlName="email" 
+          type="email" 
+          class="form-control" 
+          id="inputEmail" 
+          placeholder="Digite seu email" 
+          (focus)="removeMensagem()"
+        >
         <app-val-message 
           *ngIf="signupForm.get('email').errors?.required"
           text="Por favor, digite seu Email.">
@@ -22,8 +29,8 @@
           text="Por favor, digite um Email valido.">
         </app-val-message>
         <app-val-message
-        *ngIf="signupForm.get('email').errors?.emailTaken"
-        text="Email já cadastrado.">
+          *ngIf="exibeSeExisteEmail"
+          text="Email já cadastrado.">
         </app-val-message>
       </div>
 

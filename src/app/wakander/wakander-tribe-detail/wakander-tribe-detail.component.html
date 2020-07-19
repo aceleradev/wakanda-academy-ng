@@ -1,0 +1,30 @@
+<app-header></app-header>
+
+<div class="row">
+    <div class="col-3">
+
+        <div class="card text-white bg-secondary p-2">
+            <div class="row mt-1 ml-1">
+                <img [src]="tribo.icon_url" class="d-block rounded-circle" style="max-height: 100px; max-width: 100px;">
+            </div>
+            <h5 class="card-header">Tribo<br>{{tribo.nome}}</h5>
+            <div class="card-body">
+              <!-- <h5 class="card-title">{{tribo.nome}}</h5> -->
+              <p class="card-text">{{tribo.description}}</p> 
+            </div>
+        </div>
+        
+        <div class="card bg-light">
+            <h5 class="card-header">Habilidades</h5>
+            <div class="container mr-1 p-2">
+                <app-wakander-tribe-skill-list [skills] = "tribo.skills"></app-wakander-tribe-skill-list>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="col-9">
+        //TODO: IMPLEMENTAR LESSONS
+    </div>
+</div>
+

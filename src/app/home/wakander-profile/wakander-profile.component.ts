@@ -3,11 +3,11 @@ import { User } from 'src/app/compartilhado/interface/user';
 import { UserService } from 'src/app/compartilhado/service/user/user.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-wakander-profile',
+  templateUrl: './wakander-profile.component.html',
+  styleUrls: ['./wakander-profile.component.css']
 })
-export class HomeComponent implements OnInit {
+export class WakanderProfileComponent implements OnInit {
 
  
   userInfo: User;

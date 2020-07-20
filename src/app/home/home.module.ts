@@ -5,6 +5,7 @@ import { CompartilhadoModule } from '../compartilhado/compartilhado.module';
 import { WakandaTribeslistComponent } from './wakanda-tribeslist/wakanda-tribeslist.component';
 import { WakandaTribeComponent } from './wakanda-tribe/wakanda-tribe.component';
 import { RouterModule } from '@angular/router';
+import { WakanderProfileComponent } from './wakander-profile/wakander-profile.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { RouterModule } from '@angular/router';
   [
     HomeComponent, 
     WakandaTribeslistComponent, 
-    WakandaTribeComponent
+    WakandaTribeComponent,
+    WakanderProfileComponent
   ],
   exports: [HomeComponent]
 })

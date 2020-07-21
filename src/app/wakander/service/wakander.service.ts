@@ -13,9 +13,9 @@ export class WakanderService {
 
   constructor(private http: HttpClient) { }
 
-  getTribo(code: string) {
+  getTribo(wkcode: string, tribeCode:string) {
     //TODO: fazer busca da tribo baseado no codigo da tribo
-    return this.http.get<WakandaTribe>(environment.wakanda.wakander.tribe.detail.path);
+    return this.http.get<WakandaTribe>(environment.wakanda.wakander.tribe.list.path.replace("{wakanderCode}",wkcode) + tribeCode);
   }
 
 }

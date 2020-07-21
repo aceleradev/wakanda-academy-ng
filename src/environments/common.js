@@ -5,15 +5,18 @@ module.exports = {
     wakanda: {
         baseBath: baseBath,
         wakander: {
+            auth:{
+                path: baseBath + '/authenticate'
+            },
             profile: {
-                path: baseBath + '/wakander/{wakanderCode}/teste'
+                path: baseBath + '/wakander/'
             },
             tribe: {
                 detail: {
-                    path: baseBath + '/tribe'
+                    path: baseBath + '/{wakanderCode}/tribe/'
                 },
                 list: {
-                    path: baseBath + '/listTribes'
+                    path: baseBath + '/{wakanderCode}/tribe'
                 }
             }
         }

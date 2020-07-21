@@ -17,7 +17,7 @@ export class WakandaTribeslistService {
 
   getTribos(userId: string) {
     //TODO: fazer busca das tribos baseado no ID do usuario
-    return this.http.get<WakandaTribe[]>(environment.wakanda.wakander.tribe.list.path);
+    return this.http.get<WakandaTribe[]>(environment.wakanda.wakander.tribe.detail.path.replace("{wakanderCode}",userId));
   }
 
 }

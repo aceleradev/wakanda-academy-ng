@@ -32,7 +32,7 @@ export class WakanderTribeDetailComponent implements OnInit, OnChanges {
       this.code = this.route.snapshot.params.code;
       this.wkCode = this.route.snapshot.params.wkCode;
       console.log(this.code.concat(this.wkCode));
-      this.wakanderService.getTribo(this.code).subscribe(wakanda => {
+      this.wakanderService.getTribo(this.code, this.wkCode).subscribe(wakanda => {
         this.tribo = wakanda
         console.log(this.tribo);
       });

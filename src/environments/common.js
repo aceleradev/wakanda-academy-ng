@@ -19,6 +19,11 @@ module.exports = {
                     path: baseBath + '/{wakanderCode}/tribe'
                 }
             }
+        },
+        action: {
+            unlock:{
+                path: baseBath + "/wakanderAction"
+            }
         }
     }
 }

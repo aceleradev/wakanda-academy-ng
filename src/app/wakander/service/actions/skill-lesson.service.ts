@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, from } from 'rxjs';
 import { Lesson } from 'src/app/compartilhado/interface/lesson';
 import { HttpClient } from '@angular/common/http';
+import * as environment from '../../../../environments/environment.js';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,6 @@ export class SkillLessonService {
   }
 
   acessarLesson(url: string) {
-    return this.http.get("https://run.mocky.io/v3/98fb6943-5d10-489a-9b34-904e1b09eaf7", {observe:'response'})
+    return this.http.get(environment.wakanda.action.unlock.path + url, {observe:'response'})
   }
 }

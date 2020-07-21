@@ -24,10 +24,10 @@ export class WakandaTribeslistComponent implements OnInit {
       .getUser()
       .subscribe(user => this.user = user)
       console.log(this.user);
-      this.wkCode = this.user.code
+      this.wkCode = this.user.wakanderCode
       
     this.wakandaTribesListService
-      .getTribos(this.user.code)
+      .getTribos(this.user.wakanderCode)
       .subscribe(tribes => {
         this.tribes = tribes
         console.log(tribes);

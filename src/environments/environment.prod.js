@@ -1,4 +1,4 @@
-const userHost = 'https://wakanda-user-singup-be.herokuapp.com';
+const userHost = 'http://wakanda-academy-be.herokuapp.com';
 const landingpageUrl = 'https://wakanda-landginpage-ng.herokuapp.com';
 const common = require('./common');
 

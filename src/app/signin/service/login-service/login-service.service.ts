@@ -7,7 +7,7 @@ import { UserService } from 'src/app/compartilhado/service/user/user.service';
 import { ActivatedRoute } from '@angular/router';
 
 //const API_URL_SUCCESS = 'https://run.mocky.io/v3/4b0c7281-06b4-4867-8906-5f0ebd840332';
-const API_URL_SUCCESS = environment.wakanda.auth.path;
+const API_URL_SUCCESS = environment.wakanda.wakander.auth.path;
 const API_URL_FAIL = 'https://run.mocky.io/v3/7e0ac305-c209-4fe9-9e4a-56dffde653ba';
 
 @Injectable({

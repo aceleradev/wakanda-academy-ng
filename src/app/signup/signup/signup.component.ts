@@ -55,7 +55,11 @@ export class SignupComponent implements OnInit {
   }
 
   enviar() {
-    const newUser = this.signupForm.getRawValue() as NewUser;
+    const newUser:NewUser = this.signupForm.getRawValue() as NewUser;
+    const wk = newUser.email.split("@");
+    console.log(wk);
+    
+    newUser.wakanderCode = wk[0];
     //console.log(newUser);
     this.signupService
       .register(newUser)

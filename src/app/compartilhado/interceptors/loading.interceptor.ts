@@ -11,11 +11,15 @@ import { HttpUserEvent } from "@angular/common/http"
 import { tap } from 'rxjs/operators';
 
 import { LoadingService } from "../service/loading/loading.service";
+import { UserService } from "../service/user/user.service";
+import { TokenService } from "../service/token/token.service";
 
 @Injectable({ providedIn: 'root' })
 export class LoadingInterceptor implements HttpInterceptor{
 
-    constructor(private loadingService: LoadingService) {}
+    constructor(
+        private loadingService: LoadingService,
+        private tokenService:TokenService) {}
 
     intercept(req: HttpRequest<any>, next: HttpHandler):
     Observable<HttpSentEvent |
@@ -24,7 +28,13 @@ export class LoadingInterceptor implements HttpInterceptor{
     HttpResponse<any> |
     HttpUserEvent<any>> {
 
-        console.log("intercept fuinionca: " + req.url);
+        req = req.clone({
+            setHeaders: {
+              'Content-Type' : 'application/json; charset=utf-8',
+              'Accept'       : 'application/json',
+              'Authorization': `Bearer ${this.tokenService.getToken()}`,
+            },
+          });
 
         return next.handle(req)
             .pipe(tap((event) => {

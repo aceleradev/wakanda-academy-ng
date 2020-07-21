@@ -13,7 +13,7 @@ import * as environment from '../../../environments/environment.js';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  landingPage=environment.environment.landingpageUrl;
+  landingPage=environment.landingpageUrl;
   signupForm: FormGroup;
   protected exibeSeExisteEmail: boolean = false;
 

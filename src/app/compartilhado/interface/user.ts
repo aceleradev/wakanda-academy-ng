@@ -1,5 +1,5 @@
 export interface User {
-    code: string;
+    wakanderCode: string;
     name: string;
     email: string
 }

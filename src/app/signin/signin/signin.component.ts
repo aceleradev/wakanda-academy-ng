@@ -13,7 +13,7 @@ import * as environment from '../../../environments/environment.js';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
-  landingPage = environment.environment.landingpageUrl;
+  landingPage = environment.landingpageUrl;
   loginForm: FormGroup;
   fromUrl:string;
 

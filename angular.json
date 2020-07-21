@@ -68,6 +68,9 @@
           "configurations": {
             "production": {
               "browserTarget": "home-page:build:production"
+            },
+            "dev": {
+              "browserTarget": "home-page:build:dev"
             }
           }
         },

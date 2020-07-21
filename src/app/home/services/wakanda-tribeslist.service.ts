@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import * as environment from 'src/environments/environment.js';
 import { WakandaTribe } from '../../compartilhado/interface/wakanda-tribe';
 
 //const API_URL = environment.apiUrl
@@ -17,7 +17,7 @@ export class WakandaTribeslistService {
 
   getTribos(userId: number) {
     //TODO: fazer busca das tribos baseado no ID do usuario
-    return this.http.get<WakandaTribe[]>(userHost + url_tribos);
+    return this.http.get<WakandaTribe[]>(environment.wakanda.wakander.tribe.list.path);
   }
 
 }

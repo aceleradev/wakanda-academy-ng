@@ -15,7 +15,7 @@ export class WakanderService {
 
   getTribo(wkcode: string, tribeCode:string) {
     //TODO: fazer busca da tribo baseado no codigo da tribo
-    return this.http.get<WakandaTribe>(environment.wakanda.wakander.tribe.list.path.replace("{wakanderCode}",wkcode) + tribeCode);
+    return this.http.get<WakandaTribe>(environment.wakanda.wakander.tribe.list.path.replace("{wakanderCode}",wkcode) + '/' + tribeCode);
   }
 
 }

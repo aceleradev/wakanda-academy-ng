@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import * as environment from 'src/environments/environment.js';
+import * as environment from '../../../environments/environment.js';
 import { WakandaTribe } from '../../compartilhado/interface/wakanda-tribe';
 
 //const API_URL = environment.apiUrl

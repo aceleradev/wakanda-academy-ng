@@ -18,7 +18,7 @@ export class SignupService {
   ) { }
 
   register(newUser: NewUser) {
-    return this.http.post(environment.env.apiUrl, newUser, {observe:'response'})
+    return this.http.post(environment.wakanda.wakander.create.path, newUser, {observe:'response'})
     .pipe(map(res => true))
     .pipe(catchError(err => {
       return err.status == this.HttpStatus ? of(false) : throwError(err)

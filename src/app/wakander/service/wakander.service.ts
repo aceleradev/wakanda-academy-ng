@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { WakandaTribe } from 'src/app/compartilhado/interface/wakanda-tribe';
 
 const userHost = "https://run.mocky.io"
-const url_tribo = "/v3/c8f5bbc4-c310-4b86-badb-54849bf14ecd";
+const url_tribo = "/v3/98fb6943-5d10-489a-9b34-904e1b09eaf7";
 
 @Injectable({
   providedIn: 'root'

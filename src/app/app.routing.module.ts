@@ -29,7 +29,7 @@ const routes: Routes = [
         canActivate: [AuthGuard]
     },
     { 
-        path: 'tribe/:code', 
+        path: 'tribe/:wkCode/:code', 
         component: WakanderTribeDetailComponent,
         canActivate: [AuthGuard],
     },

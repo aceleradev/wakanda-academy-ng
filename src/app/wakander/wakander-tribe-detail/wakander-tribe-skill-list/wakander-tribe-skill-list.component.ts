@@ -10,10 +10,13 @@ import { Skill } from 'src/app/compartilhado/interface/skill';
 export class WakanderTribeSkillListComponent implements OnInit {
 
   @Input() skills: Skill[];
+  @Input() code: string = "";
   constructor() { }
 
   ngOnInit() {
     console.log(this.skills);
+    this.code.concat("/");
+    console.log(this.code);
   }
   
 }

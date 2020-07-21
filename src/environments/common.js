@@ -5,6 +5,9 @@ module.exports = {
     wakanda: {
         baseBath: baseBath,
         wakander: {
+            create: {
+                path: baseBath + '/userCreation'
+            },
             auth:{
                 path: baseBath + '/authenticate'
             },

@@ -21,7 +21,7 @@ export class LoginService {
   login(email: string, senha: string, success?: boolean) {
     return this.http
               .post(API_URL_SUCCESS, 
-                {'email': email, 'password': senha},
+                {'username': email, 'password': senha},
                 {observe: "response"})
               .pipe(tap((res: HttpResponse<any>)=> {
                 if(res.body){

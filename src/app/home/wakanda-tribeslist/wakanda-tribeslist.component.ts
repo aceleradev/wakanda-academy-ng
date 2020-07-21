@@ -13,6 +13,7 @@ export class WakandaTribeslistComponent implements OnInit {
   @Input() tribes: WakandaTribe[] = [];
   rows: any[] = [];
   user: User;
+  wkCode:string;
 
   constructor(
     private wakandaTribesListService: WakandaTribeslistService,
@@ -23,10 +24,10 @@ export class WakandaTribeslistComponent implements OnInit {
       .getUser()
       .subscribe(user => this.user = user)
       console.log(this.user);
+      this.wkCode = this.user.code
       
-
     this.wakandaTribesListService
-      .getTribos(this.user.id)
+      .getTribos(this.user.code)
       .subscribe(tribes => {
         this.tribes = tribes
         console.log(tribes);

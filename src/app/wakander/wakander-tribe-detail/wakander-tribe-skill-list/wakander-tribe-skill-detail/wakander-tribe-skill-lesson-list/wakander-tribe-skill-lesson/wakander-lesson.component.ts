@@ -24,7 +24,9 @@ export class WakanderTribeSkillLessonComponent implements OnInit {
 
   callSkillLessonComp() {
     const wk = this.snap.snapshot.params.wkCode;
-    const tribe = this.snap.snapshot.params.Code;
+    const tribe = this.snap.snapshot.params.code;
+    console.log("tribe? " + tribe);
+    
     this.skillLessonService.changeCurrentLesson(this.lesson);
     this.skillLessonService.buildURL(wk,tribe,this.code,this.lesson.code);
     this.skillActionService.changeDisplay(true);

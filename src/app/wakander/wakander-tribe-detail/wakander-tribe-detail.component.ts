@@ -30,7 +30,11 @@ export class WakanderTribeDetailComponent implements OnInit, OnChanges {
 
     ngOnInit() {
       this.code = this.route.snapshot.params.code;
+      console.log(this.code);
+      
       this.wkCode = this.route.snapshot.params.wkCode;
+      console.log(this.wkCode);
+      
       console.log(this.code.concat(this.wkCode));
       this.wakanderService.getTribo(this.code).subscribe(wakanda => {
         this.tribo = wakanda

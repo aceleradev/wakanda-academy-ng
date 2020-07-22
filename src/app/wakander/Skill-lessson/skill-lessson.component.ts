@@ -15,34 +15,43 @@ export class SkillLessonComponent implements OnInit, OnChanges {
   @Input() url: string;
   loader: Loading;
   proxima: boolean = false;
-  spin:boolean = false;
+  spin:boolean = true;
 
   constructor(
     private skillLessonService:SkillLessonService,
     private skillActionService:SkillActionService,
     private loadService: LoadingService) { }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    changes.acessar;
-    //this.skillLessonService.lesson$.subscribe(aula => this.lesson = aula);
-  }
+    
+    ngOnInit(): void {
+      this.skillLessonService.lesson$.subscribe(aula => this.lesson = aula);
+      this.skillLessonService.code$.subscribe(code => {
+        this.url = code;
+        console.log(this.url);
+      });
 
-  ngOnInit(): void {
-    this.skillLessonService.lesson$.subscribe(aula => this.lesson = aula);
-    this.skillLessonService.code$.subscribe(code => {
-      this.url = code;
-      console.log(this.url);
-    });
-
-  }
-
+      this.loadService.getLoading()
+        .subscribe(loading => {
+          this.loader = loading;
+          console.log(this.loader);
+        });
+      
+    }
+    
+    ngOnChanges(changes: SimpleChanges): void {
+      changes.acessar;
+      //this.skillLessonService.lesson$.subscribe(aula => this.lesson = aula);
+    }
   onclikAcessar(){
     //this.acessar = !this.acessar;
     this.skillLessonService.acessarLesson(this.url).subscribe(res => {
+      this.spin=false;
       if(res.status == 200) {
         window.open(this.lesson.link, '_blank');
+        this.spin=true;
       } else {
         alert("Houve um erro ao carregar a aula, tente novamente.");
+        this.spin=true;
       }
     })
    }
@@ -54,7 +63,4 @@ export class SkillLessonComponent implements OnInit, OnChanges {
    this.skillActionService.proximaAula(wkCode,this.lesson.lessonCode);
   }
 
-  spinloader() {
-    
-  }
 }

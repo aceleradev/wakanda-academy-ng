@@ -27,10 +27,12 @@ export class SkillActionService {
   
   proximaAula(wk:string,l:string) {
     let lesson;
-    this.skillLessonService.getNextLesson(wk,l).subscribe(res=> {lesson=res});
-    let skill:Skill = null;
-    this.skill.subscribe(skillRecebido => skill = skillRecebido);
-    const newlesson = skill.wakanderTribeSkillLessons.find(lesson.lessonCode);
-    this.skillLessonService.changeCurrentLesson(newlesson);
+    this.skillLessonService.getNextLesson(wk,l).subscribe(res=> {
+      lesson=res
+      let skill:Skill = null;
+      this.skill.subscribe(skillRecebido => skill = skillRecebido);
+      const newlesson = skill.wakanderTribeSkillLessons.find(lesson.lessonCode);
+      this.skillLessonService.changeCurrentLesson(newlesson);
+    });
   }
 }

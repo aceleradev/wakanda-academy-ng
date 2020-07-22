@@ -5,7 +5,7 @@
         <h1 class="jumbotron-heading" >Selecione uma aula</h1>
       </ng-template>
 
-      <div>
+      <div *ngIf="loader=='stopped' else loading">
         <a 
           class="btn btn-secondary text-white m-2"
           *ngIf="lesson"
@@ -21,7 +21,8 @@
         </a>
       </div>
         <ng-template #loading>
-          <h1 class="jumbotron-heading" >Selecione uma aula</h1>
+          <i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
+          <span>Loading...</span>
         </ng-template>
     </div>
 </section>

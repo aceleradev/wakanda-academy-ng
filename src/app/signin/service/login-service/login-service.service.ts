@@ -18,7 +18,7 @@ export class LoginService {
     private http: HttpClient,
     private userService: UserService) {}
 
-  login(email: string, senha: string, success?: boolean) {
+  login(email: string, senha: string) {
     return this.http
               .post(API_URL_SUCCESS, 
                 {'username': email, 'password': senha},

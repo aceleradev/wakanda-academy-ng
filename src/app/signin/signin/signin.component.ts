@@ -47,11 +47,9 @@ export class SigninComponent implements OnInit {
   }
 
   login() {
-    let success = this.route.snapshot.queryParamMap.get('success') == 'true';
     this.loginService.login(
       this.loginForm.get("email").value, 
-      this.loginForm.get("senha").value,
-      success)
+      this.loginForm.get("senha").value)
     .subscribe(() => {
       if(this.fromUrl){                 
         this.router.navigateByUrl(this.fromUrl);

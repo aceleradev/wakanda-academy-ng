@@ -27,12 +27,21 @@ export class SkillActionService {
   
   proximaAula(wk:string,l:string) {
     let lesson;
+    let status:BehaviorSubject<number> = new BehaviorSubject<number>(null);
+    let status$ = status.asObservable();
     this.skillLessonService.getNextLesson(wk,l).subscribe(res=> {
-      lesson=res
+      lesson=res;
       let skill:Skill = null;
       this.skill.subscribe(skillRecebido => skill = skillRecebido);
       const newlesson = skill.wakanderTribeSkillLessons.find(lesson.lessonCode);
       this.skillLessonService.changeCurrentLesson(newlesson);
+    }, err => {
+      if(err.status==500) {
+        status.next(err.status)
+        console.log(status$);
+      }
     });
+    console.log(status$);
+    return status$;
   }
 }

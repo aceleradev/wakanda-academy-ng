@@ -1,9 +1,11 @@
 <section class="jumbotron text-center">
     <div class="container">
-      <h1 class="jumbotron-heading" *ngIf="lesson else sorry">{{lesson.nome}}</h1>
+      <h1 class="jumbotron-heading" *ngIf="lesson else sorry">{{lesson.lessonName}}</h1>
       <ng-template #sorry>
         <h1 class="jumbotron-heading" >Selecione uma aula</h1>
       </ng-template>
+
+      <div>
         <a 
           class="btn btn-secondary text-white m-2"
           *ngIf="lesson"
@@ -17,5 +19,9 @@
           (click)="onclickProxima()">
             Próxima Aula
         </a>
+      </div>
+        <ng-template #loading>
+          <h1 class="jumbotron-heading" >Selecione uma aula</h1>
+        </ng-template>
     </div>
 </section>

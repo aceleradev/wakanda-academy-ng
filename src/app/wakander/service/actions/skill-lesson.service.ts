@@ -31,4 +31,14 @@ export class SkillLessonService {
   acessarLesson(url: string) {
     return this.http.get(environment.wakanda.action.unlock.path + '/' + url, {observe:'response'})
   }
+
+  getNextLesson(wkCode:string, lessonCode:string) {
+    return this.http.get(environment.wakanda.action.nextLesson.path, {
+      params: {
+        wakanderCode: wkCode,
+        currentLessonCode: lessonCode
+      },
+      observe: 'response'
+    });
+  }
 }

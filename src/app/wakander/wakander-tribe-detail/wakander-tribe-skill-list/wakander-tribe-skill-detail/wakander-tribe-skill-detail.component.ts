@@ -11,7 +11,8 @@ import { BehaviorSubject } from 'rxjs';
 export class WakanderTribeSkillDetailComponent implements OnInit {
 
   @Input() skill: Skill;
-  skill$: BehaviorSubject<Skill> = new BehaviorSubject<Skill>(null);
+  private skill$: BehaviorSubject<Skill> = new BehaviorSubject<Skill>(null);
+  getSkill = this.skill$.asObservable();
   @Input() code: string;
 
   constructor(private status:StatusColorService) { }

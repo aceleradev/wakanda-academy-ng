@@ -4,7 +4,7 @@ import { Skill } from "./skill";
 export interface WakandaTribe {
     
     tribeCode: string,
-    nome: string,
+    nameTribe: string,
     description: string,
     status: status,
     icon_url: string,

@@ -26,6 +26,9 @@ module.exports = {
         action: {
             unlock:{
                 path: baseBath + "/wakanderAction"
+            },
+            nextLesson:{
+                path: baseBath + "/wakanderAction"
             }
         }
     }

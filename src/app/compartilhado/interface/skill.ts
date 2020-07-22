@@ -3,10 +3,10 @@ import { Lesson } from "./lesson";
 
 export interface Skill {
 
-    code: string,
-    nome: string,
+    skillCode: string,
+    skillName: string,
     description: string,
-    status: status,
-    lessons: Lesson[]
+    skillStatus: status,
+    wakanderTribeSkillLessons: Lesson[]
     
 }

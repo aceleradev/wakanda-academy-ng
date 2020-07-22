@@ -3,11 +3,11 @@ import { Skill } from "./skill";
 
 export interface WakandaTribe {
     
-    code: string,
+    tribeCode: string,
     nome: string,
     description: string,
     status: status,
     icon_url: string,
-    skills: Skill[]
+    wakanderTribeSkills: Skill[]
     
 }

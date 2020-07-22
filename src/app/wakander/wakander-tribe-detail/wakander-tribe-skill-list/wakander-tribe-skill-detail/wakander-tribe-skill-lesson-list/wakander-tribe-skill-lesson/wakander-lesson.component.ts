@@ -28,7 +28,7 @@ export class WakanderTribeSkillLessonComponent implements OnInit {
     console.log("tribe? " + tribe);
     
     this.skillLessonService.changeCurrentLesson(this.lesson);
-    this.skillLessonService.buildURL(wk,tribe,this.code,this.lesson.code);
+    this.skillLessonService.buildURL(wk,tribe,this.code,this.lesson.lessonCode);
     this.skillActionService.changeDisplay(true);
   }
 

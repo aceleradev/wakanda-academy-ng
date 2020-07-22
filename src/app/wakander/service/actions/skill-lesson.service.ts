@@ -29,6 +29,6 @@ export class SkillLessonService {
   }
 
   acessarLesson(url: string) {
-    return this.http.get(environment.wakanda.action.unlock.path + url, {observe:'response'})
+    return this.http.get(environment.wakanda.action.unlock.path + '/' + url, {observe:'response'})
   }
 }

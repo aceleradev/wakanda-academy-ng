@@ -2,17 +2,17 @@
   <div class="card ">
     <div [ngClass] = "color()" class="card-header " id="headingOne">
       <h2 class="mb-0">
-        <button class="btn btn-link text-white unstyled" type="button" data-toggle="collapse" [attr.data-target]="'#' + skill.code" aria-expanded="true" aria-controls="collapseOne">
+        <button class="btn btn-link text-white unstyled" type="button" data-toggle="collapse" [attr.data-target]="'#' + skill.skillCode" aria-expanded="true" aria-controls="collapseOne">
           &#11167;
-          {{skill.nome}}
-          <i *ngIf=" this.skill.status.toString() == 'DONE' " class="fa fa-check fa-1x fa-fw ml-2"></i>
+          {{skill.skillName}}
+          <i *ngIf=" this.skill.skillStatus.toString() == 'DONE' " class="fa fa-check fa-1x fa-fw ml-2"></i>
         </button>
       </h2>
     </div>
 
     <div [attr.id]="skill.code" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card card-body">
-        <app-wakander-tribe-skill-lesson-list [code]="skill.code" [lessons] = "skill.lessons"></app-wakander-tribe-skill-lesson-list>
+        <app-wakander-tribe-skill-lesson-list [code]="skill.skillCode" [lessons] = "skill.wakanderTribeSkillLessons"></app-wakander-tribe-skill-lesson-list>
       </div>
     </div>
   </div>

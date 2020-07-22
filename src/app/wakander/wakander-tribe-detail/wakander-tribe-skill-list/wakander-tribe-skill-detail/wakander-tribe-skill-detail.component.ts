@@ -18,11 +18,11 @@ export class WakanderTribeSkillDetailComponent implements OnInit {
 
   ngOnInit() {
     this.skill$.next(this.skill);
-    this.code = this.skill.code;
-    console.log(this.skill.status.toString());
+    this.code = this.skill.skillCode;
+    console.log((this.skill.skillStatus||'').toString());
   }
   
   color() {
-    return this.status.checkStatus(this.skill.status);
+    return this.status.checkStatus(this.skill.skillStatus);
   }
 }

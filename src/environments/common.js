@@ -16,10 +16,10 @@ module.exports = {
             },
             tribe: {
                 detail: {
-                    path: baseBath + '/{wakanderCode}/tribe/'
+                    path: baseBath + '/wakander/{wakanderCode}/tribe/'
                 },
                 list: {
-                    path: baseBath + '/{wakanderCode}/tribe'
+                    path: baseBath + '/wakander/{wakanderCode}/tribe'
                 }
             }
         },

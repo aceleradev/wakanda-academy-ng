@@ -34,7 +34,7 @@ export class SkillLessonComponent implements OnInit, OnChanges {
     this.acessar = !this.acessar;
     this.skillLessonService.acessarLesson(this.url).subscribe(res => {
       if(res.status == 200)
-        window.open(this.lesson.url, '_blank');
+        window.open(this.lesson.link, '_blank');
     })
    }
 

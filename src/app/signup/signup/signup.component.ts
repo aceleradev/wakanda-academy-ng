@@ -15,7 +15,7 @@ import * as environment from '../../../environments/environment.js';
 export class SignupComponent implements OnInit {
   landingPage=environment.landingpageUrl;
   signupForm: FormGroup;
-  protected exibeSeExisteEmail: boolean = false;
+  exibeSeExisteEmail: boolean = false;
 
   constructor(
     private fromBuilder: FormBuilder,

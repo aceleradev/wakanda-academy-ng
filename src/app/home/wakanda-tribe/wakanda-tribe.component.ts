@@ -12,7 +12,7 @@ import { StatusColorService } from 'src/app/compartilhado/service/status-color/s
 export class WakandaTribeComponent implements OnInit {
 
   @Input() code:string;
-  @Input() nome:string;
+  @Input() name:string;
   @Input() descricao:string;
   @Input() icon_url:string;
   @Input() status: status;
@@ -27,9 +27,9 @@ export class WakandaTribeComponent implements OnInit {
 
   redirect() {
     console.log((["/tribe", this.wkCode, this.code]));
-    if(this.status.toString() != "CLOSED") {
-      this.router.navigate(["/tribe", this.wkCode, this.code]);
-    }
+    // if(this.status.toString() != "CLOSED") {
+    // }
+    this.router.navigate(["/tribe", this.wkCode, this.code]);
   }
 
   color() {

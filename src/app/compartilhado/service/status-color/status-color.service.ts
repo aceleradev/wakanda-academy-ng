@@ -17,8 +17,8 @@ export class StatusColorService {
         return {"bg-primary": true};
       case "DONE":
         return {"bg-success": true};
-      case "CLOSED":
-        return {"bg-danger": true};
+      case "TODO":
+        return {"bg-warning": true};
     }
   }
 }

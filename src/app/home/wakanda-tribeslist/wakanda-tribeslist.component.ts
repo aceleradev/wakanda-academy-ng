@@ -3,6 +3,7 @@ import { WakandaTribeslistService } from '../services/wakanda-tribeslist.service
 import { WakandaTribe } from '../../compartilhado/interface/wakanda-tribe';
 import { UserService } from 'src/app/compartilhado/service/user/user.service';
 import { User } from 'src/app/compartilhado/interface/user';
+import { WakandaTribeHome } from 'src/app/compartilhado/interface/wakanda-tribe-home';
 
 @Component({
   selector: 'app-wakanda-tribeslist',
@@ -10,7 +11,7 @@ import { User } from 'src/app/compartilhado/interface/user';
   styleUrls: ['./wakanda-tribeslist.component.css']
 })
 export class WakandaTribeslistComponent implements OnInit {
-  @Input() tribes: WakandaTribe[] = [];
+  @Input() tribes: WakandaTribeHome[] = [];
   rows: any[] = [];
   user: User;
   wkCode:string;
@@ -36,7 +37,7 @@ export class WakandaTribeslistComponent implements OnInit {
       console.log(this.tribes);
   }
 
-  groupColumns(tribes: WakandaTribe[]) {
+  groupColumns(tribes: WakandaTribeHome[]) {
     const newRows = [];
 
     for(let index = 0; index < tribes.length; index+=2) {

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as environment from '../../../environments/environment.js';
 import { WakandaTribe } from '../../compartilhado/interface/wakanda-tribe';
+import { WakandaTribeHome } from 'src/app/compartilhado/interface/wakanda-tribe-home.js';
 
 //const API_URL = environment.apiUrl
 const userHost = "https://run.mocky.io"
@@ -17,7 +18,7 @@ export class WakandaTribeslistService {
 
   getTribos(userId: string) {
     //TODO: fazer busca das tribos baseado no ID do usuario
-    return this.http.get<WakandaTribe[]>(environment.wakanda.wakander.tribe.detail.path.replace("{wakanderCode}",userId));
+    return this.http.get<WakandaTribeHome[]>(environment.wakanda.wakander.tribe.detail.path.replace("{wakanderCode}",userId));
   }
 
 }

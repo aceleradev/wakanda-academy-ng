@@ -5,7 +5,7 @@ export interface WakandaTribe {
     
     tribeCode: string,
     nameTribe: string,
-    description: string,
+    descriptionTribe: string,
     status: status,
     icon_url: string,
     wakanderTribeSkills: Skill[]

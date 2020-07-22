@@ -2,10 +2,10 @@ import { status } from "./status.enum";
 
 export interface Lesson {
 
-    code: string,
-    nome: string,
+    lessonCode: string,
+    lessonName: string,
     description: string,
     status: status,
-    url: string
+    link: string
     
 }

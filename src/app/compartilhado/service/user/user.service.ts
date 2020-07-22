@@ -12,14 +12,12 @@ import { User } from '../../interface/user';
 export class UserService {
 
   private userSubject = new BehaviorSubject<User>(null);
-
   constructor(
     private tokenService: TokenService,
     private router: Router
-  ) {this.tokenService.hasToken() && this.decode(); }
+  ) {this.tokenService.hasToken() && this.decode();}
 
   private decode() {
-    
     const token = this.tokenService.getToken();
     const user = jwt_decode(token) as User; 
     this.userSubject.next(user);

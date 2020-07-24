@@ -5,6 +5,7 @@ import { SkillActionService } from '../service/actions/skill-action.service';
 import { LoadingService } from 'src/app/compartilhado/service/loading/loading.service';
 import { Loading } from 'src/app/compartilhado/loading/loading/loading.enum';
 import { Router } from '@angular/router';
+import { Skill } from 'src/app/compartilhado/interface/skill';
 
 @Component({
   selector: 'app-skill-lesson',
@@ -12,7 +13,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./skill-lesson.component.css']
 })
 export class SkillLessonComponent implements OnInit, OnChanges {
-  @Input() lesson: Lesson;
+  lesson: Lesson;
+  skill: Skill;
   @Input() url: string;
   loader: Loading;
   proxima: boolean = false;
@@ -27,6 +29,7 @@ export class SkillLessonComponent implements OnInit, OnChanges {
     
     ngOnInit(): void {
       this.skillLessonService.lesson$.subscribe(aula => this.lesson = aula);
+      this.skillActionService.Skill$.subscribe(skill => this.skill = skill);
       this.skillLessonService.code$.subscribe(code => {
         this.url = code;
         console.log(this.url);
@@ -62,13 +65,14 @@ export class SkillLessonComponent implements OnInit, OnChanges {
    this.proxima = !this.proxima;
    let code = this.url.split("/");
    let wkCode = code[0];
-   const stauts = this.skillActionService.proximaAula(wkCode,this.lesson.lessonCode);
+   const stauts = this.skillActionService.proximaAula(wkCode, this.lesson.lessonCode, this.skill);
    console.log(stauts);
    stauts.subscribe( st => {
      if (st == 500) {
        alert("desculpe, hou um erro ao carregar a proxima aula.");
        this.router.navigateByUrl("");
      }
+     
    })
   }
 

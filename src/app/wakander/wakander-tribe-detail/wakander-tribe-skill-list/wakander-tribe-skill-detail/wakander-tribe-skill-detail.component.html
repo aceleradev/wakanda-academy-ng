@@ -12,7 +12,7 @@
 
     <div [attr.id]="skill.skillCode" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card card-body">
-        <app-wakander-tribe-skill-lesson-list [code]="skill.skillCode" [lessons] = "skill.wakanderTribeSkillLessons"></app-wakander-tribe-skill-lesson-list>
+        <app-wakander-tribe-skill-lesson-list [skill]="skill"></app-wakander-tribe-skill-lesson-list>
       </div>
     </div>
   </div>

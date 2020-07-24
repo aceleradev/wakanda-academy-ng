@@ -25,15 +25,13 @@ export class SkillActionService {
     this.skill.next(skill)
   }
   
-  proximaAula(wk:string,l:string) {
+  proximaAula(wakanderCode: string, lessonCode :string, skill: Skill) {
     let lesson;
     let status:BehaviorSubject<number> = new BehaviorSubject<number>(null);
     let status$ = status.asObservable();
-    this.skillLessonService.getNextLesson(wk,l).subscribe(res=> {
+    this.skillLessonService.getNextLesson(wakanderCode, lessonCode).subscribe(res=> {
       lesson=res;
-      let skill:Skill = null;
-      this.skill.subscribe(skillRecebido => skill = skillRecebido);
-      const newlesson = skill.wakanderTribeSkillLessons.find(lesson.lessonCode);
+      const newlesson = skill.wakanderTribeSkillLessons.find(currentLesson => currentLesson.lessonCode == lesson.lessonCode);
       this.skillLessonService.changeCurrentLesson(newlesson);
     }, err => {
       if(err.status==500) {

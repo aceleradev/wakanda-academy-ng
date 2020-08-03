@@ -3,6 +3,8 @@ import { UserService } from './compartilhado/service/user/user.service';
 import { Idle, DEFAULT_INTERRUPTSOURCES } from '../../node_modules/@ng-idle/core';
 import { Keepalive } from '../../node_modules/@ng-idle/keepalive';
 import { User } from './compartilhado/interface/user';
+import { TokenService } from './compartilhado/service/token/token.service';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-root',
@@ -14,11 +16,15 @@ export class AppComponent implements OnInit {
   title = 'app';
   protected showHeader: boolean = false;
   idleState = 'Not started.';
-  timedOut = false;
+  timedOut: boolean = false;
   lastPing?: Date = null;
+  private idleTime: number = 900;
+  private refreshTime: Date = null;
+  private tokenExpTime: number;
 
   constructor(
     private userService: UserService,
+    private tokenService: TokenService,
     private idle: Idle,
     private keepAlive: Keepalive) {
 
@@ -26,13 +32,24 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // // sets an idle timeout of 5 seconds, for testing purposes.
-    this.idle.setIdle(5);
+    this.tokenService.getExpDate().subscribe((exp) => {
+      if (this.tokenService.hasToken()) {
+        console.log("exp? " + exp);
+        this.tokenExpTime = Number(exp);
+        console.log("EMITE VALOR? " + this.tokenExpTime);
+        const agoradate: number = new Date(Date.now()).getTime();
+        const agoraDateCorreted: number = (agoradate + 10800000);
 
-    // // sets a timeout period of 5 seconds. after 10 seconds of inactivity, the user will be considered timed out.
-    this.idle.setTimeout(5);
+        const timeToExpire: number = (this.tokenExpTime - agoraDateCorreted);
+        console.log("tempo pro token expirar: " + (timeToExpire / 1000) / 60);
 
-    // // sets the default interrupts, in this case, things like clicks, scrolls, touches to the document
+      }
+    });
+
+    this.idle.setIdle(this.idleTime);
+
+    this.idle.setTimeout(this.idleTime);
+
     this.idle.setInterrupts(DEFAULT_INTERRUPTSOURCES);
 
     this.idle.onTimeout.subscribe(() => {
@@ -58,7 +75,6 @@ export class AppComponent implements OnInit {
       console.log(this.idleState);
     });
 
-    // // Sets the ping interval to 15 seconds
     this.keepAlive.interval(15);
 
     this.keepAlive.onPing.subscribe(() => this.lastPing = new Date());

@@ -14,6 +14,7 @@
   <div class="row">
     <div class="col-6">
       <div class="row ">
+     
         <img 
         class="col-3 rounded-circle" 
         [src]="icon_url" 
@@ -25,12 +26,12 @@
               "
             />
             <div class="">
-              <h3>{{name}}</h3>
+              <h3>{{numero+1}} {{name}}</h3>
               <p class="card-text">{{descricao}}</p>
             </div>
           </div>
         </div>
-        <i *ngIf="this.status.toString() =='DONE' " class="fa fa-check fa-4x fa-fw fa-inverse"></i>     
+        <i *ngIf="this.status.toString() =='DONE'" class="fa fa-check fa-4x fa-fw fa-inverse"></i>     
       </div>
 </a>
 

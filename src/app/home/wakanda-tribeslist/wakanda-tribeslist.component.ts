@@ -15,6 +15,8 @@ export class WakandaTribeslistComponent implements OnInit {
   rows: any[] = [];
   user: User;
   wkCode:string;
+  numeral:string;
+  
 
   constructor(
     private wakandaTribesListService: WakandaTribeslistService,
@@ -24,25 +26,39 @@ export class WakandaTribeslistComponent implements OnInit {
     this.userService
       .getUser()
       .subscribe(user => this.user = user)
-      console.log(this.user);
+     
+      
       this.wkCode = this.user.wakanderCode
       
     this.wakandaTribesListService
       .getTribos(this.user.wakanderCode)
       .subscribe(tribes => {
         this.tribes = tribes
-        console.log(tribes);
+            
         this.rows = this.groupColumns(tribes);
-      })
-      console.log(this.tribes);
+      });
+    
+     
+     
   }
 
+  groupNumer(numeral){
+    for (let i= 0; i<this.tribes.length; i++){
+      numeral = i
+    }
+    console.log("groupNumer");
+    console.log(numeral);
+    return numeral;
+        
+  }
+  
   groupColumns(tribes: WakandaTribeHome[]) {
     const newRows = [];
-
+    
     for(let index = 0; index < tribes.length; index+=2) {
       newRows.push(tribes.slice(index, index + 2));
-    }                            
+    }   
+    console.log(newRows);                         
     return newRows;
   }
 

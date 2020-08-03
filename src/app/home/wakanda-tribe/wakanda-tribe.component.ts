@@ -11,6 +11,7 @@ import { StatusColorService } from 'src/app/compartilhado/service/status-color/s
 })
 export class WakandaTribeComponent implements OnInit {
 
+  @Input() numero:number;
   @Input() code:string;
   @Input() name:string;
   @Input() descricao:string;

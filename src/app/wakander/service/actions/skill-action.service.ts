@@ -8,38 +8,19 @@ import { SkillLessonService } from './skill-lesson.service';
   providedIn: 'root'
 })
 export class SkillActionService {
-  mostra:boolean = false;
-  private show: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  show$ = this.show.asObservable();
+  private skillArray: BehaviorSubject<Skill[]> = new BehaviorSubject<Skill[]>(null);
+  SkillArray$ = this.skillArray.asObservable();
   private skill: BehaviorSubject<Skill> = new BehaviorSubject<Skill>(null);
   Skill$ = this.skill.asObservable();
 
   constructor(private skillLessonService:SkillLessonService) { }
 
-  changeDisplay(show:boolean) {
-    this.show.next(show);
-    this.mostra = true
-  }
-
   setSkill(skill:Skill) {
     this.skill.next(skill)
   }
-  
-  proximaAula(wakanderCode: string, lessonCode :string, skill: Skill) {
-    let lesson;
-    let status:BehaviorSubject<number> = new BehaviorSubject<number>(null);
-    let status$ = status.asObservable();
-    this.skillLessonService.getNextLesson(wakanderCode, lessonCode).subscribe(res=> {
-      lesson=res;
-      const newlesson = skill.wakanderTribeSkillLessons.find(currentLesson => currentLesson.lessonCode == lesson.lessonCode);
-      this.skillLessonService.changeCurrentLesson(newlesson);
-    }, err => {
-      if(err.status==500) {
-        status.next(err.status)
-        console.log(status$);
-      }
-    });
-    console.log(status$);
-    return status$;
+
+  setSkillArray(skills: Skill[]) {
+    this.skillArray.next(skills);
   }
+  
 }

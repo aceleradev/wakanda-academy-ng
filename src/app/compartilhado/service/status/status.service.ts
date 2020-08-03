@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { status } from '../../interface/status.enum';
+import { Lesson } from '../../interface/lesson';
 
 @Injectable({
   providedIn: 'root'
 })
-export class StatusColorService {
+export class StatusService {
 
   status: string;
 
@@ -20,5 +21,16 @@ export class StatusColorService {
       case "TODO":
         return {"bg-warning": true};
     }
+  }
+  isDoing(lesson:Lesson):boolean {
+    return lesson.status == status.DOING;
+  }
+
+  isDone(lesson:Lesson):boolean {
+    return lesson.status == status.DONE;
+  }
+
+  isTodo(lesson:Lesson):boolean {
+    return lesson.status == status.TODO;
   }
 }

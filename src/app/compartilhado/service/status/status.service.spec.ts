@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { StatusColorService } from './status-color.service';
+import { StatusService } from './status.service';
 
 describe('StatusColorService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [StatusColorService]
+      providers: [StatusService]
     });
   });
 
-  it('should be created', inject([StatusColorService], (service: StatusColorService) => {
+  it('should be created', inject([StatusService], (service: StatusService) => {
     expect(service).toBeTruthy();
   }));
 });

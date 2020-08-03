@@ -3,6 +3,7 @@ import { BehaviorSubject, from } from 'rxjs';
 import { Lesson } from 'src/app/compartilhado/interface/lesson';
 import { HttpClient } from '@angular/common/http';
 import * as environment from '../../../../environments/environment.js';
+import { LessonDTO } from 'src/app/compartilhado/interface/lessonDTO.js';
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +34,7 @@ export class SkillLessonService {
   }
 
   getNextLesson(wkCode:string, lessonCode:string) {
-    return this.http.get(environment.wakanda.action.nextLesson.path, {
+    return this.http.get<LessonDTO>(environment.wakanda.action.nextLesson.path, {
       params: {
         wakanderCode: wkCode,
         currentLessonCode: lessonCode

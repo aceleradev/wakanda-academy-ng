@@ -1,6 +1,9 @@
 <section class="jumbotron text-center">
     <div class="container">
-      <h1 class="jumbotron-heading" *ngIf="lesson else sorry">{{lesson.lessonName}}</h1>
+      <div *ngIf="lesson else sorry">
+        <h3>{{skill.skillName}}</h3>
+        <h1 class="jumbotron-heading" >{{lesson.lessonName}}</h1>
+      </div>
       <ng-template #sorry>
         <h1 class="jumbotron-heading" >Selecione uma aula</h1>
       </ng-template>
@@ -21,8 +24,9 @@
         </a>
       </div>
         <ng-template #loading>
-          <i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
-          <span>Loading...</span>
+          <div class="row d-flex justify-content-center">
+            <i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
+          </div>
         </ng-template>
     </div>
 </section>

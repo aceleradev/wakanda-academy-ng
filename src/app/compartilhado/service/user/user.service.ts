@@ -30,6 +30,7 @@ export class UserService {
 
   logout() {
     this.tokenService.removeToken();
+    this.userSubject.next(null);
     this.router.navigateByUrl("login");
   }
 
@@ -40,6 +41,12 @@ export class UserService {
   getUser() {
     console.log(this.userSubject);
     return this.userSubject.asObservable();
+  }
+
+  hasUser(user:User):boolean {
+    if(user)
+      return true;
+    return false
   }
 
 }

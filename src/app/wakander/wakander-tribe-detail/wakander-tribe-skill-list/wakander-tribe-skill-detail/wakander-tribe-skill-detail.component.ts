@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Skill } from 'src/app/compartilhado/interface/skill';
-import { StatusColorService } from 'src/app/compartilhado/service/status-color/status-color.service';
+import { StatusService } from 'src/app/compartilhado/service/status/status.service';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
@@ -15,7 +15,7 @@ export class WakanderTribeSkillDetailComponent implements OnInit {
   getSkill = this.skill$.asObservable();
   @Input() code: string;
 
-  constructor(private status:StatusColorService) { }
+  constructor(private status:StatusService) { }
 
   ngOnInit() {
     this.skill$.next(this.skill);

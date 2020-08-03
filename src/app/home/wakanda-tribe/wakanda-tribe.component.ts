@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { WakandaTribe } from '../../compartilhado/interface/wakanda-tribe';
 import { Router } from '@angular/router';
 import { status } from 'src/app/compartilhado/interface/status.enum';
-import { StatusColorService } from 'src/app/compartilhado/service/status-color/status-color.service';
+import { StatusService } from 'src/app/compartilhado/service/status/status.service';
 
 @Component({
   selector: 'app-wakanda-tribe',
@@ -20,7 +20,7 @@ export class WakandaTribeComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private statusColor: StatusColorService) { }
+    private statusColor: StatusService) { }
 
   ngOnInit() {
   }

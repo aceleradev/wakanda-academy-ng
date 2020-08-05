@@ -18,7 +18,7 @@ export class LoginService {
 
   login(email: string, senha: string) {
     return this.http
-      .post(environment.wakanda.wakander.auth.path,
+      .post(environment.wakanda.wakander.auth.login.path,
         { 'username': email, 'password': senha },
         { observe: "response" })
       .pipe(tap((res: HttpResponse<any>) => {

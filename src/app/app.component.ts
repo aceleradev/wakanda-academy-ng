@@ -19,32 +19,16 @@ export class AppComponent implements OnInit {
   timedOut: boolean = false;
   lastPing?: Date = null;
   private idleTime: number = 900;
-  private refreshTime: Date = null;
-  private tokenExpTime: number;
 
   constructor(
     private userService: UserService,
-    private tokenService: TokenService,
     private idle: Idle,
-    private keepAlive: Keepalive) {
+    private keepAlive: Keepalive,
+    private tokenService:TokenService) {
 
   }
 
   ngOnInit(): void {
-
-    this.tokenService.getExpDate().subscribe((exp) => {
-      if (this.tokenService.hasToken()) {
-        console.log("exp? " + exp);
-        this.tokenExpTime = Number(exp);
-        console.log("EMITE VALOR? " + this.tokenExpTime);
-        const agoradate: number = new Date(Date.now()).getTime();
-        const agoraDateCorreted: number = (agoradate + 10800000);
-
-        const timeToExpire: number = (this.tokenExpTime - agoraDateCorreted);
-        console.log("tempo pro token expirar: " + (timeToExpire / 1000) / 60);
-
-      }
-    });
 
     this.idle.setIdle(this.idleTime);
 
@@ -89,6 +73,7 @@ export class AppComponent implements OnInit {
         this.idle.stop();
       }
     }));
+
   }
 
   reset() {

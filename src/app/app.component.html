@@ -1,4 +1,10 @@
-<div class="fixed=top">
+<div *ngIf="showHeader">
+    <app-header></app-header>
+</div>
+<div class="fixed-top">
     <app-loading></app-loading>
 </div>
 <router-outlet></router-outlet>
+<div class="fixed-bottom">
+    <alert></alert>
+</div>

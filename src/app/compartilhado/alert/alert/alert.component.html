@@ -1,0 +1,8 @@
+<!-- <div *ngIf="message" [ngClass]="message.cssClass">{{message.text}}</div> -->
+<div *ngIf="message" [ngClass]="message.cssClass" class="alert-dismissible fade show" role="alert">
+  <h4 class="alert-heading">{{message.title}}</h4>
+  <p>{{message.text}}</p>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Lesson } from 'src/app/compartilhado/interface/lesson';
+import { Skill } from 'src/app/compartilhado/interface/skill';
 
 @Component({
   selector: 'app-wakander-tribe-skill-lesson-list',
@@ -7,13 +8,12 @@ import { Lesson } from 'src/app/compartilhado/interface/lesson';
 })
 export class WakanderTribeSkillLessonListComponent implements OnInit {
 
-@Input() lessons: Lesson[];
-@Input() code: string;
+@Input() skill: Skill;
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.lessons);
+    console.log(this.skill.wakanderTribeSkillLessons);
   }
 
 }

@@ -3,7 +3,8 @@ import { Lesson } from 'src/app/compartilhado/interface/lesson';
 import { SkillLessonService } from 'src/app/wakander/service/actions/skill-lesson.service';
 import { SkillActionService } from 'src/app/wakander/service/actions/skill-action.service';
 import { ActivatedRoute } from '@angular/router';
-import { StatusColorService } from 'src/app/compartilhado/service/status-color/status-color.service';
+import { StatusService } from 'src/app/compartilhado/service/status/status.service';
+import { Skill } from 'src/app/compartilhado/interface/skill';
 
 @Component({
   selector: 'app-wakander-tribe-skill-lesson',
@@ -11,17 +12,17 @@ import { StatusColorService } from 'src/app/compartilhado/service/status-color/s
 })
 export class WakanderTribeSkillLessonComponent implements OnInit {
 
+  @Input() skill: Skill;
   @Input() lesson: Lesson;
-  @Input() code: string;
 
   constructor(
     private skillLessonService:SkillLessonService,
     private skillActionService: SkillActionService,
     private snap: ActivatedRoute,
-    private statusService:StatusColorService) { }
+    private statusService:StatusService) { }
 
   ngOnInit() {
-    console.log("lesson: " + this.code)
+    console.log("lesson: " + this.lesson.lessonCode)
   }
 
   callSkillLessonComp() {
@@ -30,9 +31,9 @@ export class WakanderTribeSkillLessonComponent implements OnInit {
     console.log("tribe? " + tribe);
     console.log("lesson? " + this.lesson.status);
     
+    this.skillActionService.setSkill(this.skill);
     this.skillLessonService.changeCurrentLesson(this.lesson);
-    this.skillLessonService.buildURL(wk,tribe,this.code,this.lesson.lessonCode);
-    this.skillActionService.changeDisplay(true);
+    this.skillLessonService.buildURL(wk,tribe, this.skill.skillCode, this.lesson.lessonCode);
   }
 
   color() {

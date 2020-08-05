@@ -8,8 +8,13 @@ module.exports = {
             create: {
                 path: baseBath + '/userCreation'
             },
-            auth:{
-                path: baseBath + '/authenticate'
+            auth: {
+                login: {
+                    path: baseBath + '/authenticate'
+                },
+                renew: {
+                    path: baseBath + "/authenticate/renew"
+                }
             },
             profile: {
                 path: baseBath + '/wakander/'
@@ -24,10 +29,10 @@ module.exports = {
             }
         },
         action: {
-            unlock:{
+            unlock: {
                 path: baseBath + "/wakanderAction"
             },
-            nextLesson:{
+            nextLesson: {
                 path: baseBath + "/wakanderAction"
             }
         }

@@ -8,7 +8,9 @@ const app = express();
 app.use(express.json());
 
 app.use('/wakanda/app/v1/*', proxy(environment.userHost, {
-        proxyReqPathResolver:  (req) => req.baseUrl
+        proxyReqPathResolver:  (req) => {            
+            return req.baseUrl + req.url;
+        }
     })
 );
 

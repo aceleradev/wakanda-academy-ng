@@ -15,32 +15,32 @@ import { UserService } from "../service/user/user.service";
 import { TokenService } from "../service/token/token.service";
 
 @Injectable({ providedIn: 'root' })
-export class LoadingInterceptor implements HttpInterceptor{
+export class LoadingInterceptor implements HttpInterceptor {
 
     constructor(
         private loadingService: LoadingService,
-        private tokenService:TokenService) {}
+        private tokenService: TokenService) { }
 
     intercept(req: HttpRequest<any>, next: HttpHandler):
-    Observable<HttpSentEvent |
-    HttpHeaderResponse |
-    HttpProgressEvent |
-    HttpResponse<any> |
-    HttpUserEvent<any>> {
+        Observable<HttpSentEvent |
+            HttpHeaderResponse |
+            HttpProgressEvent |
+            HttpResponse<any> |
+            HttpUserEvent<any>> {
 
-        req = req.clone({
-            setHeaders: {
-              'Content-Type' : 'application/json; charset=utf-8',
-              'Accept'       : 'application/json',
-              'Authorization': `Bearer ${this.tokenService.getToken()}`,
-            },
-          });
+        // req = req.clone({
+        //     setHeaders: {
+        //         'Content-Type': 'application/json; charset=utf-8',
+        //         'Accept': 'application/json',
+        //         'Authorization': `Bearer ${this.tokenService.getToken()}`,
+        //     },
+        // });
 
         return next.handle(req)
             .pipe(tap((event) => {
-                if(event instanceof HttpResponse){
+                if (event instanceof HttpResponse) {
                     this.loadingService.stop();
-                }else{
+                } else {
                     this.loadingService.start();
                 }
             }))

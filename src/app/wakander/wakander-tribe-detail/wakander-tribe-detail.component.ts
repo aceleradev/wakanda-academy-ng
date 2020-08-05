@@ -11,7 +11,7 @@ import { SkillActionService } from '../service/actions/skill-action.service';
   templateUrl: './wakander-tribe-detail.component.html',
   styleUrls: ['./wakander-tribe-detail.component.css']
 })
-export class WakanderTribeDetailComponent implements OnInit, OnChanges {
+export class WakanderTribeDetailComponent implements OnInit {
 
   code: string = "";
   wkCode: string = "";
@@ -23,10 +23,6 @@ export class WakanderTribeDetailComponent implements OnInit, OnChanges {
     private wakanderService: WakanderService,
     private actionService: SkillActionService) { }
 
-    ngOnChanges(changes: SimpleChanges): void {
-      this.actionService.show$.subscribe(val => this.show = val);
-      this.show = this.actionService.mostra;
-    }
 
     ngOnInit() {
       this.code = this.route.snapshot.params.code;

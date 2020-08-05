@@ -14,7 +14,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 })
 export class AppComponent implements OnInit {
   title = 'app';
-  protected showHeader: boolean = false;
+  showHeader: boolean = false;
   idleState = 'Not started.';
   timedOut: boolean = false;
   lastPing?: Date = null;

@@ -3,6 +3,8 @@ import { UserService } from './compartilhado/service/user/user.service';
 import { Idle, DEFAULT_INTERRUPTSOURCES } from '../../node_modules/@ng-idle/core';
 import { Keepalive } from '../../node_modules/@ng-idle/keepalive';
 import { User } from './compartilhado/interface/user';
+import { TokenService } from './compartilhado/service/token/token.service';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-root',
@@ -14,25 +16,24 @@ export class AppComponent implements OnInit {
   title = 'app';
   protected showHeader: boolean = false;
   idleState = 'Not started.';
-  timedOut = false;
+  timedOut: boolean = false;
   lastPing?: Date = null;
+  private idleTime: number = 900;
 
   constructor(
     private userService: UserService,
     private idle: Idle,
-    private keepAlive: Keepalive) {
+    private keepAlive: Keepalive,
+    private tokenService:TokenService) {
 
   }
 
   ngOnInit(): void {
 
-    // // sets an idle timeout of 5 seconds, for testing purposes.
-    this.idle.setIdle(5);
+    this.idle.setIdle(this.idleTime);
 
-    // // sets a timeout period of 5 seconds. after 10 seconds of inactivity, the user will be considered timed out.
-    this.idle.setTimeout(5);
+    this.idle.setTimeout(this.idleTime);
 
-    // // sets the default interrupts, in this case, things like clicks, scrolls, touches to the document
     this.idle.setInterrupts(DEFAULT_INTERRUPTSOURCES);
 
     this.idle.onTimeout.subscribe(() => {
@@ -58,7 +59,6 @@ export class AppComponent implements OnInit {
       console.log(this.idleState);
     });
 
-    // // Sets the ping interval to 15 seconds
     this.keepAlive.interval(15);
 
     this.keepAlive.onPing.subscribe(() => this.lastPing = new Date());
@@ -73,6 +73,7 @@ export class AppComponent implements OnInit {
         this.idle.stop();
       }
     }));
+
   }
 
   reset() {

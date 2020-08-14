@@ -8,11 +8,13 @@ import { LoadingComponent } from './loading/loading/loading.component';
 import { LoadingModule } from './loading/loading.module';
 import { MetasComponent } from './modal/metas/metas.component';
 import { MetasContentComponent } from './modal/content/metas-content/metas-content.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   declarations: [ValMessageComponent, HeaderComponent, MetasComponent, MetasContentComponent],
   exports:[ValMessageComponent, HeaderComponent, MetasComponent],

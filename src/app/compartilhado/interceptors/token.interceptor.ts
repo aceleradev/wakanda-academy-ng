@@ -32,12 +32,15 @@ export class TokenInterceptor implements HttpInterceptor {
 
         return next.handle(req).pipe(catchError((error: HttpErrorResponse) => {
             if (error.status == 401) {
-                this.http.post<any>(environment.wakanda.wakander.auth.renew.path,
-                    { "token": this.tokenService.getToken() }, { observe: "response" }).pipe(tap((res: HttpResponse<any>) => {
-                        const authToken = res.body.token;
-                        this.userService.setToken(authToken);
-                        return next.handle(this.injectToken(req));
-                    }));
+                // this.http.post<any>(environment.wakanda.wakander.auth.renew.path,
+                //     { "token": this.tokenService.getToken() }, { observe: "response" }).pipe(tap((res: HttpResponse<any>) => {
+                //         const authToken = res.body.token;
+                //         this.userService.setToken(authToken);
+                //         return next.handle(this.injectToken(req));
+                //     }));
+                this.userService.logout();
+                alert("sessão encerrada")
+                return next.handle(req);
             } else {
                 return next.handle(req);
             }

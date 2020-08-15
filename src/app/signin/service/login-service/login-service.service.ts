@@ -27,7 +27,7 @@ export class LoginService {
           const expTime:string = res.body.expiresAt;
           console.log(expTime);
           
-          this.tokenService.setExpDate(expTime);
+          this.tokenService.setTokenExpDate(expTime);
           this.userService.setToken(authToken);
         }
       }));

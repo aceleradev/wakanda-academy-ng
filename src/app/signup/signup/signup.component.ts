@@ -72,6 +72,11 @@ export class SignupComponent implements OnInit {
             this.exibeSeExisteEmail = true;
             this.signupForm.controls["email"].reset("");
           }
+      }, err => {
+        console.log(err);
+        this.signupForm.reset();
+        this.signupForm.controls["email"].reset("");
+        alert('algo deu errado, tente novamente');
       })
   }
 

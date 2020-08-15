@@ -14,9 +14,9 @@
     </div>
 
     <div class="form-group">
-      <label for="InputSenha">O próximo objetivo da sua jornada será: </label>
-      <input formControlName="metaJornada" type="search" class="form-control" id="InputSenha"
-        placeholder="Digite sua meta">
+      <label for="InputJornada">O próximo objetivo da sua jornada será: </label>
+      <input formControlName="metaJornada" type="search" class="form-control" id="InputJornada"
+        placeholder="Digite sua meta" [ngbTypeahead]="search">
     </div>
 
   </form>

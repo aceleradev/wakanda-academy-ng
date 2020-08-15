@@ -24,13 +24,15 @@ export class AppComponent implements OnInit {
     private userService: UserService,
     private idle: Idle,
     private keepAlive: Keepalive,
-    private tokenService:TokenService) {
+    private tokenService: TokenService) {
 
   }
 
   ngOnInit(): void {
 
-    this.idle.setIdle(this.idleTime);
+    this.callRenewToken();
+
+    this.idle.setIdle(30);
 
     this.idle.setTimeout(this.idleTime);
 
@@ -74,6 +76,25 @@ export class AppComponent implements OnInit {
       }
     }));
 
+    setInterval(() => {
+      if (this.tokenService.hasToken()) {
+        console.log("O TOKEN " + this.tokenService.getToken() + " EXPIROU");
+        this.callRenewToken();
+        console.log("O NOVO TOKEN É: " + this.tokenService.getToken());
+      }
+    }, (28*60*100));
+
+
+  }
+
+  private callRenewToken() {
+    this.tokenService.renewToken().subscribe((res) => {
+      const token = res.body.token;
+      const expTime = res.body.expiresAt;
+
+      this.userService.setToken(token);
+      this.tokenService.setTokenExpDate(expTime);
+    });
   }
 
   reset() {

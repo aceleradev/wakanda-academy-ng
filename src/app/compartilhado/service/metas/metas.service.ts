@@ -16,16 +16,26 @@ export class MetasService {
 
   constructor(private http: HttpClient) { }
 
-  enviarMetas(wkCode: string, metas: WakanderGoal) {
-    const url = API_URL.toString().replace("{wakanderCode}", wkCode);
+  putMetas(wkCode: string, metas: WakanderGoal) {
+    const url = this.wkCodeUrl(wkCode);
     return this.http.put(url, { metas }, { observe: "response" })
   }
 
-  setMeta(meta:WakanderGoal) {
+
+  getMetas(wkCode: string) {
+    const url = this.wkCodeUrl(wkCode);
+    return this.http.get<WakanderGoal>(url, { observe: "response" });
+  }
+
+  setMeta(meta: WakanderGoal) {
     this.metas$.next(meta);
   }
 
-  getMetas() {
+  getterMetas() {
     return this.metas$.asObservable();
+  }
+
+  private wkCodeUrl(wkCode: string) {
+    return API_URL.toString().replace("{wakanderCode}", wkCode);
   }
 }

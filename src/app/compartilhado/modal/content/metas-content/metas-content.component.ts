@@ -51,7 +51,7 @@ export class MetasContentComponent implements OnInit, OnDestroy {
     );
 
     this.subs.add(
-      this.metasService.getMetas().subscribe((metas) => {
+      this.metasService.getterMetas().subscribe((metas) => {
         this.metas = metas
       })
     );
@@ -83,7 +83,7 @@ export class MetasContentComponent implements OnInit, OnDestroy {
     const tribe = this.wktribes.find(x => x.name === rawValues.metaJornada);
     const tribeGoal: WakanderTribeGoalDTO = { name: tribe.name, tribeCode: tribe.tribeCode }
     const wkGoal: WakanderGoal = { weeklyGoalStudyHours: rawValues.metaHoras, nextTribeGoal: tribeGoal };
-    this.metasService.enviarMetas(this.user.wakanderCode, wkGoal).subscribe(res => { console.log(res.statusText) });
+    this.metasService.putMetas(this.user.wakanderCode, wkGoal).subscribe(res => { console.log(res.statusText) });
     this.metasService.setMeta(wkGoal);
     this.activeModal.close();
   }

@@ -6,7 +6,7 @@ import * as environment from "../../../../environments/environment.js";
 import { BehaviorSubject } from 'rxjs';
 
 const API_URL: string = environment.wakanda.wakander.goal.path;
-const wkEmptyGoal: WakanderGoal = { nextTribeGoal: { name: "", tribeCode: "" }, weeklyGoalStudyHours: 0 }
+const wkEmptyGoal: WakanderGoal = { wakanderCode: "", nextTribeGoal: { name: "", tribeCode: "" }, weeklyGoalStudyHours: 0 }
 
 @Injectable({
   providedIn: 'root'

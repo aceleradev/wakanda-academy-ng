@@ -22,7 +22,7 @@ export class SkillLessonComponent implements OnInit, OnChanges, OnDestroy {
   skill: Skill;
   @Input() url: string;
   loader: Loading;
-  proxima: boolean = false;
+  breadCrumbs: string = "";
   private subs: Subscription = new Subscription();
 
   constructor(
@@ -31,7 +31,7 @@ export class SkillLessonComponent implements OnInit, OnChanges, OnDestroy {
     private loadService: LoadingService,
     private router: Router,
     private statusService: StatusService) { }
-
+    
 
   ngOnInit(): void {
     this.subs.add(
@@ -50,6 +50,11 @@ export class SkillLessonComponent implements OnInit, OnChanges, OnDestroy {
       this.skillActionService.Skill$.subscribe(skill => {
         this.skill = skill
         console.log("Skill-lesson skill:" + skill);
+      })
+    );
+
+    this.subs.add(this.skillActionService.getBreadCrumbs().subscribe(res => {
+      this.breadCrumbs = res;
       })
     );
 
@@ -83,7 +88,7 @@ export class SkillLessonComponent implements OnInit, OnChanges, OnDestroy {
           alert("desculpe, houve um erro ao carregar a proxima aula.");
           this.router.navigateByUrl("");
         })
-      ); 
+      );
     } else {
       alert("Você ainda não tem acesso a essa aula!");
     }

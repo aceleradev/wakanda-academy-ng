@@ -17,25 +17,35 @@ export class WakanderTribeDetailComponent implements OnInit {
   wkCode: string = "";
   tribo: WakandaTribe;
   show: boolean;
+  breadCrumbs: string = "Home > ";
+  baseBreadCrumbs:string = "Home > ";
 
   constructor(
     private route: ActivatedRoute,
     private wakanderService: WakanderService,
-    private actionService: SkillActionService) { }
+    private skillActionService: SkillActionService) { }
 
 
-    ngOnInit() {
-      this.code = this.route.snapshot.params.code;
-      console.log(this.code);
-      
-      this.wkCode = this.route.snapshot.params.wkCode;
-      console.log(this.wkCode);
-      
-      console.log(this.code.concat(this.wkCode));
-      this.wakanderService.getTribo(this.wkCode, this.code).subscribe(wakanda => {
-        this.tribo = wakanda
-        console.log(this.tribo);
-      });
+  ngOnInit() {
+    this.code = this.route.snapshot.params.code;
+    console.log(this.code);
+
+    this.wkCode = this.route.snapshot.params.wkCode;
+    console.log(this.wkCode);
+
+    console.log(this.code.concat(this.wkCode));
+    this.wakanderService.getTribo(this.wkCode, this.code).subscribe(wakanda => {
+      this.tribo = wakanda
+      console.log(this.tribo);
+      this.breadCrumbs = this.breadCrumbs.concat(this.tribo.nameTribe);
+      this.baseBreadCrumbs = this.breadCrumbs;
+    });
+    this.skillActionService.getBreadCrumbs().subscribe(res => {
+      const string = res.replace("/", " > ").replace("/", " > ").replace(this.wkCode, "");
+      this.breadCrumbs = this.baseBreadCrumbs;
+      this.breadCrumbs = this.breadCrumbs.concat(string);
+
+    });
   }
 
 }

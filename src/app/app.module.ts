@@ -12,6 +12,7 @@ import { WakanderModule } from './wakander/wakander.module';
 import { LoadingModule } from './compartilhado/loading/loading.module';
 import { CompartilhadoModule } from './compartilhado/compartilhado.module';
 import { TokenInterceptor } from './compartilhado/interceptors/token.interceptor';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { TokenInterceptor } from './compartilhado/interceptors/token.interceptor
     LoadingModule,
     CompartilhadoModule,
     NgIdleModule,
-    NgIdleKeepaliveModule
+    NgIdleKeepaliveModule,
+    NgbModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

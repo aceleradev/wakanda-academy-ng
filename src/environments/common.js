@@ -6,14 +6,14 @@ module.exports = {
         baseBath: baseBath,
         wakander: {
             create: {
-                path: baseBath + '/userCreation'
+                path: baseBath + '/user'
             },
             auth: {
                 login: {
                     path: baseBath + '/authenticate'
                 },
                 renew: {
-                    path: baseBath + "/authenticate/renew"
+                    path: baseBath + "/authenticate/refresh"
                 }
             },
             profile: {
@@ -26,6 +26,9 @@ module.exports = {
                 list: {
                     path: baseBath + '/wakander/{wakanderCode}/tribe'
                 }
+            },
+            goal: {
+                path: baseBath + "/wakander/{wakanderCode}/goal"
             }
         },
         action: {
@@ -36,5 +39,6 @@ module.exports = {
                 path: baseBath + "/wakanderAction"
             }
         }
+
     }
 }

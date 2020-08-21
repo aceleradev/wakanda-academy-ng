@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { SkillLessonService } from 'src/app/wakander/service/actions/skill-lesson.service';
-import { AlertService } from 'src/app/compartilhado/service/alert/alert.service';
 
 @Component({
   selector: 'app-home',

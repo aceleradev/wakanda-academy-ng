@@ -3,30 +3,16 @@
 
   <ol class="list-group">
     <li *ngFor="let cols of rows" class="row no-gutters mr-1 ml-1 p-4">
-         
- 
-      <div 
-          *ngFor="let tribe of cols ; index as i" 
-          class="col-6 m-0 p-4" 
-          style=
-            "
+
+
+      <div *ngFor="let tribe of cols ; index as i" class="col-6 m-0 p-4" style="
             text-align: center;
-            "
-        >          
-        
-        
-            <app-wakanda-tribe
-              [numero]="i"
-              [code]="tribe.tribeCode" 
-              [name]="tribe.name"
-              [descricao]="tribe.description"
-              [icon_url]="tribe.iconUrl"
-              [status]="tribe.status"
-              [wkCode]="wkCode"
-              > 
-            </app-wakanda-tribe>         
-        </div>
-        
+            ">
+        <app-wakanda-tribe [numero]="i" [code]="tribe.tribeCode" [name]="tribe.name" [descricao]="tribe.description"
+          [icon_url]="tribe.iconUrl" [status]="tribe.status" [wkCode]="wkCode">
+        </app-wakanda-tribe>
+      </div>
+
     </li>
   </ol>
 </div>

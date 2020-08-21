@@ -82,7 +82,7 @@ export class MetasContentComponent implements OnInit, OnDestroy {
     const rawValues = this.metasForm.value;
     const tribe = this.wktribes.find(x => x.name === rawValues.metaJornada);
     const tribeGoal: WakanderTribeGoalDTO = { name: tribe.name, tribeCode: tribe.tribeCode }
-    const wkGoal: WakanderGoal = { weeklyGoalStudyHours: rawValues.metaHoras, nextTribeGoal: tribeGoal };
+    const wkGoal: WakanderGoal = {wakanderCode: this.user.wakanderCode, weeklyGoalStudyHours: rawValues.metaHoras, nextTribeGoal: tribeGoal };
     this.metasService.putMetas(this.user.wakanderCode, wkGoal).subscribe(res => { console.log(res.statusText) });
     this.metasService.setMeta(wkGoal);
     this.activeModal.close();

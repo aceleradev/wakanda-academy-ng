@@ -9,14 +9,15 @@ import { LoadingModule } from './loading/loading.module';
 import { MetasComponent } from './modal/metas/metas.component';
 import { MetasContentComponent } from './modal/content/metas-content/metas-content.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbTypeaheadModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
-    NgbTypeaheadModule
+    NgbTypeaheadModule,
+    NgbDropdownModule
   ],
   declarations: [ValMessageComponent, HeaderComponent, MetasComponent, MetasContentComponent],
   exports:[ValMessageComponent, HeaderComponent, MetasComponent],

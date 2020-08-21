@@ -18,7 +18,7 @@ import { WakanderProfileComponent } from './wakander-profile/wakander-profile.co
     HomeComponent, 
     WakandaTribeslistComponent, 
     WakandaTribeComponent,
-    WakanderProfileComponent
+    WakanderProfileComponent,
   ],
   exports: [HomeComponent]
 })

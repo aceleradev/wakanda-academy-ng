@@ -26,12 +26,16 @@ export class WakanderTribeSkillLessonComponent implements OnInit {
   }
 
   callSkillLessonComp() {
-    const wk = this.snap.snapshot.params.wkCode;
-    const tribe = this.snap.snapshot.params.code;
+    const wk:string = this.snap.snapshot.params.wkCode;
+    const tribe:string = this.snap.snapshot.params.code;
     console.log("tribe? " + tribe);
     console.log("lesson? " + this.lesson.status);
+
+    const crumbs:string = wk.concat("/"+this.skill.skillName+"/"+this.lesson.lessonName);
+    console.log(crumbs);
     
     this.skillActionService.setSkill(this.skill);
+    this.skillActionService.buildBreadCrumbs(crumbs);
     this.skillLessonService.changeCurrentLesson(this.lesson);
     this.skillLessonService.buildURL(wk,tribe, this.skill.skillCode, this.lesson.lessonCode);
   }

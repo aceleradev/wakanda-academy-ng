@@ -29,7 +29,7 @@ export class WakandaTribeslistComponent implements OnInit {
     private modalService: NgbModal) { }
 
   ngOnInit() {
-    
+
     this.userService
       .getUser()
       .subscribe(user => {
@@ -38,15 +38,17 @@ export class WakandaTribeslistComponent implements OnInit {
           if (res.body != null) {
             this.metasService.setMeta(res.body);
             this.modalService.open(MetasContentComponent);
-          } 
+          }
         }, err => {
           if (err.status == 404) {
             console.log(err);
             this.modalService.open(MetasContentComponent);
           } else {
-            this.modalService.open(MetasContentComponent);
+            this.metasService.getterMetas().subscribe(metas => {
+              if (metas.weeklyGoalStudyHours === 0)
+                this.modalService.open(MetasContentComponent);
+            })
           }
-
         });
       });
 

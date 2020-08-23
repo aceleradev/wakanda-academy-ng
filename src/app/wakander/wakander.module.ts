@@ -8,12 +8,14 @@ import { WakanderTribeSkillDetailComponent } from './wakander-tribe-detail/wakan
 import { SkillLessonComponent } from './Skill-lessson/skill-lessson.component';
 import { WakanderTribeSkillLessonListComponent } from './wakander-tribe-detail/wakander-tribe-skill-list/wakander-tribe-skill-detail/wakander-tribe-skill-lesson-list/wakander-tribe-skill-lesson-list.component';
 import { WakanderTribeSkillLessonComponent } from './wakander-tribe-detail/wakander-tribe-skill-list/wakander-tribe-skill-detail/wakander-tribe-skill-lesson-list/wakander-tribe-skill-lesson/wakander-lesson.component';
+import { NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    CompartilhadoModule
+    CompartilhadoModule,
+    NgbProgressbarModule
   ],
   declarations: [
     WakanderTribeDetailComponent,

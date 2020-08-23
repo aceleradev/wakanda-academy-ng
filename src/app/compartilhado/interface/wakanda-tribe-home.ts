@@ -8,5 +8,6 @@ export interface WakandaTribeHome {
     description: string,
     status: status,
     iconUrl: string,
+    completedPercentageTribe:number,
     
 }

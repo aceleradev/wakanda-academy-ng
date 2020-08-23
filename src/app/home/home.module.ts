@@ -6,12 +6,14 @@ import { WakandaTribeslistComponent } from './wakanda-tribeslist/wakanda-tribesl
 import { WakandaTribeComponent } from './wakanda-tribe/wakanda-tribe.component';
 import { RouterModule } from '@angular/router';
 import { WakanderProfileComponent } from './wakander-profile/wakander-profile.component';
+import { NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
     CommonModule,
     CompartilhadoModule,
-    RouterModule
+    RouterModule,
+    NgbProgressbarModule
   ],
   declarations: 
   [

@@ -1,5 +1,4 @@
-
-<div class="row" >
+<div class="row">
     <div class="col-3">
 
         <div class="card text-white bg-secondary p-2">
@@ -8,24 +7,31 @@
             </div>
             <h5 class="card-header">Tribo atual:<br>{{tribo.nameTribe}}</h5>
             <div class="card-body">
-              <!-- <h5 class="card-title">{{tribo.nome}}</h5> -->
-              <p class="card-text">{{tribo.descriptionTribe}}</p> 
+                <!-- <h5 class="card-title">{{tribo.nome}}</h5> -->
+                <p class="card-text">{{tribo.descriptionTribe}}</p>
+                <p *ngIf="percent; else percentageNull"
+                    class="container">
+                    <ngb-progressbar type="dark" textType="light" [value]="percent"
+                        [showValue]="true">
+                    </ngb-progressbar>a
+                </p>
+                <ng-template #percentageNull>Progresso da tribo indisponivel</ng-template>
             </div>
         </div>
-        
+
         <div class="card bg-light">
             <h5 class="card-header">Habilidades</h5>
-            <div class="container mr-1 p-2">
-                <app-wakander-tribe-skill-list [code]="code" [skills] = "(tribo || {}).wakanderTribeSkills"></app-wakander-tribe-skill-list>
+            <div class="container mr-1 p-2" *ngIf="tribo">
+                <app-wakander-tribe-skill-list [code]="code" [skills]="(tribo || {}).wakanderTribeSkills">
+                </app-wakander-tribe-skill-list>
             </div>
         </div>
-        
+
     </div>
 
-    <div class="col-9" >
+    <div class="col-9">
         {{breadCrumbs}}
         <app-skill-lesson></app-skill-lesson>
 
     </div>
 </div>
-

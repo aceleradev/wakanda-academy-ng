@@ -1,41 +1,34 @@
-
-<a 
-  (click)="redirect()" 
-  class =
-  "
+<a (click)="redirect()" class="
   list-group-item 
   list-group-item-action 
   <!-- list-group-item-secondary -->
-  " 
-  [ngClass] = "color()"
-  data-toggle="modal" 
-  data-target="#exampleModal"
->
+  " [ngClass]="color()" data-toggle="modal" data-target="#exampleModal">
   <div class="row">
     <div class="col-6">
       <div class="row ">
-     
-        <img 
-        class="col-3 rounded-circle" 
-        [src]="icon_url" 
-        alt="logo da tribo"
-        style =
-              "
+
+        <img class="col-3 rounded-circle" [src]="tribe.iconUrl" alt="logo da tribo" style="
                 max-width: 100px;
                 max-height: 100px;
-              "
-            />
-            <div class="">
-              <h3>{{numero+1}} {{name}}</h3>
-              <p class="card-text">{{descricao}}</p>
-            </div>
-          </div>
+              " />
+        <div class="">
+          <h3>{{numero+1}} {{tribe.name}}</h3>
+          <p class="card-text">{{tribe.description}}</p>
+          <p *ngIf="tribe.completedPercentageTribe!=100 && tribe.completedPercentageTribe!=null; else percentageNull"
+            class="container">
+            <ngb-progressbar type="dark" textType="light" [value]="tribe.completedPercentageTribe" [showValue]="true">
+            </ngb-progressbar>
+          </p>
+          <ng-template #percentageNull>Progresso da tribo indisponivel</ng-template>
         </div>
-        <i *ngIf="this.status.toString() =='DONE'" class="fa fa-check fa-4x fa-fw fa-inverse"></i>     
       </div>
+    </div>
+    <i *ngIf="this.tribe.status.toString() =='DONE'" class="fa fa-check fa-4x fa-fw fa-inverse"></i>
+  </div>
 </a>
 
-<div  class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
       <strong>Ops!</strong> você ainda não tem acesso a esse curso!

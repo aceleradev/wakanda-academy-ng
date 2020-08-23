@@ -19,6 +19,7 @@ export class WakanderTribeDetailComponent implements OnInit {
   show: boolean;
   breadCrumbs: string = "Home > ";
   baseBreadCrumbs:string = "Home > ";
+  percent: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -36,6 +37,7 @@ export class WakanderTribeDetailComponent implements OnInit {
     console.log(this.code.concat(this.wkCode));
     this.wakanderService.getTribo(this.wkCode, this.code).subscribe(wakanda => {
       this.tribo = wakanda
+      this.percent = 0;
       console.log(this.tribo);
       this.breadCrumbs = this.breadCrumbs.concat(this.tribo.nameTribe);
       this.baseBreadCrumbs = this.breadCrumbs;

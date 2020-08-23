@@ -30,7 +30,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.callRenewToken();
+    if(this.tokenService.hasToken()) {
+      this.callRenewToken();
+    }
 
     this.idle.setIdle(30);
 

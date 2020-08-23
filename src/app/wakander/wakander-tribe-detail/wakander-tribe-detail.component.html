@@ -9,11 +9,11 @@
             <div class="card-body">
                 <!-- <h5 class="card-title">{{tribo.nome}}</h5> -->
                 <p class="card-text">{{tribo.descriptionTribe}}</p>
-                <p *ngIf="percent; else percentageNull"
+                <p *ngIf="percent!=null; else percentageNull"
                     class="container">
                     <ngb-progressbar type="dark" textType="light" [value]="percent"
                         [showValue]="true">
-                    </ngb-progressbar>a
+                    </ngb-progressbar>
                 </p>
                 <ng-template #percentageNull>Progresso da tribo indisponivel</ng-template>
             </div>

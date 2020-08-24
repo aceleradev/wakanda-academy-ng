@@ -1,5 +1,5 @@
 
-![Logo do projeto]([https://wakanda-home-ng.herokuapp.com/](https://wakanda-home-ng.herokuapp.com/images/logo.png))
+![Logo do projeto]([https://wakanda-home-ng.herokuapp.com/](https://wakanda-home-ng.herokuapp.com/assets/images/logo.png))
 
 # Wakanda Academy
 Plataforma de conteúdo para formação de novos engenheiros de software. Com ferramentas para acompanhamento da sua jornada até concluir sua formação como profissional.

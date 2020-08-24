@@ -6,12 +6,8 @@
         [routerLink]="['/home']">
     </span>
 
-    <div *ngIf="(user$ | async) as user">
-      <a class=" text-center ml-2">Olá, {{ user.name }}</a>
-    </div>
-
-    <div>
-      <div class="dropleft border rounded-circle">
+    <div class="d-flex flex-row-reverse ">
+      <div class="dropleft">
         <button class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
           aria-expanded="false">
           <i class="fa fa-user fa-2x" aria-hidden="true"></i>
@@ -28,6 +24,14 @@
           </a>
         </div>
       </div>
+
+      <div class="" *ngIf="performace!= null; else performaceErro">
+        <div class="text-center">{{performace.totalWakanderTribesCompleted}} &#8725; {{performace.totalWakanderTribesJourney}}<br>Tribos<br>exploradas
+        </div>
+      </div>
+      <ng-template class="p-2" #performaceErro>
+        Houve um erro ao carregar suas performaces
+      </ng-template>
     </div>
 
   </nav>

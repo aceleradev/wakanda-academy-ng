@@ -29,6 +29,9 @@ module.exports = {
             },
             goal: {
                 path: baseBath + "/wakander/{wakanderCode}/goal"
+            },
+            performace: {
+                path: baseBath + "/wakander/{wakanderCode}/performace/tribes-completed-vs-journey-tribes"
             }
         },
         action: {

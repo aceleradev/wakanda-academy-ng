@@ -32,6 +32,7 @@ export class HeaderComponent implements OnInit {
       this.userService.getStats(this.user.wakanderCode).subscribe(res => {
         console.log(res);
         this.performace = res.body;
+        this.userService.setPerformace(this.performace);
       });
     });
   }

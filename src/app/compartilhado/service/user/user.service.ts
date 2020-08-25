@@ -15,6 +15,7 @@ import { TribePerformace } from '../../interface/tribe-performace';
 export class UserService {
 
   private userSubject = new BehaviorSubject<User>(null);
+  private performace$ = new BehaviorSubject<TribePerformace>(null);
   constructor(
     private tokenService: TokenService,
     private router: Router,
@@ -47,6 +48,14 @@ export class UserService {
     return this.userSubject.asObservable();
   }
 
+  getPerformace() {
+    return this.performace$.asObservable();
+  }
+
+  setPerformace(pr: TribePerformace) {
+    this.performace$.next(pr);
+  }
+
   hasUser(user: User): boolean {
     if (user)
       return true;
@@ -55,7 +64,7 @@ export class UserService {
 
   getStats(wkCode: string) {
     return this.http.get<TribePerformace>(environament.wakanda.wakander.performace.path.replace("{wakanderCode}", wkCode),
-     { observe: "response" });
+      { observe: "response" });
   }
 
 }

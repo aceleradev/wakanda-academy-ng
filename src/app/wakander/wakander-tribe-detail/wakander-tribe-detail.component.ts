@@ -18,7 +18,7 @@ export class WakanderTribeDetailComponent implements OnInit {
   tribo: WakandaTribe;
   show: boolean;
   breadCrumbs: string = "Home > ";
-  baseBreadCrumbs:string = "Home > ";
+  baseBreadCrumbs: string = "Home > ";
   percent: number;
 
   constructor(

@@ -7,6 +7,9 @@ import { WakandaTribeComponent } from './wakanda-tribe/wakanda-tribe.component';
 import { RouterModule } from '@angular/router';
 import { WakanderProfileComponent } from './wakander-profile/wakander-profile.component';
 import { NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
+import { DesempenhoComponent } from './desempenho/desempenho.component';
+import { SemanalComponent } from './desempenho/semanal/semanal.component';
+import { GeralComponent } from './desempenho/geral/geral.component';
 
 @NgModule({
   imports: [
@@ -15,13 +18,16 @@ import { NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
     RouterModule,
     NgbProgressbarModule
   ],
-  declarations: 
-  [
-    HomeComponent, 
-    WakandaTribeslistComponent, 
-    WakandaTribeComponent,
-    WakanderProfileComponent,
-  ],
+  declarations:
+    [
+      HomeComponent,
+      WakandaTribeslistComponent,
+      WakandaTribeComponent,
+      WakanderProfileComponent,
+      DesempenhoComponent,
+      SemanalComponent,
+      GeralComponent,
+    ],
   exports: [HomeComponent]
 })
 export class HomeModule { }

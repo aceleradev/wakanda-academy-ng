@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable, Subscription } from 'rxjs';
@@ -28,14 +28,19 @@ export class MetasContentComponent implements OnInit, OnDestroy {
 
 
   constructor(
-    private formbuilder: FormBuilder,
     public activeModal: NgbActiveModal,
+    private formbuilder: FormBuilder,
+    private ngModalConfig: NgbModalConfig,
     private wakanderTribeListService: WakandaTribeslistService,
     private userService: UserService,
-    private metasService: MetasService
-  ) { }
+    protected metasService: MetasService
+  ) {
+    this.ngModalConfig.keyboard = false;
+    this.ngModalConfig.backdrop = 'static';
+  }
 
   ngOnInit() {
+
     this.subs.add(
       this.userService.getUser().subscribe((user) => {
         this.user = user;
@@ -52,6 +57,9 @@ export class MetasContentComponent implements OnInit, OnDestroy {
 
     this.subs.add(
       this.metasService.getterMetas().subscribe((metas) => {
+        if (metas) {
+          this.metas = { wakanderCode: "", nextTribeGoal: { name: "", tribeCode: "" }, weeklyGoalStudyHours: 0 };
+        }
         this.metas = metas
       })
     );
@@ -82,7 +90,7 @@ export class MetasContentComponent implements OnInit, OnDestroy {
     const rawValues = this.metasForm.value;
     const tribe = this.wktribes.find(x => x.name === rawValues.metaJornada);
     const tribeGoal: WakanderTribeGoalDTO = { name: tribe.name, tribeCode: tribe.tribeCode }
-    const wkGoal: WakanderGoal = {wakanderCode: this.user.wakanderCode, weeklyGoalStudyHours: rawValues.metaHoras, nextTribeGoal: tribeGoal };
+    const wkGoal: WakanderGoal = { wakanderCode: this.user.wakanderCode, weeklyGoalStudyHours: rawValues.metaHoras, nextTribeGoal: tribeGoal };
     this.metasService.putMetas(this.user.wakanderCode, wkGoal).subscribe(res => { console.log(res.statusText) });
     this.metasService.setMeta(wkGoal);
     this.activeModal.close();

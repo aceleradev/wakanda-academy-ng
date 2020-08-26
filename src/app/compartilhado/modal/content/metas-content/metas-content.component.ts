@@ -33,7 +33,7 @@ export class MetasContentComponent implements OnInit, OnDestroy {
     private ngModalConfig: NgbModalConfig,
     private wakanderTribeListService: WakandaTribeslistService,
     private userService: UserService,
-    protected metasService: MetasService
+    public metasService: MetasService
   ) {
     this.ngModalConfig.keyboard = false;
     this.ngModalConfig.backdrop = 'static';

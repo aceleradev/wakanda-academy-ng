@@ -8,6 +8,7 @@ import { TokenService } from '../token/token.service';
 import { User } from '../../interface/user';
 import * as environament from '../../../../environments/environment.js'
 import { TribePerformace } from '../../interface/tribe-performace';
+import { MetasService } from '../metas/metas.service';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,7 @@ export class UserService {
     private tokenService: TokenService,
     private router: Router,
     private http: HttpClient,
+    private metasService: MetasService
   ) { this.tokenService.hasToken() && this.decode(); }
 
   private decode() {
@@ -36,6 +38,7 @@ export class UserService {
   logout() {
     this.tokenService.removeToken();
     this.userSubject.next(null);
+    this.metasService.cleanMetas();
     this.router.navigateByUrl("login");
   }
 

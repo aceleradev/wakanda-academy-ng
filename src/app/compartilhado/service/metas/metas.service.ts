@@ -6,13 +6,13 @@ import * as environment from "../../../../environments/environment.js";
 import { BehaviorSubject } from 'rxjs';
 
 const API_URL: string = environment.wakanda.wakander.goal.path;
-const wkEmptyGoal: WakanderGoal = { wakanderCode: "", nextTribeGoal: { name: "", tribeCode: "" }, weeklyGoalStudyHours: 0 }
+const emptyWkGoal: WakanderGoal = { wakanderCode: "", nextTribeGoal: { name: "", tribeCode: "" }, weeklyGoalStudyHours: 0 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class MetasService {
-  private metas$: BehaviorSubject<WakanderGoal> = new BehaviorSubject<WakanderGoal>(wkEmptyGoal);
+  private metas$: BehaviorSubject<WakanderGoal> = new BehaviorSubject<WakanderGoal>(emptyWkGoal);
 
   constructor(private http: HttpClient) { }
 
@@ -29,6 +29,10 @@ export class MetasService {
 
   setMeta(meta: WakanderGoal) {
     this.metas$.next(meta);
+  }
+
+  cleanMetas() {
+    this.metas$.next(emptyWkGoal);
   }
 
   getterMetas() {

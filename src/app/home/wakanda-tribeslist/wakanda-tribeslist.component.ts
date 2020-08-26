@@ -62,8 +62,6 @@ export class WakandaTribeslistComponent implements OnInit {
         this.rows = this.groupColumns(tribes);
       });
 
-
-
   }
 
   groupNumer(numeral) {

@@ -37,16 +37,16 @@ export class WakandaTribeslistComponent implements OnInit {
         this.metasService.getMetas(user.wakanderCode).subscribe(res => {
           if (res.body != null) {
             this.metasService.setMeta(res.body);
-            this.modalService.open(MetasContentComponent);
+            this.modalService.open(MetasContentComponent)
           }
         }, err => {
           if (err.status == 404) {
             console.log(err);
-            this.modalService.open(MetasContentComponent);
+            this.modalService.open(MetasContentComponent)
           } else {
             this.metasService.getterMetas().subscribe(metas => {
               if (metas.weeklyGoalStudyHours === 0)
-                this.modalService.open(MetasContentComponent);
+                this.modalService.open(MetasContentComponent)
             })
           }
         });

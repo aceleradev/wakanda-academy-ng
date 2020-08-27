@@ -5,12 +5,14 @@ import { Keepalive } from '../../node_modules/@ng-idle/keepalive';
 import { User } from './compartilhado/interface/user';
 import { TokenService } from './compartilhado/service/token/token.service';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { MetasService } from './compartilhado/service/metas/metas.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [Keepalive]
+  providers: [Keepalive,]
 })
 export class AppComponent implements OnInit {
   title = 'app';
@@ -18,13 +20,14 @@ export class AppComponent implements OnInit {
   idleState = 'Not started.';
   timedOut: boolean = false;
   lastPing?: Date = null;
-  private idleTime: number = 900;
+  private idleTime: number = 10;
 
   constructor(
     private userService: UserService,
     private idle: Idle,
     private keepAlive: Keepalive,
-    private tokenService: TokenService) {
+    private tokenService: TokenService,
+    private MetasService: MetasService) {
 
   }
 

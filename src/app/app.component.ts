@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   idleState = 'Not started.';
   timedOut: boolean = false;
   lastPing?: Date = null;
-  private idleTime: number = 10;
+  private idleTime: number = 900;
 
   constructor(
     private userService: UserService,

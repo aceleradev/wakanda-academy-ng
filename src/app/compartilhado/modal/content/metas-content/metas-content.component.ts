@@ -44,6 +44,8 @@ export class MetasContentComponent implements OnInit, OnDestroy {
     this.subs.add(
       this.userService.getUser().subscribe((user) => {
         this.user = user;
+        if (this.user == null)
+          this.activeModal.close();
         this.subs.add(
           this.wakanderTribeListService.getTribos(this.user.wakanderCode).subscribe(wktribes => {
             this.wktribes = wktribes

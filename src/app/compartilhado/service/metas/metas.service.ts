@@ -4,6 +4,8 @@ import { WakanderGoal } from '../../interface/wakander-goal';
 
 import * as environment from "../../../../environments/environment.js";
 import { BehaviorSubject } from 'rxjs';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { MetasContentComponent } from '../../modal/content/metas-content/metas-content.component';
 
 const API_URL: string = environment.wakanda.wakander.goal.path;
 const emptyWkGoal: WakanderGoal = { wakanderCode: "", nextTribeGoal: { name: "", tribeCode: "" }, weeklyGoalStudyHours: 0 }
@@ -14,13 +16,13 @@ const emptyWkGoal: WakanderGoal = { wakanderCode: "", nextTribeGoal: { name: "",
 export class MetasService {
   private metas$: BehaviorSubject<WakanderGoal> = new BehaviorSubject<WakanderGoal>(emptyWkGoal);
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    private modalService: NgbModal) { }
 
   putMetas(wkCode: string, metas: WakanderGoal) {
     const url = this.wkCodeUrl(wkCode);
     return this.http.put(url, { metas }, { observe: "response" })
   }
-
 
   getMetas(wkCode: string) {
     const url = this.wkCodeUrl(wkCode);
@@ -42,4 +44,5 @@ export class MetasService {
   private wkCodeUrl(wkCode: string) {
     return API_URL.toString().replace("{wakanderCode}", wkCode);
   }
+
 }

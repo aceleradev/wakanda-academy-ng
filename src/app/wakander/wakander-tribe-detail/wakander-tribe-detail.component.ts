@@ -37,7 +37,7 @@ export class WakanderTribeDetailComponent implements OnInit {
     console.log(this.code.concat(this.wkCode));
     this.wakanderService.getTribo(this.wkCode, this.code).subscribe(wakanda => {
       this.tribo = wakanda
-      this.percent = this.tribo.completedPercentageTribe;
+      this.percent = this.tribo.completedPercentageTribe * 100;
       console.log(this.tribo);
       this.breadCrumbs = this.breadCrumbs.concat(this.tribo.nameTribe);
       this.baseBreadCrumbs = this.breadCrumbs;

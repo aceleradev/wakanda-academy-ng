@@ -57,6 +57,7 @@ export class WakandaTribeslistComponent implements OnInit {
     this.wakandaTribesListService
       .getTribos(this.user.wakanderCode)
       .subscribe(tribes => {
+        console.log(tribes);
         this.tribes = tribes
 
         this.rows = this.groupColumns(tribes);

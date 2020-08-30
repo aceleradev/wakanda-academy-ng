@@ -8,6 +8,7 @@ import { TokenService } from '../token/token.service';
 import { User } from '../../interface/user';
 import * as environament from '../../../../environments/environment.js'
 import { TribePerformace } from '../../interface/tribe-performace';
+import { MetasService } from '../metas/metas.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,10 +16,12 @@ import { TribePerformace } from '../../interface/tribe-performace';
 export class UserService {
 
   private userSubject = new BehaviorSubject<User>(null);
+  private performace$ = new BehaviorSubject<TribePerformace>(null);
   constructor(
     private tokenService: TokenService,
     private router: Router,
     private http: HttpClient,
+    private metasService: MetasService
   ) { this.tokenService.hasToken() && this.decode(); }
 
   private decode() {
@@ -35,6 +38,7 @@ export class UserService {
   logout() {
     this.tokenService.removeToken();
     this.userSubject.next(null);
+    this.metasService.cleanMetas();
     this.router.navigateByUrl("login");
   }
 
@@ -47,6 +51,14 @@ export class UserService {
     return this.userSubject.asObservable();
   }
 
+  getPerformace() {
+    return this.performace$.asObservable();
+  }
+
+  setPerformace(pr: TribePerformace) {
+    this.performace$.next(pr);
+  }
+
   hasUser(user: User): boolean {
     if (user)
       return true;
@@ -55,7 +67,7 @@ export class UserService {
 
   getStats(wkCode: string) {
     return this.http.get<TribePerformace>(environament.wakanda.wakander.performace.path.replace("{wakanderCode}", wkCode),
-     { observe: "response" });
+      { observe: "response" });
   }
 
 }

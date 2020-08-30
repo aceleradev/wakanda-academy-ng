@@ -14,9 +14,10 @@
         <div class="">
           <h3>{{numero+1}} {{tribe.name}}</h3>
           <p class="card-text">{{tribe.description}}</p>
-          <p *ngIf="tribe.completedPercentageTribe!=100 && tribe.completedPercentageTribe!=null; else percentageNull"
+          <p *ngIf="tribe.completedPercentageTribe!=1 && tribe.completedPercentageTribe!=null; else percentageNull"
             class="container">
-            <ngb-progressbar type="dark" textType="light" [value]="tribe.completedPercentageTribe" [showValue]="true">
+            <ngb-progressbar type="dark" textType="light" [value]="tribe.completedPercentageTribe*100"
+              [showValue]="true">
             </ngb-progressbar>
           </p>
           <ng-template #percentageNull>Progresso da tribo indisponivel</ng-template>

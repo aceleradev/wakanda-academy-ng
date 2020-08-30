@@ -29,9 +29,11 @@ export class HeaderComponent implements OnInit {
     this.user$ = this.userService.getUser();
     this.user$.subscribe(user => {
       this.user = user
+      if(this,user!=null)
       this.userService.getStats(this.user.wakanderCode).subscribe(res => {
         console.log(res);
         this.performace = res.body;
+        this.userService.setPerformace(this.performace);
       });
     });
   }

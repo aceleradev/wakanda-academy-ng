@@ -34,12 +34,12 @@ O projeto será baixado e as dependências serão instaladas.
 
 Para buildar projeto basta abrir o terminal do diretório do projeto e executar o seguinte comando:
 ```shell
-npm build --configuration=dev
+ng build --configuration=dev
 ```
 O comando irá compilar o projeto e gerar um diretório de distribuição(dist/) com os arquivos de script(.js), html e demais resources(imagens, arquivos, etc...).
 A flag `--configuration` representa a environment que o projeto será buildado. Caso queira buildar na environment default não é necessário adicionar a flag. Ex.:
 ```shell
-npm build
+ng build
 ```
 
 ### Deploying
@@ -72,7 +72,7 @@ npm run start
 ```
 Caso queira alguma configuração personalizada, editar o arquivo `src/environments/environment.myenv.js` e buildar o projeto novamente com a sua nova configuração. Ex.:
 ```shell
-npm build --configuration=myenv
+ng build --configuration=myenv
 npm run start
 ```
 ## Links

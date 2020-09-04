@@ -8,6 +8,7 @@ import { MetasService } from 'src/app/compartilhado/service/metas/metas.service'
 import { MetasComponent } from 'src/app/compartilhado/modal/metas/metas.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { MetasContentComponent } from 'src/app/compartilhado/modal/content/metas-content/metas-content.component';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-wakanda-tribeslist',
@@ -35,11 +36,13 @@ export class WakandaTribeslistComponent implements OnInit {
       .subscribe(user => {
         this.user = user
         this.metasService.getMetas(user.wakanderCode).subscribe(res => {
+          console.log("A API retornou a meta: " + res);
           if (res.body != null) {
             this.metasService.setMeta(res.body);
             this.modalService.open(MetasContentComponent)
           }
-        }, err => {
+        }, (err:HttpErrorResponse) => {
+          console.log("erro get metas: " + err.message)
           if (err.status == 404) {
             console.log(err);
             this.modalService.open(MetasContentComponent)

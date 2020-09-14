@@ -8,7 +8,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { MetasContentComponent } from '../../modal/content/metas-content/metas-content.component';
 
 const API_URL: string = environment.wakanda.wakander.goal.path;
-const emptyWkGoal: WakanderGoal = { wakanderCode: "", nextTribeGoal: { name: "", tribeCode: "" }, weeklyGoalStudyHours: 0 }
+const emptyWkGoal: WakanderGoal = { nextTribeGoal: { name: "", tribeCode: "" }, weeklyGoalStudyHours: 0 }
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,15 @@ export class MetasService {
 
   putMetas(wkCode: string, metas: WakanderGoal) {
     const url = this.wkCodeUrl(wkCode);
-    return this.http.put(url, { metas }, { observe: "response" })
+    console.log(metas);
+    return this.http.put(url, {
+      'weeklyGoalStudyHours': metas.weeklyGoalStudyHours,
+      'nextTribeGoal': {
+        'tribeCode': metas.nextTribeGoal.tribeCode,
+        'name': metas.nextTribeGoal.name
+      }
+    },
+      { observe: "response" });
   }
 
   getMetas(wkCode: string) {

@@ -8,7 +8,7 @@ import { WakandaTribeslistService } from 'src/app/home/services/wakanda-tribesli
 import { UserService } from 'src/app/compartilhado/service/user/user.service';
 import { User } from 'src/app/compartilhado/interface/user';
 import { WakandaTribeHome } from 'src/app/compartilhado/interface/wakanda-tribe-home';
-import { WakanderTribeGoalDTO } from 'src/app/compartilhado/interface/wakander-tribe-dto';
+import { WakanderTribeGoalDTO } from 'src/app/compartilhado/interface/wakander-tribe-goal-dto';
 import { WakanderGoal } from 'src/app/compartilhado/interface/wakander-goal';
 import { MetasService } from 'src/app/compartilhado/service/metas/metas.service';
 
@@ -97,10 +97,7 @@ export class MetasContentComponent implements OnInit, OnDestroy {
       console.log(res.statusText)
       if (res.status == 200)
         this.metasService.setMeta(wkGoal);
-      else {
-        alert("houve um erro au definir suas metas");
-      }
-    });
+    }, err => alert("houve um erro au definir suas metas"));
     this.activeModal.close();
   }
 

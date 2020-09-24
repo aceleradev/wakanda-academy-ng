@@ -8,7 +8,7 @@ import { WakandaTribeslistService } from 'src/app/home/services/wakanda-tribesli
 import { UserService } from 'src/app/compartilhado/service/user/user.service';
 import { User } from 'src/app/compartilhado/interface/user';
 import { WakandaTribeHome } from 'src/app/compartilhado/interface/wakanda-tribe-home';
-import { WakanderTribeGoalDTO } from 'src/app/compartilhado/interface/wakander-tribe-dto';
+import { WakanderTribeGoalDTO } from 'src/app/compartilhado/interface/wakander-tribe-goal-dto';
 import { WakanderGoal } from 'src/app/compartilhado/interface/wakander-goal';
 import { MetasService } from 'src/app/compartilhado/service/metas/metas.service';
 
@@ -60,7 +60,7 @@ export class MetasContentComponent implements OnInit, OnDestroy {
     this.subs.add(
       this.metasService.getterMetas().subscribe((metas) => {
         if (metas) {
-          this.metas = { wakanderCode: "", nextTribeGoal: { name: "", tribeCode: "" }, weeklyGoalStudyHours: 0 };
+          this.metas = { nextTribeGoal: { name: "", tribeCode: "" }, weeklyGoalStudyHours: 0 };
         }
         this.metas = metas
       })
@@ -92,9 +92,12 @@ export class MetasContentComponent implements OnInit, OnDestroy {
     const rawValues = this.metasForm.value;
     const tribe = this.wktribes.find(x => x.name === rawValues.metaJornada);
     const tribeGoal: WakanderTribeGoalDTO = { name: tribe.name, tribeCode: tribe.tribeCode }
-    const wkGoal: WakanderGoal = { wakanderCode: this.user.wakanderCode, weeklyGoalStudyHours: rawValues.metaHoras, nextTribeGoal: tribeGoal };
-    this.metasService.putMetas(this.user.wakanderCode, wkGoal).subscribe(res => { console.log(res.statusText) });
-    this.metasService.setMeta(wkGoal);
+    const wkGoal: WakanderGoal = { weeklyGoalStudyHours: rawValues.metaHoras, nextTribeGoal: tribeGoal };
+    this.metasService.putMetas(this.user.wakanderCode, wkGoal).subscribe(res => {
+      console.log(res.statusText)
+      if (res.status == 200)
+        this.metasService.setMeta(wkGoal);
+    }, err => alert("houve um erro au definir suas metas"));
     this.activeModal.close();
   }
 

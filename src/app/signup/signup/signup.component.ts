@@ -66,7 +66,7 @@ export class SignupComponent implements OnInit {
       .subscribe(
         (res)=>{
           if(res){
-            this.router.navigate(["Login"]);
+            this.router.navigate(["login"]);
             // this.exibeSeExisteEmail = false;
           }else{
             this.exibeSeExisteEmail = true;

@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: DecoturaICG;
+    src: url('../src/assets/fonts/deconturaICG/decoturaicg-webfont.woff2') format('woff2'),
+        url('../src/assets/fonts/deconturaICG/decoturaicg-webfont.woff') format('woff'),
+        url("../src/assets/fonts/deconturaICG/DecoturaICG.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: ErasDemiITC;
+    src: url('../src/assets/fonts/erasDemi/eras-demi-itc.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: ErasBold;
+    src: url('../src/assets/fonts/erasBold/eras-bold-itc.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: ErasMedium;
+    src: url('../src/assets/fonts/erasMedium/eras-medium-itc.ttf') format("truetype");
+}

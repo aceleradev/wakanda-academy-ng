@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { WakandaTribe } from '../../compartilhado/interface/wakanda-tribe';
+import { WakandaTribe } from '../../../compartilhado/interface/wakanda-tribe';
 import { Router } from '@angular/router';
 import { status } from 'src/app/compartilhado/interface/status.enum';
 import { StatusService } from 'src/app/compartilhado/service/status/status.service';

@@ -79,9 +79,10 @@ export class WakandaTribeslistComponent implements OnInit {
 
   groupColumns(tribes: WakandaTribeHome[]) {
     const newRows = [];
+    const tribesPerRow = 2;
 
-    for (let index = 0; index < tribes.length; index += 2) {
-      newRows.push(tribes.slice(index, index + 2));
+    for (let index = 0; index < tribes.length; index += tribesPerRow) {
+      newRows.push(tribes.slice(index, index + tribesPerRow));
     }
     console.log(newRows);
     return newRows;

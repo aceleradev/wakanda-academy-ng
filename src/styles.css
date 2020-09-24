@@ -20,3 +20,8 @@
     font-family: ErasMedium;
     src: url('../src/assets/fonts/erasMedium/eras-medium-itc.ttf') format("truetype");
 }
+
+@font-face {
+    font-family: LilyUPC;
+    src: url('../src/assets/fonts/lilyUPC/lilyUPC.ttf') format("truetype");
+}

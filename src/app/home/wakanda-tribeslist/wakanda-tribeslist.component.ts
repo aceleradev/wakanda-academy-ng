@@ -39,7 +39,6 @@ export class WakandaTribeslistComponent implements OnInit {
           console.log("A API retornou a meta: " + res);
           if (res.body != null) {
             this.metasService.setMeta(res.body);
-            this.modalService.open(MetasContentComponent)
           }
         }, (err:HttpErrorResponse) => {
           console.log("erro get metas: " + err.message)

@@ -1,5 +1,5 @@
-const userHost = 'http://wakanda-academy-be.herokuapp.com';
-const landingpageUrl = 'http://wakanda-landingpage-be.herokuapp.com';
+const userHost = 'http://localhost:8080';
+const landingpageUrl = 'http://localhost:3000';
 const common = require('./common');
 
 const env = {

@@ -57,6 +57,14 @@
                   "with": "src/environments/environment.dev.js"
                 }
               ]
+            },
+            "local": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.js",
+                  "with": "src/environments/environment.local.js"
+                }
+              ]
             }
           }
         },
@@ -70,7 +78,12 @@
               "browserTarget": "home-page:build:production"
             },
             "dev": {
-              "browserTarget": "home-page:build:dev"
+              "browserTarget": "home-page:build:dev",
+              "proxyConfig": "./proxy/dev-proxy.conf.js"
+            },
+            "local":{
+              "browserTarget": "home-page:build:local",
+              "proxyConfig": "./proxy/local-proxy.conf.js"
             }
           }
         },

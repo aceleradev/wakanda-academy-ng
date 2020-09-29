@@ -1,0 +1,12 @@
+
+@font-face {
+    font-family: ErasDemiITC;
+    src: url('/src/assets/fonts/erasDemi/eras-demi-itc.ttf') format("truetype");
+}
+
+
+.cabecalho {
+
+    background: #001226;
+}
+

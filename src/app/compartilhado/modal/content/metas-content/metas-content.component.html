@@ -1,29 +1,29 @@
 <div class="modal-header">
-  <h4 class="modal-title">Defina suas metas!</h4>
-  <button *ngIf="(metasService.getterMetas()|async).weeklyGoalStudyHours != 0" type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-    <span aria-hidden="true">&times;</span>
-  </button>
+    <h4>Defina suas metas!</h4>
+    <button *ngIf="(metasService.getterMetas()|async).weeklyGoalStudyHours != 0" type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
 </div>
-<div class="modal-body">
-  <form class="p-4" [formGroup]="metasForm">
+  <div class="modal-body">
+    <form class="p-4" [formGroup]="metasForm">
 
-    <div class="form-group">
-      <label for="InputHoras">Informe sua meta semanal de horas de estudo</label>
-      <input #InputHoras formControlName="metaHoras" type="number" class="form-control" id="InputHoras"
-        placeholder="Digite sua meta" min="0" max="168">
-    </div>
+      <div class="form-group">
+        <label for="InputHoras">Informe sua meta semanal de horas de estudo</label>
+        <input #InputHoras formControlName="metaHoras" type="number" class="form-control" id="InputHoras"
+          placeholder="Digite sua meta" min="0" max="168">
+      </div>
 
-    <div class="form-group">
-      <label for="InputJornada">O próximo objetivo da sua jornada será: </label>
-      <input formControlName="metaJornada" type="search" class="form-control" id="InputJornada"
-        placeholder="Digite sua meta" [ngbTypeahead]="search">
-    </div>
+      <div class="form-group">
+        <label for="InputJornada">O próximo objetivo da sua jornada será: </label>
+        <input formControlName="metaJornada" type="search" class="form-control" id="InputJornada"
+          placeholder="Digite sua meta" [ngbTypeahead]="search">
+      </div>
 
-  </form>
-</div>
-<div class="modal-footer">
-  <!-- <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button> -->
-  <button [disabled]="metasForm.invalid" type="submit" class="btn btn-primary mr-4" (click)="submit()">
-    Confirmar
-  </button>
-</div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <!-- <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button> -->
+    <button [disabled]="metasForm.invalid" type="submit" class="btn btn-primary mr-4" (click)="submit()">
+      OK
+    </button>
+  </div>

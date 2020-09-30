@@ -1,9 +1,11 @@
 <header class="navbar-static-top">
 
-  <nav class="navbar navbar-static-top navbar-light cabecalho">
+  <nav class="navbar navbar-static-top navbar-light cabecalho ">
     <span class="navbar-brand mb-0 h1">
     <img src="../../../assets/images/icons/Logo.svg" width="150" height="50"
     [routerLink]="['/home']">
+    
+
     </span>
 
     <div class="d-flex flex-row-reverse ">
@@ -27,7 +29,7 @@
       
       <div class="" *ngIf="performace!= null; else performaceErro">
         <div class="text-center">{{performace.totalWakanderTribesCompleted}} &#8725;
-          {{performace.totalWakanderTribesJourney}}<br>Tribos<br>exploradas
+          {{performace.totalWakanderTribesJourney}}<br class="cabecalho"> TRIBOS<br class="cabecalho">EXPLORADAS
         </div>
       </div>
       <ng-template class="p-2" #performaceErro>
@@ -35,9 +37,7 @@
       </ng-template>
     </div>
 
+
+
   </nav>
 </header>
-
-<div>
-  <p class="teste"> Texto de teste da nova fonte adicionada</p>
-</div>

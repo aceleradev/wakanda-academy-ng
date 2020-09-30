@@ -1,12 +1,15 @@
 
-@font-face {
-    font-family: ErasDemiITC;
-    src: url('/src/assets/fonts/erasDemi/eras-demi-itc.ttf') format("truetype");
-}
-
 
 .cabecalho {
-    
+
+    font-family: ErasDemiITC;
+    src: url('/src/assets/fonts/erasDemi/eras-demi-itc.ttf') format("truetype");
+
+    font-size: 15px;
+    color: white;
+    vertical-align: right ;
+    line-height: normal;
     background: #001226;
+    
 }
 

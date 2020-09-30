@@ -1,13 +1,53 @@
-.modal-header {
-    background: black;
-    background-size: cover;
-    color: white;
-    display: flex;
-    text-align: center;
+@font-face{
+    font-family: erasDemi;
+    src: url('/src/assets/fonts/erasDemi/eras-demi-itc.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
 }
 
+.modal-header {
+    padding-left: 120px;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    font-family: erasDemi;
+    border: none;
+}
 
+.close {
+    color: white;
+}
 
+.modal-body{
 
+    border: none;
+}
 
+.backgroundteste{
+    background: black;
+}
+
+.form-group{
+    color: white;
+    font-family: erasDemi;
+    font-size: 0.8rem;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+
+.modal-footer{
+    padding-right: 200px;
+    font-family: erasDemi;
+    border: none;
+}
 

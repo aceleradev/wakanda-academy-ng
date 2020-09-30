@@ -1,0 +1,26 @@
+.back {
+    height: 100vh;
+    background: url('../../../assets/images/background/Background_2.png');
+}
+
+.caixa {
+    width: 400px;
+    height: 400px;
+    border: solid 5px #00FFFF;
+    padding: 2em;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+}
+
+.contair {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    width: 200px;
+}
+

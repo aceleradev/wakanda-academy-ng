@@ -1,6 +1,7 @@
 .cor-de-fundo{
     background: black;
-
+   
+   
 }
 
 .profile{
@@ -8,4 +9,6 @@
     font-size: 100px;
     border-width: 2px solid #00FFFF;
     border-radius: 20px;
+   
+   
 }

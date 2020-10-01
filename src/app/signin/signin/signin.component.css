@@ -1,16 +1,10 @@
 .back {
     height: 100vh;
-    background: url('../../../assets/images/background/Background_2.png');
-}
-
-.caixa {
-    width: 400px;
-    height: 400px;
-    border: solid 5px #00FFFF;
-    padding: 2em;
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
+    background: url('../../../assets/images/background/Background_3.png');
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    background-size: contain;
+    -o-background-size: contain;
 }
 
 .contair {
@@ -19,8 +13,18 @@
     display: flex;
     justify-content: center;
 }
+.caixa {
+    width: 400px;
+    height: 400px;
+    border: solid 3px #00FFFF;
+    padding: 2em;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+ }
 
 .logo {
     width: 200px;
+    display: block;
+    margin: auto;
 }
 

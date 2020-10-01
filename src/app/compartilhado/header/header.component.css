@@ -1,9 +1,7 @@
 
-
 .cabecalho {
 
     font-family: ErasDemiITC;
-    src: url('/src/assets/fonts/erasDemi/eras-demi-itc.ttf') format("truetype");
 
     font-size: 15px;
     color: white;
@@ -13,3 +11,31 @@
     
 }
 
+.profile{
+
+    background-color: black; 
+}
+
+.rounded-circle {
+    position: relative;
+    left: 8px;
+    width: 70px;
+    height: 70px;
+}
+
+.profile-picture {
+
+  color: white;  
+}
+
+.border-profile {
+    position: relative;
+    bottom: 3px;
+    right: 10px;
+    background-color: #001226;
+    border: 2px solid white;
+    border-radius: 80%;
+    height: 70px;
+    width: 70px;
+
+}

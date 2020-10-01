@@ -1,20 +1,20 @@
 <body class="back">
-  <a [href]="landingPage" type="button" class="btn btn-danger m-4 text-white">	&#5176; Voltar</a>
+  <!-- <a [href]="landingPage" type="button" class="btn btn-danger m-4 text-white">	&#5176; Voltar</a> -->
 
   <div class="contair">
       <form class="caixa" [formGroup]="loginForm" (submit)="login()">
         <img class="logo" src="../../../assets/images/icons/Logo.svg" alt="logowakanda">
       <div class="form-group">
-        <label for="InputEmail">Email</label>
+        <label for="InputEmail"></label>
         <input 
           #InputEmail
           formControlName="email" 
           type="email" 
           class="form-control" 
           id="InputEmail"
-          placeholder="Digite seu Email">
+          placeholder="Email">
 
-            <app-val-message 
+            <!-- <app-val-message 
               *ngIf="loginForm.get('email').errors?.required"
               text="Por favor, digite seu email.">
             </app-val-message>
@@ -22,39 +22,39 @@
             <app-val-message 
               *ngIf="loginForm.get('email').errors?.emailPadrao"
               text="Email invalido.">
-            </app-val-message>
+            </app-val-message> -->
       </div>
 
       <div class="form-group">
-        <label for="InputSenha">Senha</label>
+        <label for="InputSenha"></label>
         <input 
           formControlName="senha" 
           type="password" 
           class="form-control" 
           id="InputSenha"
-          placeholder="Digite sua senha">
+          placeholder="Senha">
             <app-val-message 
               *ngIf="loginForm.get('senha').errors?.required"
               text="Por favor, digite sua senha.">
             </app-val-message>
       </div>
 
-      <small 
-        class="d-block mb-2">Não esta cadastrado? 
         <button 
+          [disabled]="loginForm.invalid" 
+          type="submit" 
+          class="btn-entrar">
+            Entrar
+        </button>
+
+      <small 
+        class="d-block mb-2 text-white text-center pt-3">Não possui uma conta? 
+        <div 
           [routerLink]="['../signUp']"
           type="button" 
-          class="btn btn-success">
-            Cadastre-se aqui!
-        </button>
+          class="btn-clique-aqui">
+            Clique aqui!
+      </div>
       </small>
-
-      <button 
-        [disabled]="loginForm.invalid" 
-        type="submit" 
-        class="btn btn-primary mr-4">
-          Entrar
-      </button>
       
     </form>
   </div>

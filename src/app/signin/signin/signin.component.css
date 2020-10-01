@@ -8,10 +8,14 @@
 }
 
 .contair {
-    width: 100%;
+    width: 100vw;
+    height: 100vh; 
+    height: 100%;
     margin: 0;
     display: flex;
     justify-content: center;
+    flex-direction: row;
+    align-items: center
 }
 .caixa {
     width: 400px;
@@ -26,5 +30,25 @@
     width: 200px;
     display: block;
     margin: auto;
+    padding: 1.2em 0;
 }
 
+.btn-entrar{
+    border: solid 4px #00FFFF;
+    border-top: solid 1px #00FFFF;
+    border-bottom: solid 1px #00FFFF;
+    border-radius: 7px;
+    background-color: #000631;
+    color: white;
+    padding: 0.1em 3em;
+    display: block;
+    margin: auto;
+}
+
+.btn-clique-aqui{
+    color: white;
+    display: inline-block; 
+    margin: auto;
+    text-decoration: underline;
+    
+}

@@ -10,7 +10,7 @@
           #InputEmail
           formControlName="email" 
           type="email" 
-          class="form-control" 
+          class="campo-imput fonte" 
           id="InputEmail"
           placeholder="Email">
 
@@ -30,13 +30,17 @@
         <input 
           formControlName="senha" 
           type="password" 
-          class="form-control" 
+          class="campo-imput fonte" 
           id="InputSenha"
           placeholder="Senha">
-            <app-val-message 
-              *ngIf="loginForm.get('senha').errors?.required"
-              text="Por favor, digite sua senha.">
-            </app-val-message>
+            
+            <div 
+            [routerLink]="['../signUp']"
+            type="button" 
+            class="fonte mb-2 text-white font-esqueceu-senha">
+            Esqueceu a senha?
+            </div>
+
       </div>
 
         <button 
@@ -47,7 +51,7 @@
         </button>
 
       <small 
-        class="d-block mb-2 text-white text-center pt-3">Não possui uma conta? 
+        class="d-block mb-2 text-white text-center pt-3 fonte">Não possui uma conta? 
         <div 
           [routerLink]="['../signUp']"
           type="button" 

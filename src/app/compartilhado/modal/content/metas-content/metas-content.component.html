@@ -1,31 +1,34 @@
 <body class="backgroundteste">
-  <div class="modal-header">
-      <h4>DEFINA SUAS METAS</h4>
-      <button *ngIf="(metasService.getterMetas()|async).weeklyGoalStudyHours != 0" type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-        <span aria-hidden="true">&times;</span>
-      </button>
-  </div>
-    <div class="modal-body">
+
+  <div id="border">
+      <div class="modal-header">
+        <h4>DEFINA SUAS METAS</h4>
+          <button *ngIf="(metasService.getterMetas()|async).weeklyGoalStudyHours != 0" type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body">
       <form class="p-4" [formGroup]="metasForm">
 
-        <div class="form-group">
-          <label for="InputHoras">INFORME SUA META SEMANAL DE HORAS DE ESTUDO:</label>
-          <input #InputHoras formControlName="metaHoras" type="number" class="form-control" id="InputHoras"
-            placeholder="Digite sua meta" min="0" max="168">
-        </div>
+        <div class="container">
+          <div class="form-group">
+            <label for="InputHoras">INFORME SUA META SEMANAL DE HORAS DE ESTUDO:</label>
+            <input name="qt_produto[]" id="qt_produto[]" size ="2" maxlength="2" type="text" value="" style="font-size: 120%"/>
+          </div>
 
-        <div class="form-group">
-          <label for="InputJornada">O PRÓXIMO OBJETIVO DA SUA JORNADA EM WAKANDA SERÁ:</label>
-          <input formControlName="metaJornada" type="search" class="form-control" id="InputJornada"
-            placeholder="Digite sua meta" [ngbTypeahead]="search">
+          <div class="form-group">
+            <label for="InputJornada">O PRÓXIMO OBJETIVO DA SUA JORNADA EM WAKANDA SERÁ:</label>
+            <input name="qt_produto[]" id="qt_produto[]" size ="2" maxlength="2" type="text" value="" style="font-size: 180%"/>
+          </div>
         </div>
-
       </form>
     </div>
+
     <div class="modal-footer">
       <!-- <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button> -->
       <button [disabled]="metasForm.invalid" type="submit" class="btn btn-primary mr-4" (click)="submit()">
         OK
       </button>
     </div>
+  </div> 
 </body>

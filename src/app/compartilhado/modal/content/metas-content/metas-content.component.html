@@ -10,15 +10,19 @@
       <div class="modal-body">
       <form class="p-4" [formGroup]="metasForm">
 
-        <div class="container">
+    <div id="container">
           <div class="form-group">
             <label for="InputHoras">INFORME SUA META SEMANAL DE HORAS DE ESTUDO:</label>
-            <input name="qt_produto[]" id="qt_produto[]" size ="2" maxlength="2" type="text" value="" style="font-size: 120%"/>
+            <input #InputHoras formControlName="metaHoras" type="number" class="form-control" id="InputHoras"
+            placeholder="Digite sua meta" min="0" max="168" style="font-size: 50%">
+            <img class="setinha1" src="/src/assets/images/icons/Seta (Senha).svg" alt="setaparabaixo"/>
           </div>
 
           <div class="form-group">
             <label for="InputJornada">O PRÓXIMO OBJETIVO DA SUA JORNADA EM WAKANDA SERÁ:</label>
-            <input name="qt_produto[]" id="qt_produto[]" size ="2" maxlength="2" type="text" value="" style="font-size: 180%"/>
+            <input formControlName="metaJornada" type="search" class="form-control2" id="InputJornada"
+            placeholder="Digite sua meta" [ngbTypeahead]="search" style="font-size: 100%">  
+            <img class="setinha1" src="/src/assets/images/icons/Seta (Senha).svg" alt="setaparabaixo"/>        
           </div>
         </div>
       </form>

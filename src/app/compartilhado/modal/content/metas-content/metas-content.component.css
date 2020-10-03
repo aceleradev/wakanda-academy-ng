@@ -27,6 +27,12 @@
     border-style: solid;
 }
 
+#container{
+    text-align: center;
+    justify-content:center;
+    align-items:center;
+}
+
 .close {
     color: white;
 }
@@ -47,10 +53,18 @@
     font-size: 0.8rem;
 }
 
+.form-control{
+    width: 20%;
+   
+}
+
+.form-control2{
+    
+    width: 20%;
+}
 
 .modal-footer{
-    padding-right: 200px;
-    font-family: erasDemi;
+    padding-right: 180px;
     border: none;
     
 }
@@ -60,7 +74,14 @@
     border: none;
     width: 94px;
     height: 28px;
-    margin-bottom: 5%; 
+    margin-bottom: 5%;
+    margin-top: 0.5%;
+    padding-top: 0.5%;
 }
 
+.setinha1{
 
+    width: 200px;
+    height: 200px;
+    color: white;    
+}

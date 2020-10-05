@@ -13,16 +13,18 @@
     <div id="container">
           <div class="form-group">
             <label for="InputHoras">INFORME SUA META SEMANAL DE HORAS DE ESTUDO:</label>
-            <input #InputHoras formControlName="metaHoras" type="number" class="form-control" id="InputHoras"
-            placeholder="Digite sua meta" min="0" max="168" style="font-size: 50%">
-            <img class="setinha1" src="/src/assets/images/icons/Seta (Senha).svg" alt="setaparabaixo"/>
+            <div style="background-color: #0000ff; border: 1px solid #00ffff;">
+              <input #InputHoras formControlName="metaHoras" type="number" class="form-control input-horas" id="InputHoras"
+              placeholder="Digite sua meta" min="0" max="168">
+              <img class="setinha1" src="../../../../../assets/images/icons/Seta Menu.svg" alt="setaparabaixo"/>
+            </div>
           </div>
 
           <div class="form-group">
             <label for="InputJornada">O PRÓXIMO OBJETIVO DA SUA JORNADA EM WAKANDA SERÁ:</label>
-            <input formControlName="metaJornada" type="search" class="form-control2" id="InputJornada"
-            placeholder="Digite sua meta" [ngbTypeahead]="search" style="font-size: 100%">  
-            <img class="setinha1" src="/src/assets/images/icons/Seta (Senha).svg" alt="setaparabaixo"/>        
+            <input formControlName="metaJornada" type="search" class="form-control2 input-tribo" id="InputJornada"
+            placeholder="Digite sua meta" [ngbTypeahead]="search">  
+            <img class="setinha1" src="../../../../../assets/images/icons/Seta Menu.svg" alt="setaparabaixo"/>        
           </div>
         </div>
       </form>

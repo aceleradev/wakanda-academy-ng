@@ -19,7 +19,7 @@ export class WakanderTribeSkillDetailComponent implements OnInit {
   constructor(private statusService:StatusService) { }
 
   ngOnInit() {
-    this.isSkillDone();
+    this.statusService.isSkillDone(this.skill);
     this.skill$.next(this.skill);
     this.code = this.skill.skillCode;
     console.log((this.skill.skillStatus||'').toString());
@@ -27,12 +27,5 @@ export class WakanderTribeSkillDetailComponent implements OnInit {
   
   color() {
     return this.statusService.checkStatus(this.skill.skillStatus);
-  }
-
-  private isSkillDone() {
-    if (this.skill.wakanderTribeSkillLessons.every((lesson) => {
-      return this.statusService.isDone(lesson);
-    }))
-      this.skill.skillStatus = status.DONE;
   }
 }

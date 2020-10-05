@@ -11,6 +11,7 @@ import { LessonDTO } from 'src/app/compartilhado/interface/lessonDTO';
 import { StatusService } from 'src/app/compartilhado/service/status/status.service';
 import { status } from 'src/app/compartilhado/interface/status.enum';
 import { Subscription } from 'rxjs';
+import { isUndefined } from 'util';
 
 @Component({
   selector: 'app-skill-lesson',
@@ -20,6 +21,8 @@ import { Subscription } from 'rxjs';
 export class SkillLessonComponent implements OnInit, OnChanges, OnDestroy {
   lesson: Lesson;
   skill: Skill;
+  skillArray: Skill[];
+  private currentSkillIndex = 0;
   @Input() url: string;
   loader: Loading;
   breadCrumbs: string = "";
@@ -31,31 +34,31 @@ export class SkillLessonComponent implements OnInit, OnChanges, OnDestroy {
     private loadService: LoadingService,
     private router: Router,
     private statusService: StatusService) { }
-    
+
 
   ngOnInit(): void {
     this.subs.add(
       this.skillLessonService.lesson$.subscribe(aula => {
         this.lesson = aula
-        console.log("Skill-lesson aula:" + aula);
       })
     );
     this.subs.add(
       this.skillLessonService.code$.subscribe(code => {
         this.url = code;
-        console.log(this.url);
       })
     );
     this.subs.add(
       this.skillActionService.Skill$.subscribe(skill => {
         this.skill = skill
-        console.log("Skill-lesson skill:" + skill);
       })
+    );
+    this.subs.add(
+      this.skillActionService.getSkillArray().subscribe(array => this.skillArray = array)
     );
 
     this.subs.add(this.skillActionService.getBreadCrumbs().subscribe(res => {
       this.breadCrumbs = res;
-      })
+    })
     );
 
     this.loadService.getLoading()
@@ -63,8 +66,7 @@ export class SkillLessonComponent implements OnInit, OnChanges, OnDestroy {
         this.loader = loading;
         console.log(this.loader);
       });
-
-    this.isSkillDone();
+    this.currentSkillIndex = this.skillArray.findIndex((skill) => skill == this.skill);
 
   }
 
@@ -81,7 +83,7 @@ export class SkillLessonComponent implements OnInit, OnChanges, OnDestroy {
           if (res.status == 200) {
             window.open(this.lesson.link, '_blank');
             this.lesson.status = status.DONE;
-            this.isSkillDone();
+            this.statusService.isSkillDone(this.skill);
           }
         }, err => {
           console.log(err);
@@ -102,33 +104,31 @@ export class SkillLessonComponent implements OnInit, OnChanges, OnDestroy {
       this.subs.add(
         this.skillLessonService.getNextLesson(wkCode, this.lesson.lessonCode).subscribe((res) => {
           const aulaDTO: LessonDTO = res.body;
-          console.log(aulaDTO);
-          const lessonArry: Lesson[] = this.skill.wakanderTribeSkillLessons;
-          lessonArry.forEach((lesson) => {
-            if (lesson.lessonCode == aulaDTO.lessonCode) {
-              if (!this.statusService.isDone(lesson)) {
-                lesson.status = status.DOING;
-              }
-              this.skillLessonService.changeCurrentLesson(lesson);
+          let lessonArry: Lesson[] = this.skill.wakanderTribeSkillLessons;
+          let foundTribe = lessonArry.find((lesson) => lesson.lessonCode == aulaDTO.lessonCode);
+          if (isUndefined(foundTribe)) {
+            while (isUndefined(foundTribe)) {
+              console.log("loop numero " + this.currentSkillIndex)
+              this.skill = this.skillArray[this.currentSkillIndex + 1];
+              lessonArry = this.skill.wakanderTribeSkillLessons;
+              foundTribe = lessonArry.find((lesson) => lesson.lessonCode == aulaDTO.lessonCode);
             }
-          });
+          } else {
+            if (!this.statusService.isDone(foundTribe)) {
+              foundTribe.status = status.DOING;
+            }
+            this.skillLessonService.changeCurrentLesson(foundTribe);
+          }
         }, err => {
           console.log(err);
           alert("desculpe, houve um erro ao carregar a proxima aula.");
-          this.router.navigateByUrl("");
+          //this.router.navigateByUrl("");
         })
       );
     } else {
       alert("Acesse o conteudo da aula para continuar");
     }
 
-  }
-
-  private isSkillDone() {
-    if (this.skill.wakanderTribeSkillLessons.every((lesson) => {
-      return this.statusService.isDone(lesson);
-    }))
-      this.skill.skillStatus = status.DONE;
   }
 
   ngOnDestroy(): void {

@@ -9,7 +9,7 @@ import { SkillLessonService } from './skill-lesson.service';
 })
 export class SkillActionService {
   private skillArray: BehaviorSubject<Skill[]> = new BehaviorSubject<Skill[]>(null);
-  SkillArray$ = this.skillArray.asObservable();
+  
   private skill: BehaviorSubject<Skill> = new BehaviorSubject<Skill>(null);
   Skill$ = this.skill.asObservable();
   private breadCrumbs: BehaviorSubject<string> = new BehaviorSubject<string>("");
@@ -22,6 +22,10 @@ export class SkillActionService {
 
   setSkillArray(skills: Skill[]) {
     this.skillArray.next(skills);
+  }
+
+  getSkillArray() {
+    return this.skillArray.asObservable();
   }
 
   buildBreadCrumbs (crumbs: string) {

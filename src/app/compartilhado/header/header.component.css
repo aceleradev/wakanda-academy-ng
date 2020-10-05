@@ -1,3 +1,6 @@
+.acima-de-400px { display: inline; }
+.abaixo-de-400px { display: none; }
+
 
 .cabecalho {
 
@@ -9,6 +12,31 @@
     line-height: normal;
     background: #001226;
     
+}
+
+@media(max-width: 400px) {
+    .acima-de-400px { display: none; }
+    .abaixo-de-400px { display: inline; }
+    
+    .cabecalho {
+
+        font-family: ErasDemiITC;
+        font-size: 14px;
+        color: white;
+        vertical-align: right;
+        line-height: normal;
+        background: #001226;
+        
+    }
+
+
+
+    .responsivo-texto {
+
+        display: none;
+    }
+
+
 }
 
 .profile{

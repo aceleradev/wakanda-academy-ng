@@ -28,9 +28,9 @@
         </div>
       </div>
       
-      <div class="alinhamento"*ngIf="performace!= null; else performaceErro">
+      <div class="alinhamento responsivo-texto"*ngIf="performace!= null; else performaceErro">
         <div class="text-right">{{performace.totalWakanderTribesCompleted}} &#8725;
-          {{performace.totalWakanderTribesJourney}}<br class="cabecalho alinhamento "> TRIBOS<br class="cabecalho">EXPLORADAS
+          {{performace.totalWakanderTribesJourney}}<br class="cabecalho alinhamento"> TRIBOS<br class="cabecalho">EXPLORADAS
         </div>
       </div>
       <ng-template class="p-2" #performaceErro>

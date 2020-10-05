@@ -7,25 +7,27 @@
             <span aria-hidden="true">&times;</span>
           </button>
       </div>
-      <div class="modal-body">
+    <div class="modal-body">
       <form class="p-4" [formGroup]="metasForm">
 
-    <div id="container">
-          <div class="form-group">
-            <label for="InputHoras">INFORME SUA META SEMANAL DE HORAS DE ESTUDO:</label>
-            <div style="background-color: #0000ff; border: 1px solid #00ffff;">
-              <input #InputHoras formControlName="metaHoras" type="number" class="form-control input-horas" id="InputHoras"
-              placeholder="Digite sua meta" min="0" max="168">
-              <img class="setinha1" src="../../../../../assets/images/icons/Seta Menu.svg" alt="setaparabaixo"/>
+        <div id="container">
+            <div class="form-group">
+              <label for="InputHoras">INFORME SUA META SEMANAL DE HORAS DE ESTUDO:</label>
+              <div class="background-caixa">
+                <input #InputHoras formControlName="metaHoras" type="number" class="input-horas" id="InputHoras"
+                placeholder="Digite sua meta" min="0" max="168" style="width: 5.2em;"> 
+                <img class="setinha1" src="../../../../../assets/images/icons/Seta Menu.svg" alt="setaparabaixo" style="width: 28%;"/>
+              </div>
             </div>
-          </div>
 
-          <div class="form-group">
-            <label for="InputJornada">O PRÓXIMO OBJETIVO DA SUA JORNADA EM WAKANDA SERÁ:</label>
-            <input formControlName="metaJornada" type="search" class="form-control2 input-tribo" id="InputJornada"
-            placeholder="Digite sua meta" [ngbTypeahead]="search">  
-            <img class="setinha1" src="../../../../../assets/images/icons/Seta Menu.svg" alt="setaparabaixo"/>        
-          </div>
+            <div class="form-group">
+                <label for="InputJornada">O PRÓXIMO OBJETIVO DA SUA JORNADA EM WAKANDA SERÁ:</label>
+                <div class="background-caixa2">
+                  <input formControlName="metaJornada" type="search" class="input-tribo" id="InputJornada"
+                  placeholder="Digite sua meta" [ngbTypeahead]="search" style="width: 15em;">  
+                  <img class="setinha2" src="../../../../../assets/images/icons/Seta Menu.svg" alt="setaparabaixo" style="width: 12%;"/>        
+                </div>
+            </div>
         </div>
       </form>
     </div>

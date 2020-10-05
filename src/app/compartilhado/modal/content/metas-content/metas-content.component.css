@@ -50,17 +50,24 @@
     color: white;
     text-align: center;
     font-family: erasDemi;
-    font-size: 0.8rem;
+    font-weight: bold;
+    font-size: 75%;
 }
 
-.form-control{
-    width: 20%;
-   
+.background-caixa{
+
+   border: 1.5px solid #00ffff;
+   width: 7.6em;
+   height: 9.35em;
+  
 }
 
-.form-control2{
+.background-caixa2{
+
+    background-color: #0000ff; 
+    border: 1px solid #00ffff;
+    width: 50%;
     
-    width: 20%;
 }
 
 .modal-footer{

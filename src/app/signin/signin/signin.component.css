@@ -16,6 +16,7 @@
     justify-content: center;
     flex-direction: row;
     align-items: center
+    
 }
 .caixa {
     width: 400px;
@@ -46,6 +47,7 @@
     margin: auto;
     font-family: ErasDemiITC;
     text-transform: uppercase;
+    box-shadow: 0 0 1em #00ffff
 }
 
 .btn-entrar:hover {
@@ -55,7 +57,7 @@
 
 .btn-clique-aqui{
     color: white;
-    display: inline-block; 
+    display: inline; 
     margin: auto;
     text-decoration: underline;
     font-family: ErasMedium;
@@ -77,3 +79,11 @@
     padding-left: 1em;
     display: inline-block;
 }
+
+@media only screen and (max-width: 450px) {
+    .contair{
+     width: 90%;
+     margin: auto;
+     display: flex;
+    }
+  }

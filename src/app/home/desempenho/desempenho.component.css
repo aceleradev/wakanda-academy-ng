@@ -1,31 +1,22 @@
 .tab-desempenho >{
     font-family: DecoturaICG;
-    font-size: 14px;
+    font-size: 2.25em;
+    padding: 0 3%;
 }
 
 .tab-desempenho h3 {
+    display: inline-block;
     font-family: DecoturaICG;
-    font-size: 22px;
+    font-size: 1.5em;
     white-space: nowrap;
     color: #ffffff;
     margin-block-start: 0em;
     margin-block-end: 0em;
 }
 
-/* #my-tab {
-    background-color: none;;
-} */
-
-#home-tab, #profile-tab{
-    background-color: #000000;
-    padding: auto;
-    border-color: transparent;
-    text-align: center;
-}
-
-.li-profile {
-    position: absolute;
-    left: 45%;
+ul#myTab {
+    position: relative;
+    border-bottom: none;
 }
 
 .trapezoid {
@@ -33,5 +24,33 @@
     border-left: 25px solid transparent;
     border-right: 25px solid transparent;
     height: 0;
-    width: 50%;
+    width: 52.5%;
+}
+
+.li-profile {
+    position: absolute;
+    left: 47.5%;
+}
+
+/* .li-home {
+    margin-bottom: -2px;
+} */
+
+#home-tab, #profile-tab{
+    background-color: #000000;
+    border-color: transparent;
+    text-align: center;
+    padding: 0.5rem 0;
+}
+
+/* a#home-tab h3{
+
+} */
+
+/* Descrição das tabelas*/
+
+#myTabContent {
+    background-color: #001226;
+    color: #ffffff;
+    font-family: DecoturaICG;
 }

@@ -47,7 +47,7 @@
     margin: auto;
     font-family: ErasDemiITC;
     text-transform: uppercase;
-    box-shadow: 0 0 1em #00ffff
+    box-shadow: 0 0 5px #00ffff
 }
 
 .btn-entrar:hover {

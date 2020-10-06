@@ -1,9 +1,9 @@
-<div class="row ">
-    <div class="col-3">
+<div class="row">
+    <div class="col-3 ">
 
-        <div class="card text-black p-2">
-            <div class="row mt-1 ml-1">
-                <img [src]="tribo.icon_url" class="d-block rounded-circle" style="max-height: 100px; max-width: 100px;">
+        <div class="card text-black p-2 cor-do-card" >
+        <div class="row mt-1 ml-1">
+                <img [src]="tribo.icon_url" class="d-block rounded-circle cor-imagem" style="max-height: 100px; max-width: 100px;">
             </div>
             <h5 class="card-header estilizacao">Tribo atual:<br>{{tribo.nameTribe}}</h5>
             <div class="card-body">
@@ -11,7 +11,7 @@
                 <p class="card-text">{{tribo.descriptionTribe}}</p>
                 <p *ngIf="percent!=null; else percentageNull"
                     class="container">
-                    <ngb-progressbar type="dark" textType="light" [value]="percent"
+                    <ngb-progressbar class="progressabar" type="dark" textType="light" [value]="percent"
                         [showValue]="true">
                     </ngb-progressbar>
                 </p>
@@ -19,7 +19,7 @@
             </div>
         </div>
 
-        <div class="card bg-light">
+        <div class="card habilidades ">
             <h5 class="card-header">Habilidades</h5>
             <div class="container mr-1 p-2" *ngIf="tribo">
                 <app-wakander-tribe-skill-list [code]="code" [skills]="(tribo || {}).wakanderTribeSkills">

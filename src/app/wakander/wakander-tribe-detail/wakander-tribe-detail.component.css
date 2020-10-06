@@ -1,6 +1,6 @@
 .geral {
 
-    font-family:  ErasDemiITC;;
+    font-family: ErasDemiITC;
 }
 .estilizacao {
 
@@ -9,7 +9,23 @@
 
 }
 
-.card {
+.cor-do-card {
 
     background: #333333;
+   
+   
+
+}
+
+.cor-imagem{
+
+    background: black;
+}
+
+.progressabar{
+  background: #00FFFF;
+
+}
+.habilidades{
+    background: #001226;
 }

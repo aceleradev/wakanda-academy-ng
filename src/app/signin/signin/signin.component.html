@@ -34,12 +34,12 @@
           id="InputSenha"
           placeholder="Senha">
             
-            <div 
+            <a 
             [routerLink]="['../signUp']"
             type="button" 
-            class="fonte mb-2 text-white font-esqueceu-senha">
+            class="fonte text-white font-esqueceu-senha">
             Esqueceu a senha?
-            </div>
+            </a>
 
       </div>
 
@@ -51,13 +51,13 @@
         </button>
 
       <small 
-        class="d-block mb-2 text-white text-center pt-3 fonte">Não possui uma conta? 
-        <div 
+        class="d-block text-white text-center pt-3 fonte">Não possui uma conta? 
+        <a 
           [routerLink]="['../signUp']"
           type="button" 
           class="btn-clique-aqui">
             Clique aqui!
-      </div>
+      </a>
       </small>
       
     </form>

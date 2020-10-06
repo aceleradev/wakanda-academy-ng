@@ -14,9 +14,9 @@
             <div class="form-group">
               <label for="InputHoras">INFORME SUA META SEMANAL DE HORAS DE ESTUDO:</label>
               <div class="background-caixa">
-                <input #InputHoras formControlName="metaHoras" type="number" class="input-horas" id="InputHoras"
+                <input #InputHoras formControlName="metaHoras" type="number" class="input-horas borda"  id="InputHoras"
                 placeholder="Digite sua meta" min="0" max="168" style="width: 5.2em;"> 
-                <img class="setinha1" src="../../../../../assets/images/icons/Seta Menu.svg" alt="setaparabaixo" style="width: 28%;"/>
+               <!-- <img class="setinha1" src="../../../../../assets/images/icons/Seta Menu.svg" alt="setaparabaixo" style="width: 28%;"/> -->
               </div>
             </div>
 
@@ -24,7 +24,7 @@
                 <label for="InputJornada">O PRÓXIMO OBJETIVO DA SUA JORNADA EM WAKANDA SERÁ:</label>
                 <div class="background-caixa2">
                   <input formControlName="metaJornada" type="search" class="input-tribo" id="InputJornada"
-                  placeholder="Digite sua meta" [ngbTypeahead]="search" style="width: 15em;">  
+                  placeholder="Digite sua meta" [ngbTypeahead]="search" style="width: 14.3em;">  
                   <img class="setinha2" src="../../../../../assets/images/icons/Seta Menu.svg" alt="setaparabaixo" style="width: 12%;"/>        
                 </div>
             </div>

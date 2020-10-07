@@ -6,8 +6,7 @@
 }
 
 .modal-header {
-    padding-left: 150px;
-    background-size: cover;
+    padding-left: 32%;
     color: white;
     text-align: center;
     border: none;
@@ -20,13 +19,16 @@
     font-style: italic;
 }
 
-.container {
+.meta-semanal {
+   margin-bottom: 2%;
+}
 
-    text-align: center;
+.proximo-objetivo {
+
+   margin-bottom: 1%;
 
 }
 
-    
 
 #border {
 
@@ -41,22 +43,26 @@
     color: white;
 }
 
-.modal-body{
-
-    border: none;
-}
 
 .backgroundteste{
     background: black;
 }
 
-.form-group{
+.form-group {
     color: white;
     text-align: center;
     font-family: erasDemi;
-    font-weight: bold;
-    font-size: 75%;
-    margin-top: 8px;
+    font-size: 72%;
+    margin-bottom: 2rem;
+    
+}
+
+.form-group2 {
+    color: white;
+    text-align: center;
+    font-family: erasDemi;
+    font-size: 72%;
+    margin-bottom: 2rem;
 }
 
 .input-jornada {
@@ -66,11 +72,11 @@
 
 .background-caixa{
 
-   background-color: #00006f;
+   background-color: #001226;
    color: #00ffff;
-   width: 17vh;
+   width: 14vh;
    border: solid 1px;
-   border-radius: 10px; 
+   border-radius: 6px; 
    margin-top: 10px;
    margin: auto;
    
@@ -80,11 +86,11 @@
 
 .background-caixa2{
 
-    background-color: #00006f; 
+    background-color: #001226; 
     color: #00ffff;
-    width: 30vh;
+    width: 28vh;
     border: solid 1px;
-    border-radius: 10px; 
+    border-radius: 6px; 
     display: inline-block;
     margin-top: 10px;
     
@@ -96,14 +102,16 @@
     
 }
 
-.btn {
+.botao-ok {
     background: #00006f;
     border: none;
-    width: 94px;
+    border-radius: 8px;
+    width: 82px;
     height: 28px;
     margin-bottom: 5%;
     margin-top: 0.5%;
     padding-top: 0.5%;
+    font-size: 14px;
 }
 
 

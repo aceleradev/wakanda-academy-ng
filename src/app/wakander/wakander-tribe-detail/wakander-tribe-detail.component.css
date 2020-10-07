@@ -12,9 +12,7 @@
 .cor-do-card {
 
     background: #333333;
-   
-   
-
+    
 }
 
 .cor-imagem{
@@ -22,10 +20,37 @@
     background: black;
 }
 
-.progressabar{
-  background: #00FFFF;
+.borda-imagem {
 
+    border-radius: 50%;
+    border: #00ffff solid 3px;
 }
+
+.progressabar{
+    border: #001226 solid;
+    border-top-width: 3px;
+    border-right-width: 10px;
+    border-bottom-width: 3px;
+    border-left-width: 10px;
+    padding: 0.2px;
+    transform: skew(-20deg);
+}
+
+.barra {
+    color: red;
+}
+
 .habilidades{
+
     background: #001226;
+}
+
+.progress-bar{
+    background-color:black !important;  
+    }
+
+.bread-crumbs {
+
+    font-family: ErasDemiITC;
+    font-size: 16px;
 }

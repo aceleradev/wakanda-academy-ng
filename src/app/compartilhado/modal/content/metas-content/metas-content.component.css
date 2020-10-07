@@ -26,12 +26,7 @@
 
 }
 
-.borda {
     
-    border: solid 2px #00ffff;
-    border-radius: 10px 
-    
-}
 
 #border {
 
@@ -61,29 +56,37 @@
     font-family: erasDemi;
     font-weight: bold;
     font-size: 75%;
+    margin-top: 8px;
+}
+
+.input-jornada {
+
+    width: 12em;
 }
 
 .background-caixa{
-   
+
+   background-color: #00006f;
    color: #00ffff;
-   width: 7.6em;
-   height: 9.35em;
-   position: relative;
-   top: 50px;
-   left: 150px;
+   width: 17vh;
+   border: solid 1px;
+   border-radius: 10px; 
+   margin-top: 10px;
+   margin: auto;
    
   
 }
+
 
 .background-caixa2{
 
     background-color: #00006f; 
     color: #00ffff;
-    width: 50%;
+    width: 30vh;
     border: solid 1px;
     border-radius: 10px; 
-    top: 50px;
-    margin-right: 300px;
+    display: inline-block;
+    margin-top: 10px;
     
 }
 

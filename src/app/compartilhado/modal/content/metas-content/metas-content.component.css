@@ -5,6 +5,29 @@
     font-style: normal;
 }
 
+@media only screen and (max-width: 700px) {
+    .modal-header{
+        padding-right: 32%;
+    }
+
+    .close{
+        position: absolute;
+        left: 80%;
+    }
+
+    .botao-ok{
+        position: absolute;
+        left: 37%;
+        top: 85%;
+    }
+
+    .input-tribo{
+        
+        width: 50em;
+    }
+
+}
+
 .modal-header {
     padding-left: 32%;
     color: white;
@@ -16,7 +39,7 @@
 
     font-size: 20px;
     margin-top: 5%;
-    font-style: italic;
+    
 }
 
 .meta-semanal {
@@ -70,11 +93,16 @@
     width: 12em;
 }
 
+.input-tribo {
+
+    width: 12.5em;
+}
+
 .background-caixa{
 
    background-color: #001226;
    color: #00ffff;
-   width: 14vh;
+   width: 12vh;
    border: solid 1px;
    border-radius: 6px; 
    margin-top: 10px;
@@ -88,7 +116,7 @@
 
     background-color: #001226; 
     color: #00ffff;
-    width: 28vh;
+    width: 22vh;
     border: solid 1px;
     border-radius: 6px; 
     display: inline-block;

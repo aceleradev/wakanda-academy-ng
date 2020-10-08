@@ -32,10 +32,6 @@ ul#myTab {
     left: 47.5%;
 }
 
-/* .li-home {
-    margin-bottom: -2px;
-} */
-
 #home-tab, #profile-tab{
     background-color: #000000;
     border-color: transparent;
@@ -43,14 +39,14 @@ ul#myTab {
     padding: 0.5rem 0;
 }
 
-/* a#home-tab h3{
-
-} */
-
 /* Descrição das tabelas*/
 
 #myTabContent {
     background-color: #001226;
     color: #ffffff;
     font-family: DecoturaICG;
+    border: solid 2px #ffffff;
+    border-radius: 3px;
+    border-top: none;
+    
 }

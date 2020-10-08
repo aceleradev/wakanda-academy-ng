@@ -1,7 +1,8 @@
 .primary-div{
-    background-color: black!important;
-    padding-bottom: 5px;
+    background-color: #010914!important;
+    padding: 10px 0;
     font-family: DecoturaICG;
+    font-size: 16px;
 }
 
 .empty-container {
@@ -10,75 +11,231 @@
 }
 
 #myTab {
+    width: 300px;
     position: relative;
     border-bottom: none;
-    max-width: 360px;
+    height: 1.5em;
+    margin-left: inherit!important;
 }
 
 #myTab h3 {
     display: inline-block;
     font-size: 1em;
+    line-height: 1;
     white-space: nowrap;
     color: #ffffff;
     margin-block-start: 0em;
     margin-block-end: 0em;
 }
 
+ul li {
+    position: relative;
+}
+
 .trapezoid {
-    border-bottom: 30px solid #000000;
-    border-left: 25px solid transparent;
-    border-right: 25px solid transparent;
-    height: 0;
-    width: 52.5%;
+    position: relative;
+}
+
+/* ---------------fazendo o trapézio------------------ */
+/* ---1°--- */
+.trapezoid-tab_1:before {
+    content:"";
+    width:15px;
+    height:1.7em;
+    background:#000000;
+    position:absolute;
+    left: -0.6em;
+    color:#FFF;
+    text-align:center;
+    -webkit-transform: skew(-20deg);
+    -moz-transform: skew(-20deg);
+    -o-transform: skew(-20deg);
+    border: solid 3px #ffffff;
+    border-radius: 3px;
+    border-right: 0;
+    /* border-bottom: none; */
+    border-bottom: solid 3px #ffffff;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.trapezoid-tab_1:after {
+    content:"";
+    width:15px;
+    height:1.7em;
+    background:#000000;
+    position:absolute;
+    right: -0.7em;
+    top: 0px;
+    color:#FFF;
+    text-align:center;
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -o-transform: skew(20deg);
+    border: solid 3px #ffffff;
+    border-radius: 3px;
+    border-radius: 2px;
+    border-left: none;
+    /* border-bottom: none; */
+    border-bottom: solid 3px #ffffff;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+
+
+/* ---2°--- */
+.trapezoid-tab_2:before {
+    content:"";
+    width:15px;
+    height:1.7em;
+    background:#000000;
+    position:absolute;
+    left: -0.6em;
+    color:#FFF;
+    text-align:center;
+    -webkit-transform: skew(-20deg);
+    -moz-transform: skew(-20deg);
+    -o-transform: skew(-20deg);
+    border: solid 3px #ffffff;
+    border-radius: 3px;
+    border-right: 0;
+    border-bottom: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.trapezoid-tab_2:after {
+    content:"";
+    width:15px;
+    height:1.7em;
+    background:#000000;
+    position:absolute;
+    right: -0.6em;
+    top: 0px;
+    color:#FFF;
+    text-align:center;
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -o-transform: skew(20deg);
+    border: solid 3px #ffffff;
+    border-radius: 3px;
+    border-left: none;
+    border-bottom: none;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* ----------------------------------------------------------- */
+
+.li-home {
+    left: 7%;
 }
 
 .li-profile {
-    position: absolute;
-    left: 47.5%;
+    left: 13.5%;
 }
 
 #home-tab, #profile-tab{
+    width: 7em;
+    border: 0;
     background-color: #000000;
-    border-color: transparent;
     text-align: center;
-    padding: 0;
-    height: 100%;
+    border-top: solid 3px white;
+    border-radius: 0;
+    line-height: 0;
+    padding: 0.16em 0;
+    border-bottom: solid 3px #000000;
+}
+
+#home-tab {
+    border-bottom: solid 3px #ffffff;
+}
+
+#profile-tab {
+    /* border-bottom: solid 3px #ffffff; */
 }
 
 /* Descrição das tabelas*/
 
 #myTabContent {
+    font-size: 1em;
     background-color: #001226;
     color: #ffffff;
-    border: solid 3.5px #000000;
-    margin-top: 1px;
+    border: solid 5.5px #000000;
+    margin-top: 0.2em;
     border-radius: 2px;
-    height: 10em;
+    height: 9em;
     box-shadow: 
-	0 0 0 2px #ffffff;
+    0 0 0 3px #ffffff;
+    min-width: 285px;
     
 }
-@media (min-width: 400px) {
 
-    .trapezoid {
-        min-width: 190px;
-        max-width: 230px;
-        border-bottom: 40px solid #000000
-    }
-    
+
+
+
+@media (min-width: 518px) {
+
     #myTab {
-        min-width: 360px;
+        width: 500px;
         margin-left: inherit!important;
     }
 
     #myTab h3 {
-        font-size: 1.5em;
+        font-size: 1.7em;
     }
 
-    #home-tab, #profile-tab {
-        height: 100%;
-        padding: auto 0;
-
+    .li-home {
+        left: 7%;
     }
+    
+    .li-profile {
+        left: 11.5%;
+    }
+
+    #home-tab, #profile-tab{
+        width: 12em;
+        padding: 0.16em 0;
+    }
+
+    /* ---------------fazendo o trapézio------------------ */
+    /* ---1°--- */
+    .trapezoid-tab_1:before {
+        width:1.2em;
+        height:2.4em;
+        left: -0.6em;
+    }
+
+    .trapezoid-tab_1:after {
+        width:1.2em;
+        height:2.4em;
+        right: -0.7em;
+    }
+
+    /* ---2°--- */
+    .trapezoid-tab_2:before {
+        width:1.2em;
+        height:2.4em;
+        left: -0.7em;
+    }
+
+    .trapezoid-tab_2:after {
+        width:1.2em;
+        height:2.4em;
+        right: -0.7em;
+    }
+
+    /* ----------------------------------------------------------- */
+
+    #myTabContent {
+        font-size: 1.7em;
+        margin-top: 0.5em;
+    }
+
 
 }

@@ -1,26 +1,31 @@
-.tab-desempenho >{
+.primary-div{
+    background-color: black!important;
+    padding-bottom: 5px;
     font-family: DecoturaICG;
-    font-size: 2.25em;
-    padding: 0 3%;
 }
 
-.tab-desempenho h3 {
+.empty-container {
+    width: 100%;
+    display: block;
+}
+
+#myTab {
+    position: relative;
+    border-bottom: none;
+    max-width: 360px;
+}
+
+#myTab h3 {
     display: inline-block;
-    font-family: DecoturaICG;
-    font-size: 1.5em;
+    font-size: 1em;
     white-space: nowrap;
     color: #ffffff;
     margin-block-start: 0em;
     margin-block-end: 0em;
 }
 
-ul#myTab {
-    position: relative;
-    border-bottom: none;
-}
-
 .trapezoid {
-    border-bottom: 50px solid #000000;
+    border-bottom: 30px solid #000000;
     border-left: 25px solid transparent;
     border-right: 25px solid transparent;
     height: 0;
@@ -36,7 +41,8 @@ ul#myTab {
     background-color: #000000;
     border-color: transparent;
     text-align: center;
-    padding: 0.5rem 0;
+    padding: 0;
+    height: 100%;
 }
 
 /* Descrição das tabelas*/
@@ -44,9 +50,35 @@ ul#myTab {
 #myTabContent {
     background-color: #001226;
     color: #ffffff;
-    font-family: DecoturaICG;
-    border: solid 2px #ffffff;
-    border-radius: 3px;
-    border-top: none;
+    border: solid 3.5px #000000;
+    margin-top: 1px;
+    border-radius: 2px;
+    height: 10em;
+    box-shadow: 
+	0 0 0 2px #ffffff;
     
+}
+@media (min-width: 400px) {
+
+    .trapezoid {
+        min-width: 190px;
+        max-width: 230px;
+        border-bottom: 40px solid #000000
+    }
+    
+    #myTab {
+        min-width: 360px;
+        margin-left: inherit!important;
+    }
+
+    #myTab h3 {
+        font-size: 1.5em;
+    }
+
+    #home-tab, #profile-tab {
+        height: 100%;
+        padding: auto 0;
+
+    }
+
 }

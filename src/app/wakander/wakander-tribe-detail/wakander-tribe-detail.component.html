@@ -4,7 +4,7 @@
         <div class="card text-black p-2 cor-do-card" >
         <div class="row mt-1 ml-1">
                 <!-- <img [src]="tribo.icon_url" class="d-block rounded-circle cor-imagem" style="max-height: 100px; max-width: 100px;"> -->
-                <!-- <img src="../../../assets/images/teste/Ícone 1.svg" class="d-block rounded-circle borda-imagem cor-imagem" style="max-height: 100px; max-width: 100px;"> -->
+             <img src="../../../assets/images/teste/Ícone 1.svg" class="d-block rounded-circle borda-imagem cor-imagem" style="max-height: 100px; max-width: 100px;">
             </div>
             <h5 class="card-header estilizacao">Tribo atual:<br>{{tribo.nameTribe}}</h5>
             <div class="card-body">
@@ -12,7 +12,7 @@
                 <p class="card-text">{{tribo.descriptionTribe}}</p>
                 <p *ngIf="percent!=null; else percentageNull"
                     class="container progressabar rounded">
-                    <ngb-progressbar class="progress-bar" type="primary" textType="dark" [value]="percent"
+                    <ngb-progressbar class="progress-bar" type="primary" textType="dark" [value]="75"
                         [showValue]="true">
                     </ngb-progressbar>
                 </p>

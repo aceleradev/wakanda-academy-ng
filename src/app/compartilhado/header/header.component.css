@@ -1,6 +1,11 @@
 .acima-de-400px { display: inline; }
 .abaixo-de-400px { display: none; }
 
+.posicao-fundo{
+    position: relative;
+    
+}
+
 
 .cabecalho {
 

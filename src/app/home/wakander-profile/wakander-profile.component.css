@@ -1,5 +1,6 @@
 .cor-de-fundo{
     background: black;
+    
    
    
 }
@@ -18,5 +19,17 @@
     border-radius: 80%;
     height: 100px;
     width: 100px;
+
+}
+.alterar-fonte{
+    font-family: ErasDemiITC;
+
+    position: relative;
+    background: black;
+    font-size: 25px;
+    color: blanchedalmond;
+    margin-bottom: 70px;
+   line-height: 0.5px;
+
 
 }

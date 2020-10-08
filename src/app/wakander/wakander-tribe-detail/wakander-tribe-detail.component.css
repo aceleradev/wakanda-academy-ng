@@ -1,3 +1,13 @@
+.acima-de-400px { display: inline; }
+.abaixo-de-400px { display: none; }
+
+
+@media screen and (max-width: 480px){
+ width:  100%;
+
+}
+
+
 .geral {
 
     font-family: ErasDemiITC;
@@ -5,6 +15,8 @@
 .estilizacao {
 
     font-family: DecoturaICG;
+    font-size: 40px;
+    color: blanchedalmond;
 
 
 }
@@ -36,7 +48,7 @@
     transform: skew(-20deg);
 }
 
-.barra {
+.barra{
     color: red;
 }
 
@@ -46,7 +58,9 @@
 }
 
 .progress-bar{
-    background-color:black !important;  
+    background-color:black !important; 
+
+    
     }
 
 .bread-crumbs {
@@ -54,3 +68,6 @@
     font-family: ErasDemiITC;
     font-size: 16px;
 }
+
+
+:host /deep/ .progress {background-color: black !important};

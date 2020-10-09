@@ -1,0 +1,31 @@
+.titulo-jornada{
+    background-image: linear-gradient(to bottom, black, #040813); 
+    font-family: DecoturaICG;
+    text-align: center;
+    color: white;
+    padding-bottom: 1px;
+    
+}
+
+.titulo-jornada h2{
+    font-size: 10vh;
+}
+
+#imagem-fundo{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    padding-top: 0;
+}
+
+.list-group{
+
+    
+}
+
+.row{
+
+    
+}
+

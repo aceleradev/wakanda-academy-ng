@@ -1,12 +1,14 @@
 <div class="row">
-    <div class="col-3 ">
+    <div class="col-4">
 
-        <div class="card text-black p-2 cor-do-card" >
-        <div class="row mt-1 ml-1">
+        <div class="card card-style text-black p-2 cor-do-card" >
+            <div class="row mt-1 ml-1">
                 <!-- <img [src]="tribo.icon_url" class="d-block rounded-circle cor-imagem" style="max-height: 100px; max-width: 100px;"> -->
-             <img src="../../../assets/images/teste/Ícone 1.svg" class="d-block rounded-circle borda-imagem cor-imagem" style="max-height: 100px; max-width: 100px;">
+             <img src="../../../assets/images/teste/Ícone 1.svg" class="d-block rounded-circle borda-imagem cor-imagem estilo-imagem" style="max-height: 100px; max-width: 100px;">
+             <h5 class="estilizacao"><br>{{tribo.nameTribe}}<h6 class="estilizacao-subtitulo">WEB APP JAVASCRIPT</h6></h5>
+             
             </div>
-            <h5 class="card-header estilizacao">Tribo atual:<br>{{tribo.nameTribe}}</h5>
+            
             <div class="card-body">
                 <!-- <h5 class="card-title">{{tribo.nome}}</h5> -->
                 <p class="card-text">{{tribo.descriptionTribe}}</p>
@@ -30,7 +32,7 @@
 
     </div>
 
-    <div class="col-9">
+    <div class="col-8">
         <div class="bread-crumbs">
             {{breadCrumbs}}
         </div>

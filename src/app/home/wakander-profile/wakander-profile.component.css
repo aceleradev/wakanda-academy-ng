@@ -1,14 +1,23 @@
+
+h2 {
+
+position: relative;
+top: 30px;
+
+}
+
+
 .cor-de-fundo{
     background: black;
-    
-   
-   
+       
 }
 
 .profile{
+    
     color: black; 
     font-size: 90px;
     width: 100px;
+
 }
 
 
@@ -23,11 +32,11 @@
 }
 .alterar-fonte{
     font-family: ErasDemiITC;
-
     position: relative;
+    bottom: 3px;
     background: black;
     font-size: 25px;
-    color: blanchedalmond;
+    color: white;
     margin-bottom: 70px;
    line-height: 0.5px;
 

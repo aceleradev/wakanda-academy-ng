@@ -16,16 +16,21 @@
     height: 100%;
     width: 100%;
     background-size: cover;
-    padding-top: 0;
+    
 }
 
 .list-group{
-
+  
+    display: grid;
+    width: 100%;
     
+
+}
+
+.col-6{
+
 }
 
 .row{
-
-    
+ 
 }
-

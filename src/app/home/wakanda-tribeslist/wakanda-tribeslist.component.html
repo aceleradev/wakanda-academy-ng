@@ -6,13 +6,13 @@
     <img id="imagem-fundo" src="../../../assets/images/background/Background_2.png" alt="imagemdefundo">
   </div>
 
+
   <ol class="list-group">
     <li *ngFor="let cols of rows" class="row no-gutters mr-1 ml-1 p-4">
+    
 
+      <div *ngFor="let tribe of cols ; index as i" class="col-6 m-0 p-4" style="text-align: center;">
 
-      <div *ngFor="let tribe of cols ; index as i" class="col-6 m-0 p-4" style="
-            text-align: center;
-            ">
         <app-wakanda-tribe [numero]="i" [tribe]="tribe" [status] = "tribe.status" [wkCode]="wkCode">
         </app-wakanda-tribe>
       </div>

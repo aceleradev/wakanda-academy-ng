@@ -53,8 +53,8 @@ ul li {
     border: solid 3px#00ffff;
     border-radius: 3px;
     border-right: 0;
-    /* border-bottom: none; */
-    border-bottom: solid 3px#00ffff;
+    border-bottom: none;
+    /* border-bottom: solid 3px#00ffff; */
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
@@ -66,7 +66,7 @@ ul li {
     height:1.7em;
     background:#000000;
     position:absolute;
-    right: -0.7em;
+    right: -0.6em;
     top: 0px;
     color:#FFF;
     text-align:center;
@@ -77,11 +77,12 @@ ul li {
     border-radius: 3px;
     border-radius: 2px;
     border-left: none;
-    /* border-bottom: none; */
-    border-bottom: solid 3px#00ffff;
+    border-bottom: none;
+    /* border-bottom: solid 3px#00ffff; */
     border-top-left-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
+    z-index: 1;
 }
 
 
@@ -102,7 +103,8 @@ ul li {
     border: solid 3px #00ffff;
     border-radius: 3px;
     border-right: 0;
-    border-bottom: none;
+    /* border-bottom: none; */
+    border-bottom: solid 3px#00ffff;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
@@ -124,7 +126,8 @@ ul li {
     border: solid 3px #00ffff;
     border-radius: 3px;
     border-left: none;
-    border-bottom: none;
+    /* border-bottom: none; */
+    border-bottom: solid 3px#00ffff;
     border-top-left-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
@@ -152,9 +155,37 @@ ul li {
     border-bottom: solid 3px #000000;
 }
 
-#home-tab {
+#profile-tab {
     border-bottom: solid 3px #00ffff;
 }
+
+
+
+ /*< -------------- selected_desempenho-geral ------------------> 
+.trapezoid-tab_1:before {
+    border-bottom: solid 3px#00ffff;
+}
+.trapezoid-tab_1:after {
+    border-bottom: solid 3px#00ffff;
+}
+.trapezoid-tab_2:before {
+    border-bottom: none;
+    z-index: 2;
+}
+.trapezoid-tab_2:after {
+    border-bottom: none;
+}
+
+
+#home-tab {
+    border-bottom: solid 3px#00ffff;
+}
+
+#profile-tab {
+    border-bottom: solid 3px #000000;
+}
+<---------------------------------------------------------------->*/
+
 
 /* Descrição das tabelas*/
 

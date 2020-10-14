@@ -1,29 +1,48 @@
-<div class="modal-header">
-  <h4 class="modal-title">Defina suas metas!</h4>
-  <button *ngIf="(metasService.getterMetas()|async).weeklyGoalStudyHours != 0" type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-<div class="modal-body">
-  <form class="p-4" [formGroup]="metasForm">
+<body class="backgroundteste">
 
-    <div class="form-group">
-      <label for="InputHoras">Informe sua meta semanal de horas de estudo</label>
-      <input #InputHoras formControlName="metaHoras" type="number" class="form-control" id="InputHoras"
-        placeholder="Digite sua meta" min="0" max="168">
+  <div id="border">
+      <div class="modal-header">
+        <h4>DEFINA SUAS METAS</h4>
+          <button *ngIf="(metasService.getterMetas()|async).weeklyGoalStudyHours != 0" type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+    <div class="modal-body">
+      <form class="" [formGroup]="metasForm">
+
+        <div class="form-group">
+          <div class="meta-semanal">
+           <label for="InputHoras">INFORME SUA META SEMANAL DE HORAS DE ESTUDO:</label>
+          </div>
+          <div class="background-caixa">
+            <input class="input-jornada" formControlName="metaHoras" type="number" class="input-horas borda"  id="InputHoras"
+            placeholder="Digite sua meta" min="0" max="168" style="width: 5.1em; height: 18%;"> 
+           <img class="setinha1" src="../../../../../assets/images/icons/Seta Menu.svg" alt="setaparabaixo" style="width: 20%;"/>
+          </div>
+        </div>
+        
+
+        <div class="form-group2">
+          <div class="proximo-objetivo">
+           <label for="InputJornada">O PRÓXIMO OBJETIVO DA SUA JORNADA EM WAKANDA SERÁ:</label>
+          </div>
+          <div class="background-caixa2">
+            <input class="input-jornada" formControlName="metaJornada" type="search" class="input-tribo" id="InputJornada"
+            placeholder="Digite sua meta" [ngbTypeahead]="search">  
+            <img class="setinha2" src="../../../../../assets/images/icons/Seta Menu.svg" alt="setaparabaixo" style="width: 11%;"/>        
+          </div>
+       </div>
+          
+      </form>
     </div>
-
-    <div class="form-group">
-      <label for="InputJornada">O próximo objetivo da sua jornada será: </label>
-      <input formControlName="metaJornada" type="search" class="form-control" id="InputJornada"
-        placeholder="Digite sua meta" [ngbTypeahead]="search">
+        
+    <div class="modal-footer">
+      <!-- <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button> -->
+      <button [disabled]="metasForm.invalid" type="submit" class="botao-ok btn-primary mr-4" (click)="submit()">
+        OK
+      </button>
     </div>
-
-  </form>
-</div>
-<div class="modal-footer">
-  <!-- <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button> -->
-  <button [disabled]="metasForm.invalid" type="submit" class="btn btn-primary mr-4" (click)="submit()">
-    Confirmar
-  </button>
-</div>
+  </div> 
+</body>
+              
+        

@@ -1,36 +1,51 @@
 .titulo-jornada{
     background-image: linear-gradient(to bottom, black, #040813); 
     font-family: DecoturaICG;
+    
     text-align: center;
-    color: white;
+    min-width: 100vh;
+    
     padding-bottom: 1px;
+
+   
     
 }
 
 .titulo-jornada h2{
-    font-size: 10vh;
+
+    font-size: 4rem;
+    line-height: 1.5;
+    
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+    display: flex;
+    
+        
 }
 
 #imagem-fundo{
-    position: relative;
+    position: absolute;
     height: 100%;
     width: 100%;
-    background-size: cover;
+   
     
 }
+
 
 .list-group{
-  
-    display: grid;
-    width: 100%;
+
+    font-family: DecoturaICG;
+    font-size: 0.6rem;
+    line-height: 1.5;
+    color: #ffffff;
+    text-align: left;
+    
+    display: block;
     
 
 }
 
-.col-6{
 
-}
 
-.row{
- 
-}

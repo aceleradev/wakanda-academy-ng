@@ -1,0 +1,26 @@
+.caixa{
+    width: 100%;
+    margin: auto;
+    background-color: rgb(21, 21, 116);
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.coluna-1{
+    width: 45%;
+    padding: 60px 30px;
+}
+
+.coluna-2{
+    width: 45%;
+    padding: 60px 30px;
+}
+.linha-vertical {
+    border-left: 2px solid;
+    box-sizing: border-box;
+    height: 80%;
+    margin: 2em 0;
+    color: gray ;
+   }

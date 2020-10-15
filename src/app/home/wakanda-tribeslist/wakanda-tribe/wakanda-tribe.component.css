@@ -1,38 +1,39 @@
 
 .list-group-item-action {
     cursor: pointer;
+   
 }
 
 .background {
     background: #000000;
 }
 
-.row {
-    right: 4rem;
-    height: 130px;
-}
-
-.col-6 {
-    left: 8rem;
-}
-
-.h3{
-
-
-        
-}
-
-
-
-.card-text {
+.imagem-tribo {
     
+}
+
+.titulo-subtitulo {
+    height: 4rem;
+
+
+}
+
+.nome-tribo {
+
+    font-family: DecoturaICG;
+    font-size: 2.8rem;
+    line-height: 1;
+   
+    
+
+}
+
+.subtitulo-tribo {
+
     font-family: erasMedium;
-    font-size: 0.8rem;
-
+    font-size: 0.9rem;
+    line-height: 0.8rem;
+    
 }
 
-.container {
 
-    padding: 1rem;
-
-}

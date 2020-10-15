@@ -3,23 +3,30 @@
     <div class="empty-container">
       <ul class="nav nav-tabs mx-auto" id="myTab" role="tablist">
         <li class="nav-item li-home" role="presentation">
-          <div class="trapezoid-tab_1"> 
-            <a class="nav-link active ancora" id="home-tab" data-toggle="tab" href="#semanal" role="tab" aria-controls="home"
-            aria-selected="true">
+          <a class="nav-link active ancora" id="home-tab" data-toggle="tab" href="#semanal" role="tab"
+            aria-controls="home" aria-selected="true">
+            <div class="trapezoid-tab_1">
               <h3>Desempenho semanal</h3>
-            </a>
-          </div>
+            </div>
+            <!-- <a class="nav-link active ancora" id="home-tab" data-toggle="tab" href="#semanal" role="tab" aria-controls="home"
+            aria-selected="true">
+            </a> -->
+          </a>
         </li>
+
         <li class="nav-item li-profile" role="presentation">
-          <div class="trapezoid-tab_2"> 
-            <a class="nav-link ancora" id="profile-tab" data-toggle="tab" href="#geral" role="tab" aria-controls="profile"
-            aria-selected="false">
+          <a class=" nav-link ancora" id="profile-tab" data-toggle="tab" href="#geral" role="tab"
+            aria-controls="profile" aria-selected="false">
+            <div class="trapezoid-tab_2">
               <h3>Desempenho geral</h3>
-            </a>
-        </div>
+            </div>
+            <!-- <a class="nav-link ancora" id="profile-tab" data-toggle="tab" href="#geral" role="tab" aria-controls="profile"
+            aria-selected="false">
+            </a> -->
+          </a>
         </li>
       </ul>
-  </div>
+    </div>
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active bg" id="semanal" role="tabpanel" aria-labelledby="home-tab">
         <app-semanal></app-semanal>

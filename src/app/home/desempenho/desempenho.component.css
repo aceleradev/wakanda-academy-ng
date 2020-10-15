@@ -58,6 +58,7 @@ ul li {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
+    top: -0em;
 }
 
 .trapezoid-tab_1:after {
@@ -108,6 +109,7 @@ ul li {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
+    top: -0em;
 }
 
 .trapezoid-tab_2:after {

@@ -5,10 +5,10 @@
     text-align: center;
     min-width: 100vh;
     
-    padding-bottom: 1px;
+    padding-bottom: 2px;
 
    
-    
+
 }
 
 .titulo-jornada h2{
@@ -21,31 +21,35 @@
     color: white;
 
     display: flex;
-    
-        
+
 }
 
 #imagem-fundo{
     position: absolute;
     height: 100%;
     width: 100%;
-   
-    
+
 }
 
 
 .list-group{
 
-    font-family: DecoturaICG;
-    font-size: 0.6rem;
-    line-height: 1.5;
+    
     color: #ffffff;
-    text-align: left;
-    
     display: block;
-    
-
 }
+
+
+.tribos {
+
+    border: 2px solid #00ffff;   
+    
+}
+
+
+
+
+
 
 
 

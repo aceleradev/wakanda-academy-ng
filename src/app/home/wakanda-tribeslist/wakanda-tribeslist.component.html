@@ -1,34 +1,40 @@
-<div class="titulo-jornada">
-  <h2>JORNADA</h2>
-</div>
-
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-  <link href="../../../assets/fonts/deconturaICG/DecoturaICG.ttf" rel="stylesheet">
-  <link href="../../../assets/fonts/erasMedium/eras-medium-itc.ttf" rel="stylesheet">
-</head>
-
-<body>
-  <header>
-    <img id="imagem-fundo" src="../../../assets/images/background/Background_2.png" alt="imagem-de-fundo">
-  </header>
+<div class="bg-dark">
+  <div class="titulo-jornada">
+    <h2>JORNADA</h2>
+  </div>
 
   
-    <ol class="list-group">
-      <li *ngFor="let cols of rows" class="row no-gutters mr-1 ml-1 p-2">
-      
-        
-        <div *ngFor="let tribe of cols ; index as i" class="colunas col-6 m-0 p-3">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link href="../../../assets/fonts/deconturaICG/DecoturaICG.ttf" rel="stylesheet">
+    <link href="../../../assets/fonts/erasMedium/eras-medium-itc.ttf" rel="stylesheet">
+  
+
+  <body>
+    
+      <img id="imagem-fundo" src="../../../assets/images/background/Background_2.png" alt="imagem-de-fundo">
+    
+
+      <ol class="list-group">
+        <li *ngFor="let cols of rows" class="row no-gutters mr-1 ml-1 p-0" >
           
-          <app-wakanda-tribe [numero]="i" [tribe]="tribe" [status] = "tribe.status" [wkCode]="wkCode">
-          </app-wakanda-tribe>
-        </div>
-        
-      </li>
-</ol>
-        
-  
-</body>
+                    
+          
+          <div *ngFor="let tribe of cols ; index as i" class="col-6 m-0 p-3">
+            
+            <div class="tribos">
+              <app-wakanda-tribe [numero]="i" [tribe]="tribe" [status] = "tribe.status" [wkCode]="wkCode">
+              </app-wakanda-tribe>
+            </div>  
+          </div>
+          
+        </li>
+      </ol> 
+  </body>
+</div>  
+              
+
+            
+            
   
   

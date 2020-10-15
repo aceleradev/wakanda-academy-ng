@@ -1,17 +1,19 @@
 <a (click)="redirect()" class="
+background
   list-group-item 
   list-group-item-action 
   <!-- list-group-item-secondary -->
-  " [ngClass]="color()" data-toggle="modal" data-target="#exampleModal">
+  " 
+   data-toggle="modal" data-target="#exampleModal">
   <div class="row">
     <div class="col-6">
       <div class="row ">
 
-        <img class="col-3 rounded-circle" [src]="tribe.iconUrl" alt="logo da tribo" style="
+        <img class="col-3 rounded-circle" src="../../../../assets/images/teste/Ícone 1.svg" alt="logo da tribo" style="
                 max-width: 100px;
                 max-height: 100px;
               " />
-        <div class="">
+        <div class="nome-tribos">
           <h3>{{numero+1}} {{tribe.name}}</h3>
           <p class="card-text">{{tribe.description}}</p>
           <p *ngIf="tribe.completedPercentageTribe!=1 && tribe.completedPercentageTribe!=null; else percentageNull"

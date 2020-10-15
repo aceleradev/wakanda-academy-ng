@@ -1,7 +1,7 @@
 <div class="accordion" id="accordionExample">
   <div class="card ">
     <div [ngClass] = "color()" class="card-header " id="headingOne">
-      <h2 class="mb-0">
+      <h2 class="mb-0 ">
         <button class="btn btn-link text-black-50 unstyled" type="button" data-toggle="collapse" [attr.data-target]="'#' + skill.skillCode" aria-expanded="true" aria-controls="collapseOne">
           &#11167;
           {{skill.skillName}}
@@ -10,7 +10,7 @@
       </h2>
     </div>
 
-    <div [attr.id]="skill.skillCode" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+    <div [attr.id]="skill.skillCode" class="collapse show  " aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card card-body">
         <app-wakander-tribe-skill-lesson-list [skill]="skill"></app-wakander-tribe-skill-lesson-list>
       </div>

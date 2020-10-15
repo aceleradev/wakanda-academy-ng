@@ -22,8 +22,8 @@
             </div>
         </div>
 
-        <div class="card habilidades ">
-            <h5 class="card-header">Habilidades</h5>
+        <div class="card habilidades">
+            <h5 class="card-header text-white barra-habilidades text-center">Habilidades</h5>
             <div class="container mr-1 p-2" *ngIf="tribo">
                 <app-wakander-tribe-skill-list [code]="code" [skills]="(tribo || {}).wakanderTribeSkills">
                 </app-wakander-tribe-skill-list>

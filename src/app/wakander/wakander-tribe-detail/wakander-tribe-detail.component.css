@@ -78,7 +78,16 @@
 
 .habilidades{
 
-    background: #001226;
+    
+    background: #000631;
+
+}
+
+.barra-habilidades{
+
+    font-family: lilyUPC;
+    font-size: 40px;
+
 }
 
 .progress-bar{

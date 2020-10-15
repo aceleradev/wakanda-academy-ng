@@ -10,17 +10,17 @@
 
       <div *ngIf="loader=='stopped' else loading">
         <a 
-          class="btn btn-secondary text-white m-2 buttons"
+          class="btn btn-secondary text-white buttons"
           *ngIf="lesson"
           (click)="onclikAcessar()">
-            Acessar 
+            Acessar aula 
         </a>
 
         <a 
-          class="btn btn-secondary text-white m-2 buttons"
+          class="btn btn-secondary text-white buttons"
           *ngIf="lesson"
           (click)="onclickProxima()">
-            Próxima Aula
+            Próxima aula
         </a>
       </div>
         <ng-template #loading>

@@ -1,3 +1,4 @@
+
 .list-group-item-action {
     cursor: pointer;
 }
@@ -8,25 +9,20 @@
 
 .row {
     right: 4rem;
+    height: 130px;
 }
 
 .col-6 {
-    left: 4rem;
+    left: 8rem;
 }
 
-.nome.tribos h3 {
+.h3{
 
-    font: decoturaICG;
-    text-align: left;
-    font-size: 1.9rem;
-    padding-right: 50%;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    
 
+        
 }
+
+
 
 .card-text {
     

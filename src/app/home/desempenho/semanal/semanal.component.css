@@ -11,11 +11,14 @@
 .coluna-1{
     width: 45%;
     padding: 60px 30px;
+    
 }
 
 .coluna-2{
     width: 45%;
     padding: 60px 30px;
+    font-family: ErasDemiITC;
+    text-transform: uppercase;
 }
 .linha-vertical {
     border-left: 2px solid;

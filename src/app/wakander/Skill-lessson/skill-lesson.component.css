@@ -5,3 +5,28 @@
 .geral-style h1, .geral-style h3 {
     font-size: 1.2em;
 }
+
+.buttons {
+    font-family: ErasDemiITC;
+    text-transform: uppercase;
+    background-color: #000631;
+    font-size: 0.9em;
+    border: solid 1px #27eef1;
+    box-shadow: 0 0 3px #000631;
+}
+
+
+@media (min-width: 530px) {
+    .geral-style h1, .geral-style h3 {
+        font-size: 2em;
+    }
+
+
+}
+
+@media (min-width: 720px) {
+    .geral-style h1, .geral-style h3 {
+        font-size: 3em;
+    }
+
+}

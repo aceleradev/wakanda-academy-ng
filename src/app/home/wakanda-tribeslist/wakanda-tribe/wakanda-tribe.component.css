@@ -8,8 +8,17 @@
     background: #000000;
 }
 
-.imagem-tribo {
+.paralelograma{
     
+    background: #001226;
+    top: -25px;
+    display:inline-block;
+    margin: 0 0 0 20px;
+    padding: 0 3px 0 3px;
+    position: absolute;
+    width: 100px;
+    height: 117px !important;
+    transform: skew(15deg);
 }
 
 .titulo-subtitulo {
@@ -23,8 +32,8 @@
     font-family: DecoturaICG;
     font-size: 2.8rem;
     line-height: 1;
-   
-    
+    text-align: right;
+    display: flex;
 
 }
 

@@ -1,0 +1,41 @@
+.geral-style {
+    font-family: DecoturaICG;
+    background-color: #ffffff;
+}
+
+.geral-style h1, .geral-style h3 {
+    font-size: 1.2em;
+    color: #000000;
+}
+
+.buttons {
+    font-family: ErasDemiITC;
+    text-transform: uppercase;
+    background-color: #000631;
+    font-size: 0.5em;
+    border: solid 2px #27eef1;
+    border-radius: 8px;
+    box-shadow: 3px 3px 8px #000631;
+    margin: 3em 1.5em 0;
+    padding: 0.5em 1.5em;
+}
+
+@media (min-width: 530px) {
+    .geral-style h1, .geral-style h3 {
+        font-size: 2em;
+    }
+
+    .buttons {
+        font-size: 0.7em;
+    }
+}
+
+@media (min-width: 720px) {
+    .geral-style h1, .geral-style h3 {
+        font-size: 3em;
+    }
+
+    .buttons {
+        font-size: 0.9em;
+    }
+}

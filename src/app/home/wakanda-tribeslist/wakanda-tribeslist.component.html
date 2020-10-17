@@ -10,28 +10,28 @@
     <link href="../../../assets/fonts/erasMedium/eras-medium-itc.ttf" rel="stylesheet">
   
 
-  <body>
-    
-      <img id="imagem-fundo" src="../../../assets/images/background/Background_2.png" alt="imagem-de-fundo">
-    
+ 
+    <div class="imagem-wakanda"> 
+      <img class="imagem-fundo" src="../../../assets/images/background/Background_2.png" alt="imagem-de-fundo">
+    </div>
 
-      <ol class="list-group">
-        <li *ngFor="let cols of rows" class="row no-gutters mr-1 ml-1 p-0" >
+    <ol class="list-group colunas">
+      <li *ngFor="let cols of rows" class="tamanho row no-gutters mr-1 ml-1 p-0" >
           
                     
           
-          <div *ngFor="let tribe of cols ; index as i" class="col-6 m-0 p-3">
+        <div *ngFor="let tribe of cols ; index as i" class="col-6 m-0 p-3">
             
             <div class="tribos">
               <app-wakanda-tribe [numero]="i" [tribe]="tribe" [status] = "tribe.status" [wkCode]="wkCode">
               </app-wakanda-tribe>
             </div>  
-          </div>
+        </div>
           
-        </li>
-      </ol> 
-  </body>
+      </li>
+   </ol> 
 </div>  
+  
               
 
             

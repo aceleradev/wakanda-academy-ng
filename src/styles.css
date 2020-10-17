@@ -9,6 +9,8 @@
 @font-face {
     font-family: ErasDemiITC;
     src: url('../src/assets/fonts/erasDemi/eras-demi-itc.ttf') format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
@@ -25,3 +27,7 @@
     font-family: LilyUPC;
     src: url('../src/assets/fonts/lilyUPC/lilyUPC.ttf') format("truetype");
 }
+
+.progress-bar{
+    background-color:black !important;  
+    }

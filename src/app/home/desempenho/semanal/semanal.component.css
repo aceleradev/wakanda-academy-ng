@@ -19,6 +19,9 @@
     padding: 60px 30px;
     font-family: ErasDemiITC;
     text-transform: uppercase;
+    /*linha tracejada porem ficou em cima no topo*/
+    /*border-top: 1px dotted rgb(255, 253, 253); border-right: none; border-bottom: none; border-left: none;*/
+
 }
 .linha-vertical {
     border-left: 2px solid;

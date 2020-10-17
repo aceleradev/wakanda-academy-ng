@@ -23,6 +23,8 @@
 .titulo-total{
     text-align: center;
     margin-bottom: 50px;
+    border: none;
+    border-top: 1px dotted black;
 
 }
 .linha-vertical {

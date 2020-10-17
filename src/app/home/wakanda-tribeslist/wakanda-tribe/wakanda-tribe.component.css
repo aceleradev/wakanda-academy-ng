@@ -1,18 +1,15 @@
-
 .list-group-item-action {
     cursor: pointer;
-   
 }
 
 .background {
     background: #000000;
 }
 
-.paralelograma{
-    
+.paralelograma {
     background: #001226;
     top: -25px;
-    display:inline-block;
+    display: inline-block;
     margin: 0 0 0 20px;
     padding: 0 3px 0 3px;
     position: absolute;
@@ -23,26 +20,27 @@
 
 .titulo-subtitulo {
     height: 4rem;
-
-
 }
 
 .nome-tribo {
-
     font-family: DecoturaICG;
     font-size: 2.8rem;
     line-height: 1;
     text-align: right;
     display: flex;
-
 }
 
 .subtitulo-tribo {
-
     font-family: erasMedium;
     font-size: 0.9rem;
     line-height: 0.8rem;
-    
 }
 
+.imagem-tribo {
+    position: absolute;
+}
 
+/* modifica aq o "espaçamento" enre o paralelograma e o restante dos elementos */
+.space {
+    width: 7.5em;
+}

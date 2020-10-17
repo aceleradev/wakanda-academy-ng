@@ -3,45 +3,56 @@ background
   list-group-item 
   list-group-item-action 
   <!-- list-group-item-secondary -->
-  " 
-   data-toggle="modal" data-target="#exampleModal">
+  " data-toggle="modal" data-target="#exampleModal">
 
   <div class="row">
     <div class="col-12">
-      <div class="row ">
+      <div class="row">
 
-        <div class="imagem-tribo paralelograma">
-          <img class="icone-tribo col-3 mr-5 rounded-circle" src="../../../../assets/images/teste/Ícone 1.svg" alt="logo da tribo" style="max-width: 125px; max-height: 125px; padding-top: 35%;" />
-        </div>
-                
-          
-          <div class="titulo-subtitulo">
-            <h3 class="nome-tribo">{{numero+1}} {{tribe.name}}</h3>
-          
-            <p class="subtitulo-tribo">{{tribe.description}}</p>
-            <p *ngIf="tribe.completedPercentageTribe!=1 && tribe.completedPercentageTribe!=null; else percentageNull"
-              class="container">
-              <ngb-progressbar type="dark" textType="light" [value]="tribe.completedPercentageTribe*100"
-                [showValue]="true">
-              </ngb-progressbar>
-            </p>
-            <ng-template class="progresso" #percentageNull></ng-template>
+        <!-- col e margens movidos para div pai -->
+        <!-- como o paralelograma tá como absolute ele sai do fuxo normal do document e 
+        segue sua propria formatação relativa a pagina, por isso que nn move os outros elementos
+        basicamente, o elemento fica "flutundo"-->
+        
+        <!-- para q ele fique ocupando espaço, eu criei uma outra div com a classe "space"
+        e botei ela com uma width pra dar a impressão q o paralelograma ocupa espaço, no fluxo do
+        html ele fica bem embaixo do paraleloragramo, ai se precisar mudar os espaçaento dele relativo a pagina
+        faz isso nesse "space", caso tu queira mudar o tamanho do proprio paralelogram e do icone 
+        tu faz na div que tem a classe "paralelograma" e tags filhas-->
+
+        <div class="space">
+          <div class="paralelograma col-3 ml-0 mr-5 container">
+            <img class="icone-tribo" src="../../../../assets/images/teste/Ícone 1.svg"
+              alt="logo da tribo" style="max-width: 125px; max-height: 125px; padding-top: 35%;" />
           </div>
         </div>
+
+        <div class="titulo-subtitulo">
+          <h3 class="nome-tribo">{{numero+1}} {{tribe.name}}</h3>
+
+          <p class="subtitulo-tribo">{{tribe.description}}</p>
+          <p *ngIf="tribe.completedPercentageTribe!=1 && tribe.completedPercentageTribe!=null; else percentageNull"
+            class="container">
+            <ngb-progressbar type="dark" textType="light" [value]="tribe.completedPercentageTribe*100"
+              [showValue]="true">
+            </ngb-progressbar>
+          </p>
+          <ng-template class="progresso" #percentageNull></ng-template>
+        </div>
       </div>
-      <i *ngIf="this.tribe.status.toString() =='DONE'" class="fa fa-check fa-4x fa-fw fa-inverse"></i>
     </div>
-  </a>
-  
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>Ops!</strong> você ainda não tem acesso a esse curso!
-        <button type="button" class="close p-1" data-dismiss="alert" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
+    <i *ngIf="this.tribe.status.toString() =='DONE'" class="fa fa-check fa-4x fa-fw fa-inverse"></i>
+  </div>
+</a>
+
+<dialog class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Ops!</strong> você ainda não tem acesso a esse curso!
+      <button type="button" class="close p-1" data-dismiss="alert" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
   </div>
-                  
+</dialog>

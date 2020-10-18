@@ -1,0 +1,145 @@
+@font-face{
+    font-family: erasDemi;
+    src: url('/src/assets/fonts/erasDemi/eras-demi-itc.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media only screen and (max-width: 700px) {
+    .modal-header{
+        padding-right: 32%;
+    }
+
+    .close{
+        position: absolute;
+        left: 80%;
+    }
+
+    .botao-ok{
+        position: absolute;
+        left: 37%;
+        top: 85%;
+    }
+
+    .input-tribo{
+        
+        width: 50em;
+    }
+
+}
+
+.modal-header {
+    padding-left: 32%;
+    color: white;
+    text-align: center;
+    border: none;
+}
+
+.modal-header h4 {
+
+    font-size: 20px;
+    margin-top: 5%;
+    
+}
+
+.meta-semanal {
+   margin-bottom: 2%;
+}
+
+.proximo-objetivo {
+
+   margin-bottom: 1%;
+
+}
+
+
+#border {
+
+    border-color: #00FFFF;
+    border-width: 1.5px;
+    border-style: solid;
+}
+
+
+
+.close {
+    color: white;
+}
+
+
+.backgroundteste{
+    background: black;
+}
+
+.form-group {
+    color: white;
+    text-align: center;
+    font-family: erasDemi;
+    font-size: 72%;
+    margin-bottom: 2rem;
+    
+}
+
+.form-group2 {
+    color: white;
+    text-align: center;
+    font-family: erasDemi;
+    font-size: 72%;
+    margin-bottom: 2rem;
+}
+
+.input-jornada {
+
+    width: 12em;
+}
+
+.input-tribo {
+
+    width: 12.5em;
+}
+
+.background-caixa{
+
+   background-color: #001226;
+   color: #00ffff;
+   width: 12vh;
+   border: solid 1px;
+   border-radius: 6px; 
+   margin-top: 10px;
+   margin: auto;
+   
+  
+}
+
+
+.background-caixa2{
+
+    background-color: #001226; 
+    color: #00ffff;
+    width: 22vh;
+    border: solid 1px;
+    border-radius: 6px; 
+    display: inline-block;
+    margin-top: 10px;
+    
+}
+
+.modal-footer{
+    padding-right: 180px;
+    border: none;
+    
+}
+
+.botao-ok {
+    background: #00006f;
+    border: none;
+    border-radius: 8px;
+    width: 82px;
+    height: 28px;
+    margin-bottom: 5%;
+    margin-top: 0.5%;
+    padding-top: 0.5%;
+    font-size: 14px;
+}
+
+

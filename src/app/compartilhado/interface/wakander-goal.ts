@@ -1,7 +1,6 @@
-import { WakanderTribeGoalDTO } from "./wakander-tribe-dto";
+import { WakanderTribeGoalDTO } from "./wakander-tribe-goal-dto";
 
 export interface WakanderGoal {
-    wakanderCode:string,
     weeklyGoalStudyHours: number,
     nextTribeGoal: WakanderTribeGoalDTO
 }

@@ -32,6 +32,7 @@ export class TokenService {
 
   removeToken() {
     this.setTokenExpDate(null);
+    window.localStorage.removeItem('tokenExpirationDate')
     window.localStorage.removeItem(key);
   }
 
@@ -41,15 +42,16 @@ export class TokenService {
   }
 
   setTokenExpDate(dateString: string) {
-    const date = new Date(dateString);
-    const dateLocalTime = new Date(date.getTime() - (3 * 60 * 60 * 1000));
-    console.log(dateLocalTime);
-    this.expDate.next(dateLocalTime);
+    window.localStorage.setItem('tokenExpirationDate', dateString);
   }
 
   getTokenExpDate() {
-    console.log(this.expDate.value);
-    return this.expDate.asObservable();
+    let expirationDateString = window.localStorage.getItem('tokenExpirationDate');
+    return expirationDateString == null ? null : new Date(expirationDateString);
+  }
+
+  tokenHasExpired(): boolean {
+    return new Date() < this.expDate.value;
   }
 
 }

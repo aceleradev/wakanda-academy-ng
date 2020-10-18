@@ -16,7 +16,7 @@
           <p class="card-text">{{tribe.description}}</p>
           <p *ngIf="tribe.completedPercentageTribe!=1 && tribe.completedPercentageTribe!=null; else percentageNull"
             class="container">
-            <ngb-progressbar type="dark" textType="light" [value]="tribe.completedPercentageTribe*100"
+            <ngb-progressbar type="dark" textType="light" [value]="(tribe.completedPercentageTribe*100).toPrecision(2)"
               [showValue]="true">
             </ngb-progressbar>
           </p>

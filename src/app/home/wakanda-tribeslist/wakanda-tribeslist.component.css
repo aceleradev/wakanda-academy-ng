@@ -10,9 +10,11 @@
     }
 
    
-       
+    #resp {
 
-    
+        max-width: 100% !important;
+    }
+
 }
 
 
@@ -44,11 +46,9 @@
 
 }
 
-.imagem-fundo{
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.imagem-de-fundo{
     
+    background: url('../../../assets/images/background/Background_2.png'), repeat-y;
 }
 
 

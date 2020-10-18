@@ -32,7 +32,7 @@ background
 
           <p class="subtitulo-tribo">{{tribe.description}}</p>
           <p *ngIf="tribe.completedPercentageTribe!=1 && tribe.completedPercentageTribe!=null; else percentageNull"
-            class="container">
+            class="container hidden">
             <ngb-progressbar type="dark" textType="light" [value]="tribe.completedPercentageTribe*100"
               [showValue]="true">
             </ngb-progressbar>

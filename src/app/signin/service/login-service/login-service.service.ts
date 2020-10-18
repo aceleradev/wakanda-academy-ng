@@ -25,7 +25,7 @@ export class LoginService {
         if (res.body) {
           const authToken = res.body.token;
           const expTime:string = res.body.expiresAt;
-          console.log(expTime);
+          console.log('setando storage', expTime);
           
           this.tokenService.setTokenExpDate(expTime);
           this.userService.setToken(authToken);

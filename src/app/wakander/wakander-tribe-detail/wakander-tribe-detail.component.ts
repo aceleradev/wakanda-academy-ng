@@ -5,6 +5,7 @@ import { WakandaTribe } from 'src/app/compartilhado/interface/wakanda-tribe';
 import { WakanderService } from '../service/wakander.service';
 import { SkillLessonService } from '../service/actions/skill-lesson.service';
 import { SkillActionService } from '../service/actions/skill-action.service';
+import { WakanderTribeService } from './service/wakander-tribe.service';
 
 @Component({
   selector: 'app-wakander-tribe-detail',
@@ -24,7 +25,8 @@ export class WakanderTribeDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private wakanderService: WakanderService,
-    private skillActionService: SkillActionService) { }
+    private skillActionService: SkillActionService,
+    private wakanderTribeService: WakanderTribeService) { }
 
 
   ngOnInit() {
@@ -36,7 +38,8 @@ export class WakanderTribeDetailComponent implements OnInit {
 
     console.log(this.code.concat(this.wkCode));
     this.wakanderService.getTribo(this.wkCode, this.code).subscribe(wakanda => {
-      this.tribo = wakanda
+      this.tribo = wakanda;
+      this.wakanderTribeService.selectTribe(this.tribo);
       this.percent = this.tribo.completedPercentageTribe * 100;
       console.log(this.percent); 
       console.log(this.tribo);

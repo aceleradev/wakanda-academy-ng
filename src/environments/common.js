@@ -36,7 +36,7 @@ module.exports = {
         },
         action: {
             unlock: {
-                path: baseBath + "/wakanderAction"
+                path: baseBath + "/wakanderAction/{wakanderCode}/{tribeCode}/{skillCode}/{lessonCode}"
             },
             nextLesson: {
                 path: baseBath + "/wakanderAction"

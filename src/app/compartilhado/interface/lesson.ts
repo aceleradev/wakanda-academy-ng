@@ -6,6 +6,7 @@ export interface Lesson {
     lessonName: string,
     description: string,
     status: status,
+    unlockedContent:boolean,
     link: string
     
 }

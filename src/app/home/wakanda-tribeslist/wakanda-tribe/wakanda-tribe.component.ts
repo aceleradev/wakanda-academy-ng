@@ -1,9 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { WakandaTribe } from '../../../compartilhado/interface/wakanda-tribe';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { status } from 'src/app/compartilhado/interface/status.enum';
-import { StatusService } from 'src/app/compartilhado/service/status/status.service';
 import { WakandaTribeHome } from 'src/app/compartilhado/interface/wakanda-tribe-home';
+import { StatusService } from 'src/app/compartilhado/service/status/status.service';
 
 @Component({
   selector: 'app-wakanda-tribe',
@@ -29,8 +28,6 @@ export class WakandaTribeComponent implements OnInit {
 
   redirect() {
     console.log((["/tribe", this.wkCode, this.tribe.tribeCode]));
-    // if(this.status.toString() != "CLOSED") {
-    // }
     this.router.navigate(["/tribe", this.wkCode, this.tribe.tribeCode]);
   }
 

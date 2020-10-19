@@ -37,8 +37,8 @@ ul li {
 }
 
 /* ---------------fazendo o trapézio------------------ */
-/* ---1°--- */
-.trapezoid-tab_1:before {
+/* ---1°--- SEMANAL BUTTON SELECTED */
+.firstTrapezoidTab-yes:before {
     content:"";
     width:15px;
     height:1.7em;
@@ -50,18 +50,16 @@ ul li {
     -webkit-transform: skew(-20deg);
     -moz-transform: skew(-20deg);
     -o-transform: skew(-20deg);
-    border: solid 3px#00ffff;
-    border-radius: 3px;
-    border-right: 0;
+    border: solid 3px #00ffff;
+    border-right: none;
     border-bottom: none;
-    /* border-bottom: solid 3px#00ffff; */
+    border-radius: 3px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
     top: -0em;
 }
-
-.trapezoid-tab_1:after {
+.firstTrapezoidTab-yes:after {
     content:"";
     width:15px;
     height:1.7em;
@@ -74,12 +72,53 @@ ul li {
     -webkit-transform: skew(20deg);
     -moz-transform: skew(20deg);
     -o-transform: skew(20deg);
-    border: solid 3px#00ffff;
-    border-radius: 3px;
-    border-radius: 2px;
+    border: solid 3px #00ffff;
     border-left: none;
     border-bottom: none;
-    /* border-bottom: solid 3px#00ffff; */
+    border-radius: 3px;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    z-index: 1;
+}
+
+/* ---1°--- GERAL BUTTON SELECTED */
+.firstTrapezoidTab-no:before {
+    content:"";
+    width:15px;
+    height:1.7em;
+    background:#000000;
+    position:absolute;
+    left: -0.6em;
+    color:#FFF;
+    text-align:center;
+    -webkit-transform: skew(-20deg);
+    -moz-transform: skew(-20deg);
+    -o-transform: skew(-20deg);
+    border: solid 3px #00ffff;
+    border-right: none;
+    border-radius: 3px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    top: -0em;
+}
+.firstTrapezoidTab-no:after {
+    content:"";
+    width:15px;
+    height:1.7em;
+    background:#000000;
+    position:absolute;
+    right: -0.6em;
+    top: 0px;
+    color:#FFF;
+    text-align:center;
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -o-transform: skew(20deg);
+    border: solid 3px #00ffff;
+    border-left: none;
+    border-radius: 3px;
     border-top-left-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
@@ -88,8 +127,8 @@ ul li {
 
 
 
-/* ---2°--- */
-.trapezoid-tab_2:before {
+/* ---2°--- SEMANAL BUTTON SELECTED */
+.secondTrapezoidTab-no:before {
     content:"";
     width:15px;
     height:1.7em;
@@ -102,17 +141,15 @@ ul li {
     -moz-transform: skew(-20deg);
     -o-transform: skew(-20deg);
     border: solid 3px #00ffff;
+    border-right: none;
     border-radius: 3px;
-    border-right: 0;
-    /* border-bottom: none; */
-    border-bottom: solid 3px#00ffff;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
     top: -0em;
 }
 
-.trapezoid-tab_2:after {
+.secondTrapezoidTab-no:after {
     content:"";
     width:15px;
     height:1.7em;
@@ -126,16 +163,79 @@ ul li {
     -moz-transform: skew(20deg);
     -o-transform: skew(20deg);
     border: solid 3px #00ffff;
-    border-radius: 3px;
     border-left: none;
-    /* border-bottom: none; */
-    border-bottom: solid 3px#00ffff;
+    border-radius: 3px;
     border-top-left-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 }
 
+/* ---2°--- GERAL BUTTON SELECTED */
+.secondTrapezoidTab-yes:before {
+    content:"";
+    width:15px;
+    height:1.7em;
+    background:#000000;
+    position:absolute;
+    left: -0.6em;
+    color:#FFF;
+    text-align:center;
+    -webkit-transform: skew(-20deg);
+    -moz-transform: skew(-20deg);
+    -o-transform: skew(-20deg);
+    border: solid 3px #00ffff;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 3px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    top: -0em;
+    z-index: 2;
+}
+
+.secondTrapezoidTab-yes:after {
+    content:"";
+    width:15px;
+    height:1.7em;
+    background:#000000;
+    position:absolute;
+    right: -0.6em;
+    top: 0px;
+    color:#FFF;
+    text-align:center;
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -o-transform: skew(20deg);
+    border: solid 3px #00ffff;
+    border-left: none;
+    border-bottom: none;
+    border-radius: 3px;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
 /* ----------------------------------------------------------- */
+
+
+
+/* ---1°--- SEMANAL BUTTON SELECTED */
+.homeTab-yes {
+    border-bottom: solid 3px #000000!important;
+}
+.profileTab-no {
+    border-bottom: solid 3px #00ffff!important;
+}
+
+/* ---2°--- GERAL BUTTON SELECTED */
+.homeTab-no {
+    border-bottom: solid 3px #00ffff!important;
+}
+.profileTab-yes {
+    border-bottom: solid 3px #000000!important;
+}
+/*  -------------------------------- */
+
 
 .li-home {
     left: 7%;
@@ -150,43 +250,11 @@ ul li {
     border: 0;
     background-color: #000000;
     text-align: center;
-    border-top: solid 3px white;
+    border-top: solid 3px #00ffff;
     border-radius: 0;
     line-height: 0;
     padding: 0.16em 0;
-    border-bottom: solid 3px #000000;
 }
-
-#profile-tab {
-    border-bottom: solid 3px #00ffff;
-}
-
-
-
- /*< -------------- selected_desempenho-geral ------------------> 
-.trapezoid-tab_1:before {
-    border-bottom: solid 3px#00ffff;
-}
-.trapezoid-tab_1:after {
-    border-bottom: solid 3px#00ffff;
-}
-.trapezoid-tab_2:before {
-    border-bottom: none;
-    z-index: 2;
-}
-.trapezoid-tab_2:after {
-    border-bottom: none;
-}
-
-
-#home-tab {
-    border-bottom: solid 3px#00ffff;
-}
-
-#profile-tab {
-    border-bottom: solid 3px #000000;
-}
-<---------------------------------------------------------------->*/
 
 
 /* Descrição das tabelas*/
@@ -233,31 +301,57 @@ ul li {
     }
 
     /* ---------------fazendo o trapézio------------------ */
-    /* ---1°--- */
-    .trapezoid-tab_1:before {
+    /* ---1°--- SEMANAL SELECTED*/
+    .firstTrapezoidTab-yes:before {
         width:1.2em;
         height:2.4em;
         left: -0.6em;
     }
 
-    .trapezoid-tab_1:after {
+    .firstTrapezoidTab-yes:after {
+        width:1.2em;
+        height:2.4em;
+        right: -0.7em;
+    }
+    /* ---1°--- GERAL SELECTED*/
+    .firstTrapezoidTab-no:before {
+        width:1.2em;
+        height:2.4em;
+        left: -0.6em;
+    }
+
+    .firstTrapezoidTab-no:after {
         width:1.2em;
         height:2.4em;
         right: -0.7em;
     }
 
-    /* ---2°--- */
-    .trapezoid-tab_2:before {
+    /* ---2°--- SEMANAL SELECTED*/
+    .secondTrapezoidTab-no:before {
         width:1.2em;
         height:2.4em;
         left: -0.7em;
     }
 
-    .trapezoid-tab_2:after {
+    .secondTrapezoidTab-no:after {
         width:1.2em;
         height:2.4em;
         right: -0.7em;
     }
+    /* ---2°--- GERAL SELECTED*/
+    .secondTrapezoidTab-yes:before {
+        width:1.2em;
+        height:2.4em;
+        left: -0.7em;
+    }
+
+    .secondTrapezoidTab-yes:after {
+        width:1.2em;
+        height:2.4em;
+        right: -0.7em;
+    }
+
+    
 
     /* ----------------------------------------------------------- */
 

@@ -50,10 +50,10 @@ ul li {
     -webkit-transform: skew(-20deg);
     -moz-transform: skew(-20deg);
     -o-transform: skew(-20deg);
-    border: solid 3px#00ffff;
-    border-radius: 3px;
-    border-right: 0;
+    border: solid 3px #00ffff;
+    border-right: none;
     border-bottom: none;
+    border-radius: 3px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
@@ -72,11 +72,10 @@ ul li {
     -webkit-transform: skew(20deg);
     -moz-transform: skew(20deg);
     -o-transform: skew(20deg);
-    border: solid 3px#00ffff;
-    border-radius: 3px;
-    border-radius: 2px;
+    border: solid 3px #00ffff;
     border-left: none;
     border-bottom: none;
+    border-radius: 3px;
     border-top-left-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
@@ -96,10 +95,9 @@ ul li {
     -webkit-transform: skew(-20deg);
     -moz-transform: skew(-20deg);
     -o-transform: skew(-20deg);
-    border: solid 3px#00ffff;
+    border: solid 3px #00ffff;
+    border-right: none;
     border-radius: 3px;
-    border-right: 0;
-    border-bottom: solid 3px#00ffff;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
@@ -118,11 +116,9 @@ ul li {
     -webkit-transform: skew(20deg);
     -moz-transform: skew(20deg);
     -o-transform: skew(20deg);
-    border: solid 3px#00ffff;
-    border-radius: 3px;
-    border-radius: 2px;
+    border: solid 3px #00ffff;
     border-left: none;
-    border-bottom: solid 3px#00ffff;
+    border-radius: 3px;
     border-top-left-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
@@ -145,9 +141,8 @@ ul li {
     -moz-transform: skew(-20deg);
     -o-transform: skew(-20deg);
     border: solid 3px #00ffff;
+    border-right: none;
     border-radius: 3px;
-    border-right: 0;
-    border-bottom: solid 3px#00ffff;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
@@ -168,9 +163,8 @@ ul li {
     -moz-transform: skew(20deg);
     -o-transform: skew(20deg);
     border: solid 3px #00ffff;
-    border-radius: 3px;
     border-left: none;
-    border-bottom: solid 3px#00ffff;
+    border-radius: 3px;
     border-top-left-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
@@ -190,9 +184,9 @@ ul li {
     -moz-transform: skew(-20deg);
     -o-transform: skew(-20deg);
     border: solid 3px #00ffff;
-    border-radius: 3px;
-    border-right: 0;
+    border-right: none;
     border-bottom: none;
+    border-radius: 3px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
@@ -214,9 +208,9 @@ ul li {
     -moz-transform: skew(20deg);
     -o-transform: skew(20deg);
     border: solid 3px #00ffff;
-    border-radius: 3px;
     border-left: none;
     border-bottom: none;
+    border-radius: 3px;
     border-top-left-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
@@ -235,7 +229,7 @@ ul li {
 
 /* ---2°--- GERAL BUTTON SELECTED */
 .homeTab-no {
-    border-bottom: solid 3px#00ffff!important;
+    border-bottom: solid 3px #00ffff!important;
 }
 .profileTab-yes {
     border-bottom: solid 3px #000000!important;
@@ -256,7 +250,7 @@ ul li {
     border: 0;
     background-color: #000000;
     text-align: center;
-    border-top: solid 3px white;
+    border-top: solid 3px #00ffff;
     border-radius: 0;
     line-height: 0;
     padding: 0.16em 0;

@@ -1,9 +1,15 @@
 .cor-de-fundo{
-    background: black;
     
-   
-   
+    background: linear-gradient( #011226, black); 
 }
+
+.cor-de-profile{
+    
+    background: black; 
+    position: relative;
+    margin-bottom: 20px;
+}
+
 
 .profile{
     color: black; 

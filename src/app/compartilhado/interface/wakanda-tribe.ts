@@ -10,5 +10,5 @@ export interface WakandaTribe {
     icon_url: string,
     completedPercentageTribe:number,
     wakanderTribeSkills: Skill[]
-    
+
 }

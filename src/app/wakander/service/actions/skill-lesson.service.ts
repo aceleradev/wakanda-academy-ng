@@ -29,8 +29,14 @@ export class SkillLessonService {
     this.code.next(newcode);
   }
 
-  acessarLesson(url: string) {
-    return this.http.get(environment.wakanda.action.unlock.path + '/' + url, {observe:'response'})
+  acessarLesson(wakanderCode: string, tribeCode: string, skillCode: string, lessonCode: string) {
+    let unlockLessonUrl = environment.wakanda.action.unlock.path
+                                    .replace("{wakanderCode}", wakanderCode)
+                                    .replace("{tribeCode}", tribeCode)
+                                    .replace("{skillCode}", skillCode)
+                                    .replace("{lessonCode}", lessonCode);
+                                    
+    return this.http.get(unlockLessonUrl, {observe:'response'})
   }
 
   getNextLesson(wkCode:string, lessonCode:string) {

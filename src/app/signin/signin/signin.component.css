@@ -1,0 +1,89 @@
+.back {
+    height: 100vh;
+    background: url('../../../assets/images/background/Background_3.png');
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    background-size: contain;
+    -o-background-size: contain;
+}
+
+.contair {
+    width: 100vw;
+    height: 100vh; 
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center
+    
+}
+.caixa {
+    width: 400px;
+    height: 370px;
+    border: solid 3px #00FFFF;
+    padding: 2em;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+ }
+
+.logo {
+    width: 200px;
+    display: block;
+    margin: auto;
+    margin-bottom: 2em;
+    padding: 1.2em 0;
+}
+
+.btn-entrar{
+    border: solid 4px #00FFFF;
+    border-top: solid 1px #00FFFF;
+    border-bottom: solid 1px #00FFFF;
+    border-radius: 7px;
+    background-color: #000631;
+    color: white;
+    padding: 0.1em 2.5em;
+    display: block;
+    margin: auto;
+    font-family: ErasDemiITC;
+    text-transform: uppercase;
+    box-shadow: 0 0 5px #00ffff
+}
+
+.btn-entrar:hover {
+    background-color: #000520;
+    transition: 0,5s;
+}
+
+.btn-clique-aqui{
+    color: white;
+    display: inline; 
+    margin: auto;
+    text-decoration: underline;
+    font-family: ErasMedium;
+}
+
+.fonte {
+    font-family: ErasMedium;
+}
+
+.campo-imput {
+    width: 100%;
+    padding: 0.1em;
+    border-radius: 5px;
+    padding-left: 0.7em;
+}
+
+.font-esqueceu-senha {
+    font-size: 12px;
+    padding-left: 1em;
+    display: inline-block;
+}
+
+@media only screen and (max-width: 450px) {
+    .contair{
+     width: 90%;
+     margin: auto;
+     display: flex;
+    }
+  }

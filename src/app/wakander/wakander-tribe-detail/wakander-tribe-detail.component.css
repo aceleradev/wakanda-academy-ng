@@ -1,12 +1,20 @@
 .acima-de-400px { display: inline; }
 .abaixo-de-400px { display: none; }
 
+.card-style {
 
-@media screen and (max-width: 480px){
- width:  100%;
+    height: 10%;
 
 }
+.estilo-imagem {
 
+
+    display: inline;
+    position: relative;
+    top: 40px;
+    width: 40%;
+
+}
 
 .geral {
 
@@ -14,11 +22,21 @@
 }
 .estilizacao {
 
+
+    margin-left: 20px;
+    margin-top: 5px;
     font-family: DecoturaICG;
     font-size: 40px;
-    color: blanchedalmond;
+    color: white;
+   
 
+}
 
+.estilizacao-subtitulo {
+    font-family: DecoturaICG;
+    font-size: 19px;
+    color: #00ffff;
+    text-align: left;
 }
 
 .cor-do-card {
@@ -34,11 +52,16 @@
 
 .borda-imagem {
 
-    border-radius: 50%;
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
     border: #00ffff solid 3px;
 }
 
 .progressabar{
+
+    position: relative;
+    bottom: 20px ;
     border: #001226 solid;
     border-top-width: 3px;
     border-right-width: 10px;
@@ -46,6 +69,7 @@
     border-left-width: 10px;
     padding: 0.2px;
     transform: skew(-20deg);
+
 }
 
 .barra{

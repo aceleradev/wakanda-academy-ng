@@ -1,3 +1,63 @@
+@media only screen and (max-width: 750px) {
+
+
+
+}   
+
+
+
+.hidden {
+    display: none;
+}
+
 .list-group-item-action {
     cursor: pointer;
+}
+
+.background {
+    background: #000000;
+}
+
+
+
+.paralelograma {
+    background: #001226;
+    top: -25px;
+    display: inline-block;
+    margin: 0 0 0 20px;
+    padding: 0 3px 0 3px;
+    position: absolute;
+    width: 100px;
+    height: 117px !important;
+    transform: skew(15deg);
+}
+
+.titulo-subtitulo {
+    height: 4em;
+    
+    
+}
+
+.nome-tribo {
+    font-family: DecoturaICG;
+    font-size: 2.8em;
+    line-height: 1;
+    text-align: auto;
+    display: flex;
+}
+
+.subtitulo-tribo {
+    font-family: erasMedium;
+    font-size: 0.9em;
+    line-height: 0.8em;
+}
+
+.imagem-tribo {
+    position: absolute;
+}
+
+/* modifica aq o "espaçamento" enre o paralelograma e o restante dos elementos */
+.space {
+    width: 9.5em;
+    
 }

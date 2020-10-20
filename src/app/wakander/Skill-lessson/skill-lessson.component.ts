@@ -11,6 +11,9 @@ import { LessonDTO } from 'src/app/compartilhado/interface/lessonDTO';
 import { StatusService } from 'src/app/compartilhado/service/status/status.service';
 import { status } from 'src/app/compartilhado/interface/status.enum';
 import { Subscription } from 'rxjs';
+import { UserService } from 'src/app/compartilhado/service/user/user.service';
+import { WakanderTribeService } from '../wakander-tribe-detail/service/wakander-tribe.service';
+import { WakandaTribe } from 'src/app/compartilhado/interface/wakanda-tribe';
 
 @Component({
   selector: 'app-skill-lesson',
@@ -18,9 +21,10 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./skill-lesson.component.css']
 })
 export class SkillLessonComponent implements OnInit, OnChanges, OnDestroy {
+  tribe: WakandaTribe;
   lesson: Lesson;
   skill: Skill;
-  @Input() url: string;
+  private wakanderCode: string;
   loader: Loading;
   breadCrumbs: string = "";
   private subs: Subscription = new Subscription();
@@ -28,28 +32,34 @@ export class SkillLessonComponent implements OnInit, OnChanges, OnDestroy {
   constructor(
     private skillLessonService: SkillLessonService,
     private skillActionService: SkillActionService,
+    private userService: UserService,
     private loadService: LoadingService,
     private router: Router,
-    private statusService: StatusService) { }
+    private statusService: StatusService,
+    private wakanderTribeService: WakanderTribeService) { }
     
 
   ngOnInit(): void {
+    this.userService
+        .getUser()
+        .subscribe(user => this.wakanderCode = user.wakanderCode);
+
+    console.log("init component lesson");
+    
+    this.wakanderTribeService
+        .getTribe()
+        .subscribe(tribe => this.tribe = tribe);
+
     this.subs.add(
       this.skillLessonService.lesson$.subscribe(aula => {
-        this.lesson = aula
-        console.log("Skill-lesson aula:" + aula);
-      })
-    );
-    this.subs.add(
-      this.skillLessonService.code$.subscribe(code => {
-        this.url = code;
-        console.log(this.url);
+        this.lesson = aula;
+        console.log("Skill-lesson aula", aula);
       })
     );
     this.subs.add(
       this.skillActionService.Skill$.subscribe(skill => {
         this.skill = skill
-        console.log("Skill-lesson skill:" + skill);
+        console.log("Skill-lesson skill", skill);
       })
     );
 
@@ -77,10 +87,11 @@ export class SkillLessonComponent implements OnInit, OnChanges, OnDestroy {
     console.log(this.statusService.isDoing(this.lesson) || this.statusService.isDone(this.lesson));
     if (!this.statusService.isTodo(this.lesson)) {
       this.subs.add(
-        this.skillLessonService.acessarLesson(this.url).subscribe(res => {
+        this.skillLessonService.acessarLesson(this.wakanderCode, this.tribe.tribeCode, this.skill.skillCode, this.lesson.lessonCode).subscribe(res => {
           if (res.status == 200) {
             window.open(this.lesson.link, '_blank');
             this.lesson.status = status.DONE;
+            this.lesson.unlockedContent = true;
             this.isSkillDone();
           }
         }, err => {
@@ -96,22 +107,19 @@ export class SkillLessonComponent implements OnInit, OnChanges, OnDestroy {
 
   onclickProxima() {
     console.log(this.statusService.isDone(this.lesson));
-    if (this.statusService.isDone(this.lesson)) {
-      let code = this.url.split("/");
-      let wkCode = code[0];
+    if (this.lesson.unlockedContent) {
       this.subs.add(
-        this.skillLessonService.getNextLesson(wkCode, this.lesson.lessonCode).subscribe((res) => {
+        this.skillLessonService.getNextLesson(this.wakanderCode, this.lesson.lessonCode).subscribe((res) => {
           const aulaDTO: LessonDTO = res.body;
-          console.log(aulaDTO);
+          console.log('res nextLesson', aulaDTO);
           const lessonArry: Lesson[] = this.skill.wakanderTribeSkillLessons;
-          lessonArry.forEach((lesson) => {
-            if (lesson.lessonCode == aulaDTO.lessonCode) {
-              if (!this.statusService.isDone(lesson)) {
-                lesson.status = status.DOING;
-              }
-              this.skillLessonService.changeCurrentLesson(lesson);
-            }
-          });
+          lessonArry.filter(lesson => lesson.lessonCode == aulaDTO.lessonCode)
+                    .forEach((lesson) => {
+                      if (!this.statusService.isDone(lesson)) {
+                        lesson.status = status.DOING;
+                      }
+                      this.skillLessonService.changeCurrentLesson(lesson);
+                    });
         }, err => {
           console.log(err);
           alert("desculpe, houve um erro ao carregar a proxima aula.");

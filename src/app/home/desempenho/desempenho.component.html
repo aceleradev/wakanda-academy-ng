@@ -1,19 +1,32 @@
-<div class="bg-light">
-  <div class="bg-light mx-auto container">
-    <ul class="nav nav-tabs mx-auto bg-dark" id="myTab" role="tablist">
-      <li class="nav-item" role="presentation">
-        <a class="nav-link active " id="home-tab" data-toggle="tab" href="#semanal" role="tab" aria-controls="home"
-          aria-selected="true">
-          <h3>Desempenho semanal</h3>
-        </a>
-      </li>
-      <li class="nav-item" role="presentation">
-        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#geral" role="tab" aria-controls="profile"
-          aria-selected="false">
-          <h3>Desempenho geral</h3>
-        </a>
-      </li>
-    </ul>
+<div class="bg-light primary-div">
+  <div class="mx-auto container">
+    <div class="empty-container">
+      <ul class="nav nav-tabs mx-auto" id="myTab" role="tablist">
+        <li class="nav-item li-home" role="presentation">
+          <a class="homeTab-yes nav-link active ancora" id="home-tab" data-toggle="tab" href="#semanal" role="tab"
+            aria-controls="home" aria-selected="true">
+            <div class="firstTrapezoidTab-yes">
+              <h3>Desempenho semanal</h3>
+            </div>
+            <!-- <a class="nav-link active ancora" id="home-tab" data-toggle="tab" href="#semanal" role="tab" aria-controls="home"
+            aria-selected="true">
+            </a> -->
+          </a>
+        </li>
+
+        <li class="nav-item li-profile" role="presentation">
+          <a class="profileTab-no nav-link ancora" id="profile-tab" data-toggle="tab" href="#geral" role="tab"
+            aria-controls="profile" aria-selected="false">
+            <div class="secondTrapezoidTab-no">
+              <h3>Desempenho geral</h3>
+            </div>
+            <!-- <a class="nav-link ancora" id="profile-tab" data-toggle="tab" href="#geral" role="tab" aria-controls="profile"
+            aria-selected="false">
+            </a> -->
+          </a>
+        </li>
+      </ul>
+    </div>
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active bg" id="semanal" role="tabpanel" aria-labelledby="home-tab">
         <app-semanal></app-semanal>

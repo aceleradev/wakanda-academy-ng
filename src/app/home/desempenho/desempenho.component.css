@@ -1,0 +1,364 @@
+.primary-div{
+    background-color: #010914!important;
+    padding: 10px 0;
+    font-family: DecoturaICG;
+    font-size: 16px;
+}
+
+.empty-container {
+    width: 100%;
+    display: block;
+}
+
+#myTab {
+    width: 300px;
+    position: relative;
+    border-bottom: none;
+    height: 1.5em;
+    margin-left: inherit!important;
+}
+
+#myTab h3 {
+    display: inline-block;
+    font-size: 1em;
+    line-height: 1;
+    white-space: nowrap;
+    color: #ffffff;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
+ul li {
+    position: relative;
+}
+
+.trapezoid {
+    position: relative;
+}
+
+/* ---------------fazendo o trapézio------------------ */
+/* ---1°--- SEMANAL BUTTON SELECTED */
+.firstTrapezoidTab-yes:before {
+    content:"";
+    width:15px;
+    height:1.7em;
+    background:#000000;
+    position:absolute;
+    left: -0.6em;
+    color:#FFF;
+    text-align:center;
+    -webkit-transform: skew(-20deg);
+    -moz-transform: skew(-20deg);
+    -o-transform: skew(-20deg);
+    border: solid 3px #00ffff;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 3px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    top: -0em;
+}
+.firstTrapezoidTab-yes:after {
+    content:"";
+    width:15px;
+    height:1.7em;
+    background:#000000;
+    position:absolute;
+    right: -0.6em;
+    top: 0px;
+    color:#FFF;
+    text-align:center;
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -o-transform: skew(20deg);
+    border: solid 3px #00ffff;
+    border-left: none;
+    border-bottom: none;
+    border-radius: 3px;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    z-index: 1;
+}
+
+/* ---1°--- GERAL BUTTON SELECTED */
+.firstTrapezoidTab-no:before {
+    content:"";
+    width:15px;
+    height:1.7em;
+    background:#000000;
+    position:absolute;
+    left: -0.6em;
+    color:#FFF;
+    text-align:center;
+    -webkit-transform: skew(-20deg);
+    -moz-transform: skew(-20deg);
+    -o-transform: skew(-20deg);
+    border: solid 3px #00ffff;
+    border-right: none;
+    border-radius: 3px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    top: -0em;
+}
+.firstTrapezoidTab-no:after {
+    content:"";
+    width:15px;
+    height:1.7em;
+    background:#000000;
+    position:absolute;
+    right: -0.6em;
+    top: 0px;
+    color:#FFF;
+    text-align:center;
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -o-transform: skew(20deg);
+    border: solid 3px #00ffff;
+    border-left: none;
+    border-radius: 3px;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    z-index: 1;
+}
+
+
+
+/* ---2°--- SEMANAL BUTTON SELECTED */
+.secondTrapezoidTab-no:before {
+    content:"";
+    width:15px;
+    height:1.7em;
+    background:#000000;
+    position:absolute;
+    left: -0.6em;
+    color:#FFF;
+    text-align:center;
+    -webkit-transform: skew(-20deg);
+    -moz-transform: skew(-20deg);
+    -o-transform: skew(-20deg);
+    border: solid 3px #00ffff;
+    border-right: none;
+    border-radius: 3px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    top: -0em;
+}
+
+.secondTrapezoidTab-no:after {
+    content:"";
+    width:15px;
+    height:1.7em;
+    background:#000000;
+    position:absolute;
+    right: -0.6em;
+    top: 0px;
+    color:#FFF;
+    text-align:center;
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -o-transform: skew(20deg);
+    border: solid 3px #00ffff;
+    border-left: none;
+    border-radius: 3px;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* ---2°--- GERAL BUTTON SELECTED */
+.secondTrapezoidTab-yes:before {
+    content:"";
+    width:15px;
+    height:1.7em;
+    background:#000000;
+    position:absolute;
+    left: -0.6em;
+    color:#FFF;
+    text-align:center;
+    -webkit-transform: skew(-20deg);
+    -moz-transform: skew(-20deg);
+    -o-transform: skew(-20deg);
+    border: solid 3px #00ffff;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 3px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    top: -0em;
+    z-index: 2;
+}
+
+.secondTrapezoidTab-yes:after {
+    content:"";
+    width:15px;
+    height:1.7em;
+    background:#000000;
+    position:absolute;
+    right: -0.6em;
+    top: 0px;
+    color:#FFF;
+    text-align:center;
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -o-transform: skew(20deg);
+    border: solid 3px #00ffff;
+    border-left: none;
+    border-bottom: none;
+    border-radius: 3px;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+/* ----------------------------------------------------------- */
+
+
+
+/* ---1°--- SEMANAL BUTTON SELECTED */
+.homeTab-yes {
+    border-bottom: solid 3px #000000!important;
+}
+.profileTab-no {
+    border-bottom: solid 3px #00ffff!important;
+}
+
+/* ---2°--- GERAL BUTTON SELECTED */
+.homeTab-no {
+    border-bottom: solid 3px #00ffff!important;
+}
+.profileTab-yes {
+    border-bottom: solid 3px #000000!important;
+}
+/*  -------------------------------- */
+
+
+.li-home {
+    left: 7%;
+}
+
+.li-profile {
+    left: 13.5%;
+}
+
+#home-tab, #profile-tab{
+    width: 7em;
+    border: 0;
+    background-color: #000000;
+    text-align: center;
+    border-top: solid 3px #00ffff;
+    border-radius: 0;
+    line-height: 0;
+    padding: 0.16em 0;
+}
+
+
+/* Descrição das tabelas*/
+
+#myTabContent {
+    font-size: 1em;
+    background-color: #001226;
+    color: #ffffff;
+    border: solid 5.5px #000000;
+    margin-top: 0.2em;
+    border-radius: 2px;
+    height: 9em;
+    box-shadow: 
+    0 0 0 3px #00ffff;
+    min-width: 285px;
+    
+}
+
+
+
+
+@media (min-width: 518px) {
+
+    #myTab {
+        width: 500px;
+        margin-left: inherit!important;
+    }
+
+    #myTab h3 {
+        font-size: 1.7em;
+    }
+
+    .li-home {
+        left: 7%;
+    }
+    
+    .li-profile {
+        left: 11.5%;
+    }
+
+    #home-tab, #profile-tab{
+        width: 12em;
+        padding: 0.16em 0;
+    }
+
+    /* ---------------fazendo o trapézio------------------ */
+    /* ---1°--- SEMANAL SELECTED*/
+    .firstTrapezoidTab-yes:before {
+        width:1.2em;
+        height:2.4em;
+        left: -0.6em;
+    }
+
+    .firstTrapezoidTab-yes:after {
+        width:1.2em;
+        height:2.4em;
+        right: -0.7em;
+    }
+    /* ---1°--- GERAL SELECTED*/
+    .firstTrapezoidTab-no:before {
+        width:1.2em;
+        height:2.4em;
+        left: -0.6em;
+    }
+
+    .firstTrapezoidTab-no:after {
+        width:1.2em;
+        height:2.4em;
+        right: -0.7em;
+    }
+
+    /* ---2°--- SEMANAL SELECTED*/
+    .secondTrapezoidTab-no:before {
+        width:1.2em;
+        height:2.4em;
+        left: -0.7em;
+    }
+
+    .secondTrapezoidTab-no:after {
+        width:1.2em;
+        height:2.4em;
+        right: -0.7em;
+    }
+    /* ---2°--- GERAL SELECTED*/
+    .secondTrapezoidTab-yes:before {
+        width:1.2em;
+        height:2.4em;
+        left: -0.7em;
+    }
+
+    .secondTrapezoidTab-yes:after {
+        width:1.2em;
+        height:2.4em;
+        right: -0.7em;
+    }
+
+    
+
+    /* ----------------------------------------------------------- */
+
+    #myTabContent {
+        font-size: 1.7em;
+        margin-top: 0.5em;
+    }
+
+
+}

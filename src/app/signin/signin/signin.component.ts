@@ -51,6 +51,7 @@ export class SigninComponent implements OnInit {
       this.loginForm.get("email").value, 
       this.loginForm.get("senha").value)
     .subscribe(() => {
+      console.log('redirecionando home');
       if(this.fromUrl){                 
         this.router.navigateByUrl(this.fromUrl);
       }else{
